@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPSG Notes</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #c4c4c4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(360deg, #00503d, #00674f);
+            color: white;
+            padding: 4rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .container {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column; /* Ensure vertical alignment on smaller screens */
+                height: 100vh;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                background: linear-gradient(0deg, #000000, rgba(0, 103, 79, 0.8)), url('schoolimg.jpg');
+                background-size: cover;
+                color: black;
+                padding: 0 20px;
+                position: relative;
+                overflow: hidden;
+              }
+        
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        h3{
+            font-size: 35px;
+        }
+        
+        .card {
+            background: #fff;
+            padding: 2rem 9rem 2rem 9rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10rem;
+            text-align: center;
+            transition: transform 0.4s ease-in-out;
+          }
+          
+          .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition-duration: 400ms;
+          }
+          
+          .card:hover {
+            transform: translateY(-10px);
+            cursor: pointer;
+            transform: scale(1.1);
+            color: #000000;
+            background: #6ec5a2;
+          }
+          .card:active {
+            background: #529279;
+          }
+          .gallery a {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit the text color from the parent */
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: rgb(35, 95, 58);
+            color: white;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DPSG Notes Gallery</h1>
+        <p></p>
+    </header>
+    <div class="container">
+
+    
+        <div class="gallery">
+            <a href="class.html" class="card">
+                
+                <!-- <img src="example1.jpg" alt="Notebook Page 1"> -->
+                <h3>Standard</h3>
+                <p>Select Your Class</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
