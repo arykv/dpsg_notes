@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 11 Subjects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #c4c4c4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(360deg, #000000e3, #00674f);
+            color: white;
+            padding: 4rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background: linear-gradient(0deg, #000000, rgb(0, 103, 79));
+            color: black;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h3 {
+            font-size: 35px;
+            color: rgb(240, 253, 193);
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .button {
+            background: #fff;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 22px;
+            font-weight: 500;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .update {
+            font-size: 17px;
+            color: gray;
+        }
+        .button:hover {
+            transform: scale(1.05);
+            background: #6ec5a2;
+            color: #000;
+        }
+
+        .button:active {
+            background: #529279;
+        }
+    </style>
+</head>
+<body>
+
+   
+    <div class="container">
+        <h3>Select a Student</h3>
+        <div class="subjects">
+            <div class="button" onclick="location.href='Uday Computer - 22 December.pdf'">Uday<br><span class="update">last updated 22nd December</span>
+            </div>
+            
+            
+        </div>
+    </div>
+
+</body>
+</html>
