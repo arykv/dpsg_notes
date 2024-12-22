@@ -24,17 +24,32 @@
             background: linear-gradient(360deg, #00503d, #00674f);
             color: white;
             padding: 3rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .header-center {
             text-align: center;
         }
 
-        header h1 {
+        .header-center h1 {
             font-size: 2.2rem;
             margin-bottom: 0.5rem;
         }
 
-        header p {
+        .header-center p {
             font-size: 1.2rem;
             opacity: 0.8;
+        }
+
+        .Name {
+            font-size: 2.3rem;
+            color: rgb(238, 229, 133);
+            position: absolute;
+            right: 7rem;
+            top: 5.8rem;
         }
 
         .container {
@@ -99,12 +114,17 @@
         }
 
         @media (max-width: 768px) {
-            header h1 {
+            .header-center h1 {
                 font-size: 2rem;
             }
 
-            header p {
+            .header-center p {
                 font-size: 1rem;
+            }
+
+            .Name {
+                font-size: 2rem;
+                top: 1rem;
             }
 
             .card h3 {
@@ -133,10 +153,14 @@
 </head>
 <body>
     <header>
-        <h1>DPSG Notes Gallery</h1>
-        <p>Explore and select your class for notes</p>
+        <div class="header-center">
+            <h1>DPSG Notes Gallery</h1>
+            <p>Explore and select your class for notes</p>
+        </div>
+        <h1 class="Name">- Aryan Rao</h1>
     </header>
     <hr size="10">
+    
     <div class="container">
         <div class="gallery">
             <a href="class.html" class="card">
