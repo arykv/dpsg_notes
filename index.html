@@ -67,19 +67,20 @@
             background-size: cover;
             background-position: center;
             padding: 2rem 1rem;
+            width: 100%;
         }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            width: 90%;
-            max-width: 1000px;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .card {
             background: #fff;
-            padding: 1.2rem 14rem;  
+            padding: 1.2rem;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -88,7 +89,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            max-width: 600px;  
+            max-width: 100%;
             margin: 0 auto;
         }
         
@@ -102,8 +103,6 @@
             font-size: 1rem;
             opacity: 0.8;
         }
-        
-        
 
         .card:hover {
             transform: translateY(-10px) scale(1.05);
@@ -123,27 +122,26 @@
 
         @media (max-width: 768px) {
             .header-center h1 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .header-center p {
-                font-size: 0.8rem;
+                font-size: 1rem;
             }
 
             .Name {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 top: 1rem;
             }
 
             .card {
-                padding: 1.2rem 14rem;
-                max-width: 600px; 
+                padding: 1rem;
             }
-        
+
             .card h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
-        
+
             .card p {
                 font-size: 0.9rem;
             }
@@ -154,20 +152,24 @@
                 padding: 2rem 1rem;
             }
 
+            .container {
+                padding: 1rem;
+            }
+
             .card {
-                padding: 1.2rem 14rem;
+                padding: 1rem;
             }
 
             .gallery {
-                gap: 1.5rem;
+                gap: 1rem;
             }
 
             .card h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .card p {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -187,7 +189,7 @@
             <h1>DPSG Notes Gallery</h1>
             <p>Explore and select your class for notes</p>
         </div>
-<!--         <h1 class="Name">- Aryan Rao</h1> -->
+        <!-- <h1 class="Name">- Aryan Rao</h1> -->
     </header>
     <hr size="5">
     <div class="container">
