@@ -18,6 +18,9 @@
             background-color: #c4c4c4;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         header {
@@ -45,11 +48,11 @@
         }
 
         .Name {
-            font-size: 2.1rem;
+            font-size: 2rem;
             color: rgb(238, 229, 133);
             position: absolute;
             right: 7rem;
-            top: 5.8rem;
+            top: 6.3rem;
         }
 
         .container {
@@ -57,7 +60,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 90vh;
+            flex: 1;
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 103, 79, 0.7)), 
                         url('schoolimg.jpg');
             background-size: cover;
@@ -75,7 +78,7 @@
 
         .card {
             background: #fff;
-            padding: 2rem;
+            padding: 1.2rem 14rem;  
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -84,18 +87,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            max-width: 600px;  
+            margin: 0 auto;
         }
-
+        
         .card h3 {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
             color: #00503d;
         }
-
+        
         .card p {
             font-size: 1rem;
-            opacity: 0.7;
+            opacity: 0.8;
         }
+        
+        
 
         .card:hover {
             transform: translateY(-10px) scale(1.05);
@@ -115,11 +122,11 @@
 
         @media (max-width: 768px) {
             .header-center h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
             }
 
             .header-center p {
-                font-size: 1rem;
+                font-size: 0.8rem;
             }
 
             .Name {
@@ -127,10 +134,15 @@
                 top: 1rem;
             }
 
+            .card {
+                padding: 1.5rem 1rem;
+                max-width: 250px; 
+            }
+        
             .card h3 {
                 font-size: 1.5rem;
             }
-
+        
             .card p {
                 font-size: 0.9rem;
             }
@@ -142,13 +154,30 @@
             }
 
             .card {
-                padding: 1.5rem;
+                padding: 0.8rem;
             }
 
             .gallery {
                 gap: 1.5rem;
             }
+
+            .card h3 {
+                font-size: 1.2rem;
+            }
+
+            .card p {
+                font-size: 0.8rem;
+            }
         }
+
+        footer {
+            background: #00503d;
+            color: white;
+            text-align: center;
+            padding: 0.4rem;
+            font-size: 1.3rem;
+        }
+
     </style>
 </head>
 <body>
@@ -159,8 +188,7 @@
         </div>
         <h1 class="Name">- Aryan Rao</h1>
     </header>
-    <hr size="10">
-    
+    <hr size="5">
     <div class="container">
         <div class="gallery">
             <a href="class.html" class="card">
@@ -169,5 +197,8 @@
             </a>
         </div>
     </div>
+    <footer>
+        Special thanks to <strong>Uday</strong> for providing the notes!
+    </footer>
 </body>
 </html>
