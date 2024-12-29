@@ -53,7 +53,7 @@
         }
 
         h3 {
-            font-size: 65px;
+            font-size: 35px;
             color: rgb(240, 253, 193);
         }
 
@@ -63,7 +63,7 @@
             gap: 1.5rem;
             margin-top: 2rem;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
         }
 
         .button {
@@ -72,12 +72,15 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 500;
             transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
             cursor: pointer;
         }
-
+        .update {
+            font-size: 17px;
+            color: gray;
+        }
         .button:hover {
             transform: scale(1.05);
             background: #6ec5a2;
@@ -93,8 +96,13 @@
 
    
     <div class="container">
-        <h3>Coming Soon!</h3>
-       
+        <h3>Select a Student</h3>
+        <div class="subjects">
+            <div class="button" onclick="location.href='Uday Maths 24 December.pdf'">Uday<br><span class="update">last updated 24th December [Binomial and Sequence Series]</span>
+            </div>
+            
+            
+        </div>
     </div>
 
 </body>
