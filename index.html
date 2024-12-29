@@ -190,7 +190,40 @@
             padding: 0.4rem;
             font-size: 1.3rem;
         }
+        .announcement-bar {
+            background: linear-gradient(180deg, #007056, #00674f); 
+            color: white;
+            font-weight: normal;
+            padding: 0rem;
+            padding-bottom: 0rem;
+            padding-top: 0rem;
+            font-size: 1.2rem;
+            text-align: center;
+            width: 100%;
+            height: 30px; 
+            overflow: hidden;
+            border-top: 2px solid #fff; 
+        }
 
+        .announcement-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: smooth-scroll 15s linear infinite; 
+        }
+
+        @keyframes smooth-scroll {
+            0% {
+                transform: translateX(-130%);
+            }
+            100% {
+                transform: translateX(120%);
+            }
+        }
+
+        .anno {
+            color: rgb(238, 229, 133);
+            font-weight: bolder;
+        }
     </style>
 </head>
 <body>
@@ -201,7 +234,15 @@
         </div>
         <!-- <h1 class="Name">- Aryan Rao</h1> -->
     </header>
-    <hr size="5">
+    <hr size="3">
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            📢 <span class="anno">Announcements:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Commerce and Arts Sections Added! - Notes Required &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Maths Section Updated - Class 11 Science &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mail at dpsgnotes@gmail.com for sending notes or any queries
+        </div>
+    </div>
+    <hr size="6">
     <div class="container">
         <div class="gallery">
             <a href="class.html" class="card">
