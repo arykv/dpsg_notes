@@ -11,6 +11,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 from pypdf import PdfReader
@@ -69,18 +70,29 @@ NOISE = re.compile(
 )
 
 
-def fetch(url: str, timeout: int = 45) -> bytes | None:
+def fetch(url: str, timeout: int = 45, attempts: int = 3) -> bytes | None:
     """Shell out to curl — this machine sits behind a TLS-intercepting proxy
-    that Python's own certificate store doesn't trust, but the system one does."""
-    try:
-        r = subprocess.run(
-            ["curl", "-sL", "--max-time", str(timeout), "-A", UA["User-Agent"], url],
-            capture_output=True,
-        )
-        data = r.stdout
-        return data if data[:4] == b"%PDF" else None
-    except Exception:
-        return None
+    that Python's own certificate store doesn't trust, but the system one does.
+
+    Retries matter: a single dropped connection used to delete a real chapter
+    from the index, which looks identical to the chapter not existing.
+    """
+    for attempt in range(attempts):
+        try:
+            r = subprocess.run(
+                ["curl", "-sL", "--max-time", str(timeout), "-A", UA["User-Agent"], url],
+                capture_output=True,
+            )
+            data = r.stdout
+            if data[:4] == b"%PDF":
+                return data
+            # A 404 comes back as a tiny HTML body; no point retrying that.
+            if len(data) < 512 and b"<" in data[:64]:
+                return None
+        except Exception:
+            pass
+        time.sleep(1 + attempt)
+    return None
 
 
 def title_from(data: bytes) -> tuple[str | None, int]:
@@ -104,6 +116,48 @@ def title_from(data: bytes) -> tuple[str | None, int]:
         if not NOISE.match(ln) and 3 < len(ln) < 70 and ln.upper() == ln:
             return ln, pages
     return None, pages
+
+
+PAGE_NUM = re.compile(r"^\s*\d{1,3}\s*|\s*\d{1,3}\s*$")
+CH_PREFIX = re.compile(r"^\s*chapter\s*\d+\s*[•·\-–]?\s*", re.I)
+
+
+def undouble(t: str) -> str:
+    """Drop-shadow text extracts twice: "TitleTitle" -> "Title"."""
+    half = len(t) // 2
+    if len(t) % 2 == 0 and t[:half] == t[half:]:
+        return t[:half]
+    return t
+
+
+def header_title(reader: PdfReader, book_label: str) -> str | None:
+    """The running header on odd pages is the chapter title in most NCERT books.
+
+    Even pages carry the book name instead, so only odd ones are sampled and the
+    most repeated candidate wins.
+    """
+    seen: dict[str, int] = {}
+    for i in (2, 4, 6, 8):
+        if i >= len(reader.pages):
+            break
+        text = reader.pages[i].extract_text() or ""
+        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+        if not lines:
+            continue
+        cand = CH_PREFIX.sub("", PAGE_NUM.sub("", lines[0])).strip(" .:-—•")
+        cand = undouble(re.sub(r"\s+", " ", cand))
+        if not (3 < len(cand) < 70):
+            continue
+        if book_label and cand.lower() in book_label.lower():
+            continue
+        if NOISE.match(cand) or cand.isdigit():
+            continue
+        seen[cand] = seen.get(cand, 0) + 1
+
+    if not seen:
+        return None
+    best, count = max(seen.items(), key=lambda kv: kv[1])
+    return best if count >= 2 else None
 
 
 def clean(t: str) -> str:
@@ -156,27 +210,58 @@ def toc_titles(code: str) -> dict[int, str]:
 
 
 def do_chapter(args):
-    code, ch = args
+    code, ch, label = args
     data = fetch(BASE.format(code=code, ch=ch))
     if not data:
         return None
     title, pages = title_from(data)
+
+    running = None
+    try:
+        running = header_title(PdfReader(io.BytesIO(data)), label)
+    except Exception:
+        pass
+
     return {
         "ch": ch,
-        "title": clean(title) if title else f"Chapter {ch}",
+        "title": clean(title) if title else "",
+        "running": clean(running) if running else "",
         "pages": pages,
         "sizeMb": round(len(data) / 1_048_576, 1),
-        "guessed": title is None,
     }
 
 
+SAFE_CHARS = re.compile(r"[A-Za-z0-9 ,.'’\-–—:;()&/?!]")
+
+
+def looks_like_title(t: str) -> bool:
+    """Reject anything that would look broken on the page.
+
+    Some of these PDFs use subsetted display fonts with no usable encoding, so
+    the "title" comes out as a run of tofu. A wrong-looking title is worse than
+    an honest "Chapter 7", so the bar here is deliberately high.
+    """
+    if not t or not (3 <= len(t) <= 70):
+        return False
+    if re.match(r"^\d", t):          # "18 Mathematics"
+        return False
+    if re.search(r"\d{2,}$", t):     # "Themes in Indian History28"
+        return False
+    if len(SAFE_CHARS.findall(t)) < len(t) * 0.9:
+        return False
+    if not re.search(r"[A-Za-z]{3}", t):
+        return False
+    return True
+
+
 def main():
-    jobs = [(code, ch) for code, *_ in BOOKS for ch in range(1, 21)]
-    with ThreadPoolExecutor(max_workers=24) as pool:
+    label_of = {code: label for code, _g, _s, _st, label in BOOKS}
+    jobs = [(code, ch, label_of[code]) for code, *_ in BOOKS for ch in range(1, 21)]
+    with ThreadPoolExecutor(max_workers=20) as pool:
         results = list(pool.map(do_chapter, jobs))
 
     by_code: dict[str, list] = {}
-    for (code, _ch), res in zip(jobs, results):
+    for (code, _ch, _l), res in zip(jobs, results):
         if res:
             by_code.setdefault(code, []).append(res)
 
@@ -193,15 +278,15 @@ def main():
 
         toc = tocs.get(code, {})
         for c in chapters:
-            if c["ch"] in toc:
-                c["title"] = toc[c["ch"]]
-                c["guessed"] = False
-            elif c["guessed"] or not c["title"] or re.search(r"\d", c["title"][:3]):
-                # No trustworthy title anywhere — say so plainly rather than
-                # shipping a mangled one.
+            # Contents page first, then the running header, then the page-1
+            # heading. Anything that still looks mangled becomes "Chapter N".
+            for cand in (toc.get(c["ch"]), c["running"], c["title"]):
+                if cand and looks_like_title(cand):
+                    c["title"] = cand
+                    break
+            else:
                 c["title"] = f"Chapter {c['ch']}"
-                c["guessed"] = True
-            c.pop("guessed", None)
+            c.pop("running", None)
 
         out.append({
             "code": code, "grade": grade, "subject": subject,

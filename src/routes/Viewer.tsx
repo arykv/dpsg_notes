@@ -136,6 +136,7 @@ export default function Viewer() {
                 {resource.official ? 'Official' : KIND_LABELS[resource.kind]}
               </Badge>
               <Badge tone="outline">Class {resource.grade}</Badge>
+              {resource.handwritten && <Badge tone="outline">Handwritten</Badge>}
             </div>
 
             <h1 className="mt-3.5 text-2xl">{resource.title}</h1>

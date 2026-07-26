@@ -1,1 +1,2168 @@
-[]
+[
+ {
+  "code": "keph1",
+  "grade": 11,
+  "subject": "physics",
+  "stream": "science",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Units and Measurement",
+    "pages": 12,
+    "sizeMb": 1.1
+   },
+   {
+    "ch": 2,
+    "title": "Motion in a Straight Line",
+    "pages": 14,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 3,
+    "title": "Motion in a Plane",
+    "pages": 22,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 4,
+    "title": "Laws of Motion",
+    "pages": 22,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 5,
+    "title": "Work, Energy and Power",
+    "pages": 21,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 6,
+    "title": "Systems of Particles and Rotational Motion",
+    "pages": 35,
+    "sizeMb": 4.0
+   },
+   {
+    "ch": 7,
+    "title": "\uf043\uf048\uf041\uf050\uf054\uf045\uf052\uf020\uf053\uf045\uf056\uf045\uf04e",
+    "pages": 17,
+    "sizeMb": 1.7
+   }
+  ]
+ },
+ {
+  "code": "keph2",
+  "grade": 11,
+  "subject": "physics",
+  "stream": "science",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Mechanical Properties of Solids",
+    "pages": 13,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 2,
+    "title": "Mechanical Properties of Fluids",
+    "pages": 22,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 3,
+    "title": "Thermal Properties of Matter",
+    "pages": 24,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 4,
+    "title": "Thermodynamics",
+    "pages": 18,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 5,
+    "title": "Kinetic Theory",
+    "pages": 15,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 6,
+    "title": "Oscillations",
+    "pages": 19,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 7,
+    "title": "Waves",
+    "pages": 22,
+    "sizeMb": 1.9
+   }
+  ]
+ },
+ {
+  "code": "kech1",
+  "grade": 11,
+  "subject": "chemistry",
+  "stream": "science",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Some Basic Concepts of Chemistry",
+    "pages": 28,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 2,
+    "title": "Structure of Atom",
+    "pages": 45,
+    "sizeMb": 5.2
+   },
+   {
+    "ch": 3,
+    "title": "Classification of Elements and Periodicity in Properties",
+    "pages": 26,
+    "sizeMb": 3.3
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 36,
+    "sizeMb": 4.9
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 32,
+    "sizeMb": 4.9
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 53,
+    "sizeMb": 5.4
+   }
+  ]
+ },
+ {
+  "code": "kech2",
+  "grade": 11,
+  "subject": "chemistry",
+  "stream": "science",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Some BaSic conceptS of chemiStry",
+    "pages": 21,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 2,
+    "title": "Structure of atom",
+    "pages": 39,
+    "sizeMb": 4.3
+   },
+   {
+    "ch": 3,
+    "title": "c laSSification of elementS and periodicity in propertieS",
+    "pages": 33,
+    "sizeMb": 3.1
+   }
+  ]
+ },
+ {
+  "code": "kemh1",
+  "grade": 11,
+  "subject": "maths",
+  "stream": "science",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Sets",
+    "pages": 23,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 2,
+    "title": "Relations and Functions",
+    "pages": 19,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 3,
+    "title": "Trigonometric Functions",
+    "pages": 33,
+    "sizeMb": 2.9
+   },
+   {
+    "ch": 4,
+    "title": "Complex Numbers and Quadratic Equations",
+    "pages": 13,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 11,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 26,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 9,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 16,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 9,
+    "title": "Chapter 9",
+    "pages": 25,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 10,
+    "title": "Chapter 10",
+    "pages": 32,
+    "sizeMb": 2.9
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 9,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 12,
+    "title": "Chapter 12",
+    "pages": 40,
+    "sizeMb": 3.3
+   },
+   {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 32,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 14,
+    "title": "Chapter 14",
+    "pages": 25,
+    "sizeMb": 2.2
+   }
+  ]
+ },
+ {
+  "code": "kebo1",
+  "grade": 11,
+  "subject": "biology",
+  "stream": "science",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 9,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 13,
+    "sizeMb": 3.1
+   },
+   {
+    "ch": 3,
+    "title": "Plant Kingdom 23",
+    "pages": 14,
+    "sizeMb": 4.9
+   },
+   {
+    "ch": 4,
+    "title": "Animal Kingdom 3737",
+    "pages": 18,
+    "sizeMb": 5.9
+   },
+   {
+    "ch": 5,
+    "title": "Unit 2",
+    "pages": 16,
+    "sizeMb": 3.3
+   },
+   {
+    "ch": 6,
+    "title": "Anatomy of Flowering Plants 71",
+    "pages": 8,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 7,
+    "title": "Structural Organisation in Animals 79",
+    "pages": 6,
+    "sizeMb": 1.0
+   },
+   {
+    "ch": 8,
+    "title": "Unit 3",
+    "pages": 19,
+    "sizeMb": 6.7
+   },
+   {
+    "ch": 9,
+    "title": "Chapter 9",
+    "pages": 16,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 10,
+    "title": "Chapter 10",
+    "pages": 11,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 11,
+    "title": "Unit 4",
+    "pages": 22,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 12,
+    "title": "Respiration in Plants 153",
+    "pages": 13,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 15,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 14,
+    "title": "Unit 5",
+    "pages": 12,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 15,
+    "title": "Body Fluids and Circulation 193",
+    "pages": 12,
+    "sizeMb": 3.0
+   },
+   {
+    "ch": 16,
+    "title": "Excretory Products and Their Elimination 205",
+    "pages": 12,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 17,
+    "title": "Locomotion and Movement 217",
+    "pages": 13,
+    "sizeMb": 4.3
+   },
+   {
+    "ch": 18,
+    "title": "Chapter 18",
+    "pages": 9,
+    "sizeMb": 4.1
+   },
+   {
+    "ch": 19,
+    "title": "Chapter 19",
+    "pages": 14,
+    "sizeMb": 2.0
+   }
+  ]
+ },
+ {
+  "code": "kecs1",
+  "grade": 11,
+  "subject": "computer-science",
+  "stream": "science",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "CoMpuTer sysTeM",
+    "pages": 26,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 2,
+    "title": "enCodIng sCheMes and nuMber sysTeM",
+    "pages": 18,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 3,
+    "title": "eMergIng Trends",
+    "pages": 16,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 4,
+    "title": "InTroduCTIon to probleM solvIng",
+    "pages": 26,
+    "sizeMb": 3.2
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 34,
+    "sizeMb": 3.3
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 22,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 32,
+    "sizeMb": 2.9
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 14,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 9,
+    "title": "Chapter 9",
+    "pages": 18,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 10,
+    "title": "Chapter 10",
+    "pages": 22,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 24,
+    "sizeMb": 2.8
+   }
+  ]
+ },
+ {
+  "code": "keip1",
+  "grade": 11,
+  "subject": "computer-science",
+  "stream": "science",
+  "label": "Informatics Practices",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Computer SyStem",
+    "pages": 14,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 2,
+    "title": "emerging trendS",
+    "pages": 16,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 3,
+    "title": "Brief overview of python",
+    "pages": 24,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 4,
+    "title": "working with LiStS and diCtionarieS",
+    "pages": 26,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 14,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 28,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 20,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 32,
+    "sizeMb": 3.2
+   }
+  ]
+ },
+ {
+  "code": "keac1",
+  "grade": 11,
+  "subject": "accountancy",
+  "stream": "commerce",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Introduction to Accounting",
+    "pages": 24,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 2,
+    "title": "Theory Base of Accounting",
+    "pages": 21,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 3,
+    "title": "Recording of Transactions - I",
+    "pages": 53,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 4,
+    "title": "Recording of Transactions - II",
+    "pages": 61,
+    "sizeMb": 4.8
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 20,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 46,
+    "sizeMb": 3.4
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 51,
+    "sizeMb": 3.7
+   }
+  ]
+ },
+ {
+  "code": "keac2",
+  "grade": 11,
+  "subject": "accountancy",
+  "stream": "commerce",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "i ntroduction to Accounting",
+    "pages": 41,
+    "sizeMb": 3.0
+   },
+   {
+    "ch": 2,
+    "title": "t heory bAse oF Accounting",
+    "pages": 71,
+    "sizeMb": 0.8
+   }
+  ]
+ },
+ {
+  "code": "kebs1",
+  "grade": 11,
+  "subject": "business-studies",
+  "stream": "commerce",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Business, Trade and Commerce",
+    "pages": 25,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 2,
+    "title": "Forms of Business Organisation",
+    "pages": 31,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 3,
+    "title": "Private, Public and Global Enterprises",
+    "pages": 22,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 4,
+    "title": "Business Services",
+    "pages": 34,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 5,
+    "title": "Emerging Modes of Business",
+    "pages": 20,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 6,
+    "title": "Social ReSponSibilitieS of buSineSS and",
+    "pages": 18,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 7,
+    "title": "Formation of a Company",
+    "pages": 20,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 8,
+    "title": "Sources of Business Finance",
+    "pages": 26,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 9,
+    "title": "MSME and Business Entrepreneurship",
+    "pages": 17,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 10,
+    "title": "Internal Trade",
+    "pages": 31,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 11,
+    "title": "International Business",
+    "pages": 38,
+    "sizeMb": 3.1
+   }
+  ]
+ },
+ {
+  "code": "keec1",
+  "grade": 11,
+  "subject": "economics",
+  "stream": "commerce",
+  "label": "Indian Economic Development",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Development Policies and Experience",
+    "pages": 15,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 20,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 3,
+    "title": "Unit",
+    "pages": 21,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 4,
+    "title": "Current Challenges Facing The",
+    "pages": 18,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 17,
+    "sizeMb": 3.0
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 23,
+    "sizeMb": 4.5
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 17,
+    "sizeMb": 4.1
+   },
+   {
+    "ch": 8,
+    "title": "Development Experiences of India: a Comparison",
+    "pages": 19,
+    "sizeMb": 2.7
+   }
+  ]
+ },
+ {
+  "code": "kest1",
+  "grade": 11,
+  "subject": "economics",
+  "stream": "commerce",
+  "label": "Statistics for Economics",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 8,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 13,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 18,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 18,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 16,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 16,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 15,
+    "sizeMb": 1.1
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 16,
+    "sizeMb": 1.8
+   }
+  ]
+ },
+ {
+  "code": "kehs1",
+  "grade": 11,
+  "subject": "history",
+  "stream": "arts",
+  "label": "Themes in World History",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 28,
+    "sizeMb": 3.6
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 48,
+    "sizeMb": 5.9
+   },
+   {
+    "ch": 3,
+    "title": "Changing Traditions",
+    "pages": 9,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 20,
+    "sizeMb": 3.0
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 17,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 30,
+    "sizeMb": 3.5
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 36,
+    "sizeMb": 3.6
+   }
+  ]
+ },
+ {
+  "code": "keps1",
+  "grade": 11,
+  "subject": "political-science",
+  "stream": "arts",
+  "label": "Indian Constitution at Work",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 16,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 2,
+    "title": "Freedom",
+    "pages": 14,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 3,
+    "title": "Equality",
+    "pages": 22,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 4,
+    "title": "Social Justice",
+    "pages": 14,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 5,
+    "title": "Rights",
+    "pages": 12,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 6,
+    "title": "Citizenship",
+    "pages": 18,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 7,
+    "title": "Nationalism",
+    "pages": 14,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 8,
+    "title": "Secularism",
+    "pages": 18,
+    "sizeMb": 2.2
+   }
+  ]
+ },
+ {
+  "code": "keps2",
+  "grade": 11,
+  "subject": "political-science",
+  "stream": "arts",
+  "label": "Political Theory",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Constitution",
+    "pages": 25,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 2,
+    "title": "Rights in the Indian",
+    "pages": 25,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 3,
+    "title": "Election And",
+    "pages": 27,
+    "sizeMb": 3.1
+   },
+   {
+    "ch": 4,
+    "title": "Executive",
+    "pages": 22,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 5,
+    "title": "Legislature",
+    "pages": 24,
+    "sizeMb": 3.0
+   },
+   {
+    "ch": 6,
+    "title": "Judiciary",
+    "pages": 26,
+    "sizeMb": 2.9
+   },
+   {
+    "ch": 7,
+    "title": "Federalism",
+    "pages": 26,
+    "sizeMb": 3.4
+   },
+   {
+    "ch": 8,
+    "title": "Local",
+    "pages": 20,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 9,
+    "title": "Constitution As A",
+    "pages": 24,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 10,
+    "title": "The Philosophy Of",
+    "pages": 23,
+    "sizeMb": 2.4
+   }
+  ]
+ },
+ {
+  "code": "kepy1",
+  "grade": 11,
+  "subject": "psychology",
+  "stream": "arts",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 18,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 21,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 20,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 17,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 18,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 14,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 17,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 12,
+    "sizeMb": 1.4
+   }
+  ]
+ },
+ {
+  "code": "kehb1",
+  "grade": 11,
+  "subject": "english",
+  "stream": "common",
+  "label": "Hornbill",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "The Portrait of a Lady",
+    "pages": 11,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 9,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 14,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 8,
+    "sizeMb": 1.1
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 14,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 13,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 12,
+    "title": "Chapter 12",
+    "pages": 4,
+    "sizeMb": 0.9
+   },
+   {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 3,
+    "sizeMb": 0.8
+   },
+   {
+    "ch": 14,
+    "title": "Chapter 14",
+    "pages": 5,
+    "sizeMb": 1.0
+   },
+   {
+    "ch": 15,
+    "title": "Chapter 15",
+    "pages": 9,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 16,
+    "title": "Chapter 16",
+    "pages": 3,
+    "sizeMb": 0.8
+   }
+  ]
+ },
+ {
+  "code": "kesp1",
+  "grade": 11,
+  "subject": "english",
+  "stream": "common",
+  "label": "Snapshots",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 8,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 2,
+    "title": "The Address",
+    "pages": 5,
+    "sizeMb": 0.9
+   },
+   {
+    "ch": 3,
+    "title": "Mother\u2019s Day",
+    "pages": 20,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 4,
+    "title": "Birth",
+    "pages": 5,
+    "sizeMb": 0.9
+   },
+   {
+    "ch": 5,
+    "title": "The Tale of Melon City",
+    "pages": 8,
+    "sizeMb": 1.2
+   }
+  ]
+ },
+ {
+  "code": "leph1",
+  "grade": 12,
+  "subject": "physics",
+  "stream": "science",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Electric Charges",
+    "pages": 44,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 36,
+    "sizeMb": 3.7
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 26,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 29,
+    "sizeMb": 3.5
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 18,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 23,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 24,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 8,
+    "title": "Electromagnetic",
+    "pages": 14,
+    "sizeMb": 1.3
+   }
+  ]
+ },
+ {
+  "code": "leph2",
+  "grade": 12,
+  "subject": "physics",
+  "stream": "science",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Ray Optics",
+    "pages": 34,
+    "sizeMb": 3.2
+   },
+   {
+    "ch": 2,
+    "title": "Wave Optics",
+    "pages": 19,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 16,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 16,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 17,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 21,
+    "sizeMb": 1.8
+   }
+  ]
+ },
+ {
+  "code": "lech1",
+  "grade": 12,
+  "subject": "chemistry",
+  "stream": "science",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Solutions",
+    "pages": 30,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 2,
+    "title": "Electrochemistry",
+    "pages": 30,
+    "sizeMb": 4.2
+   },
+   {
+    "ch": 3,
+    "title": "Chemical Kinetics",
+    "pages": 28,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 29,
+    "sizeMb": 4.0
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 23,
+    "sizeMb": 3.5
+   }
+  ]
+ },
+ {
+  "code": "lech2",
+  "grade": 12,
+  "subject": "chemistry",
+  "stream": "science",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Solutions",
+    "pages": 34,
+    "sizeMb": 4.1
+   },
+   {
+    "ch": 3,
+    "title": "Chemical Kinetics",
+    "pages": 32,
+    "sizeMb": 4.2
+   },
+   {
+    "ch": 4,
+    "title": "THE d-AND f-BLOCK ELEMENTS",
+    "pages": 22,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 5,
+    "title": "Coordination Compounds",
+    "pages": 22,
+    "sizeMb": 3.0
+   }
+  ]
+ },
+ {
+  "code": "lemh1",
+  "grade": 12,
+  "subject": "maths",
+  "stream": "science",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Relations and Functions",
+    "pages": 17,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 2,
+    "title": "Inverse Trigonometric Functions",
+    "pages": 16,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 3,
+    "title": "Matrices",
+    "pages": 42,
+    "sizeMb": 3.3
+   },
+   {
+    "ch": 4,
+    "title": "Determinants",
+    "pages": 28,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 40,
+    "sizeMb": 3.1
+   }
+  ]
+ },
+ {
+  "code": "lemh2",
+  "grade": 12,
+  "subject": "maths",
+  "stream": "science",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Relations and Functions 1",
+    "pages": 67,
+    "sizeMb": 5.4
+   },
+   {
+    "ch": 3,
+    "title": "Matrices 34",
+    "pages": 38,
+    "sizeMb": 3.2
+   },
+   {
+    "ch": 4,
+    "title": "Determinants 76",
+    "pages": 39,
+    "sizeMb": 4.8
+   },
+   {
+    "ch": 6,
+    "title": "Application of Derivatives 147",
+    "pages": 12,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 7,
+    "title": "Integrals",
+    "pages": 33,
+    "sizeMb": 2.8
+   }
+  ]
+ },
+ {
+  "code": "lebo1",
+  "grade": 12,
+  "subject": "biology",
+  "stream": "science",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Sexual Reproduction in Flowering Plants",
+    "pages": 25,
+    "sizeMb": 35.1
+   },
+   {
+    "ch": 3,
+    "title": "Reproductive Health",
+    "pages": 10,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 5,
+    "title": "Molecular Basis of Inheritance",
+    "pages": 31,
+    "sizeMb": 3.9
+   },
+   {
+    "ch": 6,
+    "title": "Evolution",
+    "pages": 17,
+    "sizeMb": 12.1
+   },
+   {
+    "ch": 7,
+    "title": "Human Health and Disease",
+    "pages": 22,
+    "sizeMb": 4.3
+   },
+   {
+    "ch": 8,
+    "title": "Micr obes in Human W elfare",
+    "pages": 12,
+    "sizeMb": 12.3
+   },
+   {
+    "ch": 9,
+    "title": "Biotechnology : Principles and Processes",
+    "pages": 16,
+    "sizeMb": 3.0
+   },
+   {
+    "ch": 10,
+    "title": "Biotechnology and its Applications",
+    "pages": 11,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 17,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 12,
+    "title": "Chapter 12",
+    "pages": 11,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 13,
+    "sizeMb": 2.2
+   }
+  ]
+ },
+ {
+  "code": "lecs1",
+  "grade": 12,
+  "subject": "computer-science",
+  "stream": "science",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "exCepTIon handlIng in pyThon",
+    "pages": 18,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 2,
+    "title": "fIle handlIng in pyThon",
+    "pages": 20,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 3,
+    "title": "sTaCk",
+    "pages": 14,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 4,
+    "title": "Queue",
+    "pages": 14,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 14,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 16,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 14,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 20,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 9,
+    "title": "(Sql)",
+    "pages": 50,
+    "sizeMb": 4.0
+   },
+   {
+    "ch": 10,
+    "title": "Chapter 10",
+    "pages": 22,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 20,
+    "sizeMb": 3.6
+   },
+   {
+    "ch": 12,
+    "title": "Chapter 12",
+    "pages": 18,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 8,
+    "sizeMb": 0.7
+   }
+  ]
+ },
+ {
+  "code": "leip1",
+  "grade": 12,
+  "subject": "computer-science",
+  "stream": "science",
+  "label": "Informatics Practices",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "QueryIng and sQl funCTIons",
+    "pages": 26,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 2,
+    "title": "daTa handlIng usIng pandas - I",
+    "pages": 36,
+    "sizeMb": 3.2
+   },
+   {
+    "ch": 3,
+    "title": "daTa handlIng usIng pandas - II",
+    "pages": 42,
+    "sizeMb": 3.7
+   },
+   {
+    "ch": 4,
+    "title": "ploTTIng daTa usIng MaTploTlIb",
+    "pages": 32,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 30,
+    "sizeMb": 4.2
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 28,
+    "sizeMb": 3.2
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 16,
+    "sizeMb": 1.9
+   }
+  ]
+ },
+ {
+  "code": "leac1",
+  "grade": 12,
+  "subject": "accountancy",
+  "stream": "commerce",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Accounting for Partnership: Basic Concepts",
+    "pages": 47,
+    "sizeMb": 3.5
+   },
+   {
+    "ch": 2,
+    "title": "Reconstitution of a Partnership Firm \u2013 Admission",
+    "pages": 59,
+    "sizeMb": 4.2
+   },
+   {
+    "ch": 3,
+    "title": "Reconstitution of a Partnership Firm \u2013",
+    "pages": 49,
+    "sizeMb": 3.6
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 39,
+    "sizeMb": 2.9
+   }
+  ]
+ },
+ {
+  "code": "leac2",
+  "grade": 12,
+  "subject": "accountancy",
+  "stream": "commerce",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Accounting for Share Capital",
+    "pages": 74,
+    "sizeMb": 5.3
+   },
+   {
+    "ch": 2,
+    "title": "Issue and Redemption of Debentures",
+    "pages": 69,
+    "sizeMb": 5.0
+   },
+   {
+    "ch": 3,
+    "title": "Financial Statements of a Company",
+    "pages": 27,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 23,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 47,
+    "sizeMb": 3.6
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 46,
+    "sizeMb": 3.5
+   }
+  ]
+ },
+ {
+  "code": "lebs1",
+  "grade": 12,
+  "subject": "business-studies",
+  "stream": "commerce",
+  "label": "Part I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Nature aNd SigNificaNce of MaNageMeNt",
+    "pages": 29,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 2,
+    "title": "PriNciPleS of MaNageMeNt",
+    "pages": 39,
+    "sizeMb": 3.3
+   },
+   {
+    "ch": 3,
+    "title": "BuSiNeSS eNviroNMeNt",
+    "pages": 22,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 4,
+    "title": "PlaNNiNg",
+    "pages": 18,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 5,
+    "title": "o rgaNiSiNg",
+    "pages": 30,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 6,
+    "title": "StaffiNg",
+    "pages": 30,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 7,
+    "title": "d irectiNg",
+    "pages": 32,
+    "sizeMb": 2.9
+   },
+   {
+    "ch": 8,
+    "title": "c oNtrolliNg",
+    "pages": 14,
+    "sizeMb": 1.8
+   }
+  ]
+ },
+ {
+  "code": "lebs2",
+  "grade": 12,
+  "subject": "business-studies",
+  "stream": "commerce",
+  "label": "Part II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "n ature and signiFicance oF ManageMent",
+    "pages": 27,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 2,
+    "title": "PrinciPles oF ManageMent",
+    "pages": 47,
+    "sizeMb": 4.2
+   },
+   {
+    "ch": 3,
+    "title": "Business environMent",
+    "pages": 16,
+    "sizeMb": 2.1
+   }
+  ]
+ },
+ {
+  "code": "leec1",
+  "grade": 12,
+  "subject": "economics",
+  "stream": "commerce",
+  "label": "Introductory Microeconomics",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Introduction",
+    "pages": 8,
+    "sizeMb": 1.0
+   },
+   {
+    "ch": 2,
+    "title": "National Income Accounting",
+    "pages": 27,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 3,
+    "title": "Money and Banking",
+    "pages": 17,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 4,
+    "title": "Determination of Income and Employment",
+    "pages": 13,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 19,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 15,
+    "sizeMb": 1.3
+   }
+  ]
+ },
+ {
+  "code": "leec2",
+  "grade": 12,
+  "subject": "economics",
+  "stream": "commerce",
+  "label": "Introductory Macroeconomics",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "I Ntroduction",
+    "pages": 7,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 2,
+    "title": "T Heory of C Onsumer B Ehaviour",
+    "pages": 28,
+    "sizeMb": 3.9
+   },
+   {
+    "ch": 3,
+    "title": "P Roduction and C Osts",
+    "pages": 17,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 4,
+    "title": "The Theor the TheorThe Theor the TheorThe Theor y of the F y of the Fy of the F y of the Fy of the F irm irmirm irmirm",
+    "pages": 18,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 17,
+    "sizeMb": 2.1
+   }
+  ]
+ },
+ {
+  "code": "lehs1",
+  "grade": 12,
+  "subject": "history",
+  "stream": "arts",
+  "label": "Themes in Indian History I",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Theme",
+    "pages": 27,
+    "sizeMb": 4.2
+   },
+   {
+    "ch": 2,
+    "title": "Themes in Indian History28",
+    "pages": 25,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 29,
+    "sizeMb": 4.0
+   },
+   {
+    "ch": 4,
+    "title": "Themes in Indian History82",
+    "pages": 33,
+    "sizeMb": 8.9
+   }
+  ]
+ },
+ {
+  "code": "lehs2",
+  "grade": 12,
+  "subject": "history",
+  "stream": "arts",
+  "label": "Themes in Indian History II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 25,
+    "sizeMb": 3.4
+   },
+   {
+    "ch": 2,
+    "title": "Themes in Indian History \u2013 Part Ii140",
+    "pages": 30,
+    "sizeMb": 4.3
+   },
+   {
+    "ch": 3,
+    "title": "Themes in Indian History \u2013 Part Ii170",
+    "pages": 26,
+    "sizeMb": 4.9
+   },
+   {
+    "ch": 4,
+    "title": "Themes in Indian History \u2013 Part Ii196",
+    "pages": 31,
+    "sizeMb": 4.6
+   }
+  ]
+ },
+ {
+  "code": "lehs3",
+  "grade": 12,
+  "subject": "history",
+  "stream": "arts",
+  "label": "Themes in Indian History III",
+  "chapters": [
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 0,
+    "sizeMb": 0.2
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 29,
+    "sizeMb": 2.9
+   }
+  ]
+ },
+ {
+  "code": "leps1",
+  "grade": 12,
+  "subject": "political-science",
+  "stream": "arts",
+  "label": "Contemporary World Politics",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 14,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 16,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 0,
+    "sizeMb": 0.3
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 18,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 18,
+    "sizeMb": 3.1
+   }
+  ]
+ },
+ {
+  "code": "leps2",
+  "grade": 12,
+  "subject": "political-science",
+  "stream": "arts",
+  "label": "Politics in India since Independence",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 24,
+    "sizeMb": 8.2
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 18,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 10,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 18,
+    "sizeMb": 5.2
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 20,
+    "sizeMb": 4.4
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 20,
+    "sizeMb": 5.3
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 24,
+    "sizeMb": 5.7
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 25,
+    "sizeMb": 5.7
+   }
+  ]
+ },
+ {
+  "code": "lepy1",
+  "grade": 12,
+  "subject": "psychology",
+  "stream": "arts",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "At At",
+    "pages": 22,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 27,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 19,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 20,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 15,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 16,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 7,
+    "title": "Processesprocessesprocessesprocessesprocesses",
+    "pages": 12,
+    "sizeMb": 1.5
+   }
+  ]
+ },
+ {
+  "code": "lefl1",
+  "grade": 12,
+  "subject": "english",
+  "stream": "common",
+  "label": "Flamingo",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "The LasT Lesson Alphonse Daudet",
+    "pages": 12,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 2,
+    "title": "LosT spring Anees Jung",
+    "pages": 10,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 4,
+    "title": "The raTTrap Selma Lagerlof",
+    "pages": 0,
+    "sizeMb": 0.2
+   },
+   {
+    "ch": 5,
+    "title": "inDigo Louis Fischer",
+    "pages": 11,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 6,
+    "title": "poeTs anD pancakes Asokamitran",
+    "pages": 10,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 8,
+    "title": "going pLaces A. R. Barton",
+    "pages": 0,
+    "sizeMb": 0.3
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 3,
+    "sizeMb": 0.5
+   },
+   {
+    "ch": 12,
+    "title": "Chapter 12",
+    "pages": 3,
+    "sizeMb": 0.7
+   },
+   {
+    "ch": 14,
+    "title": "Chapter 14",
+    "pages": 3,
+    "sizeMb": 0.4
+   }
+  ]
+ },
+ {
+  "code": "levt1",
+  "grade": 12,
+  "subject": "english",
+  "stream": "common",
+  "label": "Vistas",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "The Thir d Level Jack Finney",
+    "pages": 7,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 10,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 7,
+    "sizeMb": 1.3
+   }
+  ]
+ }
+]

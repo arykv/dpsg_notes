@@ -81,6 +81,8 @@ export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
         <div className="ml-auto flex items-center gap-2 md:ml-2">
           <button
             onClick={onOpenSearch}
+            aria-label="Search everything"
+            aria-keyshortcuts="Meta+K"
             className={cn(
               'surface-2 border-line text-faint hover:border-line-strong flex h-9 items-center gap-2 rounded-[6px] border px-3 transition-colors',
               'hover:text-[var(--text)] sm:min-w-56',
