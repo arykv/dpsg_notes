@@ -47,14 +47,16 @@ export const MY_RESOURCES: StudySource[] = [
   {
     id: 'ushank-ghai',
     name: 'Ushank Ghai sir',
-    handle: '@UshankGhai',
-    href: 'https://www.youtube.com/@UshankGhai',
+    // Same channel as Ashu sir — the two of them post under one roof, so
+    // there's no separate handle to send anyone to.
+    handle: '@AshuGhai11th12th',
+    href: 'https://www.youtube.com/@AshuGhai11th12th',
     subjects: ['Mathematics'],
     alsoAt: {
       label: 'Also on @ScienceAndFunEducation',
       href: 'https://www.youtube.com/@ScienceAndFunEducation',
     },
-    note: 'All my maths came from here. I never watched ahead of class — it was always the night before, and it still worked. A chapter you thought was impossible turns out to be about forty minutes of video.',
+    note: 'Maths, on the same channel as Ashu sir. I never watched ahead of class — it was always the night before, and it still worked. A chapter you thought was impossible turns out to be about forty minutes of video.',
   },
   {
     id: 'grand-academy',
