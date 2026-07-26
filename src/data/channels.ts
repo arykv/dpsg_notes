@@ -39,8 +39,8 @@ export const MY_RESOURCES: StudySource[] = [
   {
     id: 'ncert-wallah',
     name: 'NCERT Wallah',
-    handle: '@NCERTWallah',
-    href: 'https://www.youtube.com/@NCERTWallah',
+    handle: '@NCERTWallahClass12PW',
+    href: 'https://www.youtube.com/@NCERTWallahClass12PW',
     subjects: ['Chemistry'],
     note: 'Second option for Chemistry when Ashu sir’s explanation isn’t landing. Two people explaining the same chapter differently is often what makes it click.',
   },

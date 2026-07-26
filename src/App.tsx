@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { CommandPalette } from '@/components/CommandPalette'
+import { RouteErrorBoundary } from '@/components/RouteErrorBoundary'
 import { TooltipProvider } from '@/components/ui/primitives'
 import { ThemeProvider } from '@/lib/theme'
 import { useHotkey } from '@/lib/hooks'
@@ -43,30 +44,38 @@ export default function App() {
         <Header onOpenSearch={() => setPaletteOpen(true)} />
 
         <main id="content">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={location.pathname}
-              variants={page}
-              initial="hidden"
-              animate="show"
-              exit="exit"
-            >
-              <Suspense fallback={<RouteFallback />}>
-                <Routes location={location}>
-                  <Route path="/" element={<Home onOpenSearch={() => setPaletteOpen(true)} />} />
-                  <Route path="/library" element={<Library />} />
-                  <Route path="/library/:id" element={<Viewer />} />
-                  <Route path="/tools" element={<Tools />} />
-                  <Route path="/day" element={<SchoolDay />} />
-                  <Route path="/chapters" element={<Chapters />} />
-                  <Route path="/resources" element={<Resources />} />
-                  <Route path="/links" element={<Navigate to="/resources" replace />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </motion.div>
-          </AnimatePresence>
+          {/* Suspense sits OUTSIDE AnimatePresence on purpose.
+              Inside, a lazy route that suspends part-way through the previous
+              page's exit animation could leave AnimatePresence holding an
+              unmounted child — the page went blank and only a refresh brought
+              it back. Keeping the boundary out here means a chunk that is still
+              loading shows the fallback instead of interrupting the exit. */}
+          <RouteErrorBoundary>
+            <Suspense fallback={<RouteFallback />}>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={location.pathname}
+                  variants={page}
+                  initial="hidden"
+                  animate="show"
+                  exit="exit"
+                >
+                  <Routes location={location}>
+                    <Route path="/" element={<Home onOpenSearch={() => setPaletteOpen(true)} />} />
+                    <Route path="/library" element={<Library />} />
+                    <Route path="/library/:id" element={<Viewer />} />
+                    <Route path="/tools" element={<Tools />} />
+                    <Route path="/day" element={<SchoolDay />} />
+                    <Route path="/chapters" element={<Chapters />} />
+                    <Route path="/resources" element={<Resources />} />
+                    <Route path="/links" element={<Navigate to="/resources" replace />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </motion.div>
+              </AnimatePresence>
+            </Suspense>
+          </RouteErrorBoundary>
         </main>
 
         <Footer />
