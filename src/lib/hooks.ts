@@ -42,19 +42,6 @@ export function useDebounced<T>(value: T, ms = 120): T {
   return debounced
 }
 
-export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(() =>
-    typeof window === 'undefined' ? false : window.matchMedia(query).matches,
-  )
-  useEffect(() => {
-    const mql = window.matchMedia(query)
-    const onChange = () => setMatches(mql.matches)
-    onChange()
-    mql.addEventListener('change', onChange)
-    return () => mql.removeEventListener('change', onChange)
-  }, [query])
-  return matches
-}
 
 /** Copy-to-clipboard with the "Copied" state built in. */
 export function useCopy(resetMs = 1600) {

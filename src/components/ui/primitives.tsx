@@ -59,16 +59,6 @@ export function SectionHead({
   )
 }
 
-/* --- Skeleton ------------------------------------------------------------- */
-
-export function Skeleton({ className }: { className?: string }) {
-  return (
-    <div className={cn('surface-2 relative overflow-hidden rounded-[5px]', className)}>
-      <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/6 to-transparent" />
-    </div>
-  )
-}
-
 /* --- Empty state ---------------------------------------------------------- */
 
 export function EmptyState({
