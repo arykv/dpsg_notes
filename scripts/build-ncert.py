@@ -86,8 +86,10 @@ def fetch(url: str, timeout: int = 45, attempts: int = 3) -> bytes | None:
             data = r.stdout
             if data[:4] == b"%PDF":
                 return data
-            # A 404 comes back as a tiny HTML body; no point retrying that.
-            if len(data) < 512 and b"<" in data[:64]:
+            # A missing chapter answers with a few bytes of non-PDF. Only an
+            # empty body means the connection actually dropped, so that's the
+            # only case worth retrying.
+            if data:
                 return None
         except Exception:
             pass

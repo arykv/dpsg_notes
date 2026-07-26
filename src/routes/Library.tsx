@@ -47,10 +47,11 @@ export default function Library() {
     )
   }, [debounced, setParams])
 
-  function setParam(key: string, value: string | null) {
+  /** Chips toggle off when re-clicked; the sort control always keeps a value. */
+  function setParam(key: string, value: string | null, toggle = true) {
     setParams((prev) => {
       const next = new URLSearchParams(prev)
-      if (value === null || next.get(key) === value) next.delete(key)
+      if (value === null || (toggle && next.get(key) === value)) next.delete(key)
       else next.set(key, value)
       return next
     })
@@ -218,7 +219,7 @@ export default function Library() {
           <Segmented
             label="Sort"
             value={sort}
-            onChange={(v) => setParam('sort', v === 'recent' ? null : v)}
+            onChange={(v) => setParam('sort', v === 'recent' ? null : v, false)}
             options={[
               { value: 'recent', label: 'Newest' },
               { value: 'title', label: 'A–Z' },
