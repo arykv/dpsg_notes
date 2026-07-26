@@ -5,6 +5,7 @@ actual PDF, so the catalogue matches the current rationalised syllabus rather
 than whatever the chapter list used to be.
 """
 
+import collections
 import io
 import json
 import pathlib
@@ -236,6 +237,91 @@ def do_chapter(args):
 SAFE_CHARS = re.compile(r"[A-Za-z0-9 ,.'’\-–—:;()&/?!]")
 
 
+SUBJECT_NAMES = {
+    "physics": "Physics", "chemistry": "Chemistry", "maths": "Mathematics",
+    "biology": "Biology", "computer-science": "Computer Science", "english": "English",
+    "accountancy": "Accountancy", "business-studies": "Business Studies",
+    "economics": "Economics", "history": "History",
+    "political-science": "Political Science", "psychology": "Psychology",
+}
+STOP = {"a", "an", "and", "as", "at", "by", "for", "from", "in", "into", "is",
+        "of", "on", "or", "the", "to", "with", "its"}
+JUNK = {"notes", "contents", "index", "appendix", "glossary", "answers",
+        "preface", "foreword"}
+
+
+def join_split_letters(t: str) -> str:
+    """"Gravit a Tion" -> "Gravitation".
+
+    Letter-spaced display type extracts with spaces inside words. Only stray
+    single letters are rejoined — "a" and "I" are real words and are left alone,
+    or "Motion in a Plane" would become "Motion inaPlane".
+    """
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(
+            r"\b([A-Za-z]{2,})\s+([b-hj-z])\s+([A-Za-z]{2,})\b",
+            lambda m: m.group(1) + m.group(2) + m.group(3),
+            t,
+        )
+    return t
+
+
+def titlecase(t: str) -> str:
+    words = t.split()
+    out = []
+    for i, w in enumerate(words):
+        if not re.match(r"^[A-Za-z]", w):
+            out.append(w)
+        elif i > 0 and w.lower() in STOP:
+            out.append(w.lower())
+        else:
+            out.append(w[0].upper() + w[1:])
+    return " ".join(out)
+
+
+def messy_case(t: str) -> bool:
+    words = [w for w in t.split() if re.match(r"^[A-Za-z]{2,}$", w)]
+    if len(words) < 2:
+        return False
+    lower = sum(1 for w in words[1:] if w[0].islower() and w.lower() not in STOP)
+    return lower > 0 and any(w[0].isupper() for w in words)
+
+
+def tidy_book(book: dict) -> None:
+    """Drop titles that are really the book's own running header, then normalise.
+
+    A "chapter title" that shows up on several chapters of the same book is the
+    header printed on every page, not a chapter name.
+    """
+    subject = SUBJECT_NAMES.get(book["subject"], "")
+    banned = {subject.lower(), book["label"].lower()}
+    banned |= {f"{subject} part {n}".lower() for n in ("i", "ii", "iii")}
+
+    counts = collections.Counter(c["title"].lower() for c in book["chapters"])
+    repeated = {t for t, n in counts.items() if n > 1 and not t.startswith("chapter ")}
+
+    for c in book["chapters"]:
+        low = c["title"].lower().strip()
+        if (
+            low in banned
+            or low in repeated
+            or low in JUNK
+            or c["title"].startswith("/")
+            or (subject and low.startswith(subject.lower()))
+            or len(low) < 3
+        ):
+            c["title"] = f"Chapter {c['ch']}"
+            continue
+        if c["title"].startswith("Chapter "):
+            continue
+        t = join_split_letters(c["title"])
+        if messy_case(t):
+            t = titlecase(t)
+        c["title"] = re.sub(r"\s+", " ", t).strip()
+
+
 def looks_like_title(t: str) -> bool:
     """Reject anything that would look broken on the page.
 
@@ -290,10 +376,12 @@ def main():
                 c["title"] = f"Chapter {c['ch']}"
             c.pop("running", None)
 
-        out.append({
+        book = {
             "code": code, "grade": grade, "subject": subject,
             "stream": stream, "label": label, "chapters": chapters,
-        })
+        }
+        tidy_book(book)
+        out.append(book)
         named = sum(1 for c in chapters if not c["title"].startswith("Chapter "))
         print(f"  ok  {code}: {len(chapters)} chapters, {named} titled", file=sys.stderr)
 

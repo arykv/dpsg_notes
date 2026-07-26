@@ -37,7 +37,11 @@ export function relativeDate(iso: string): string {
     const months = Math.floor(days / 30)
     return months === 1 ? 'last month' : `${months} months ago`
   }
-  return formatDate(iso)
+  // Past a year the exact day stops mattering, and the short form fits the card.
+  return new Date(`${iso}T00:00:00`).toLocaleDateString('en-IN', {
+    month: 'short',
+    year: 'numeric',
+  })
 }
 
 export function formatSize(mb?: number): string | undefined {

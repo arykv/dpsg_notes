@@ -14,13 +14,13 @@
    },
    {
     "ch": 2,
-    "title": "Motion in a Straight Line",
+    "title": "Motion InaStraight Line",
     "pages": 14,
     "sizeMb": 1.4
    },
    {
     "ch": 3,
-    "title": "Motion in a Plane",
+    "title": "Motion InaPlane",
     "pages": 22,
     "sizeMb": 2.1
    },
@@ -38,13 +38,13 @@
    },
    {
     "ch": 6,
-    "title": "Systems of Particles and Rotational Motion",
+    "title": "Chapter 6",
     "pages": 35,
     "sizeMb": 4.0
    },
    {
     "ch": 7,
-    "title": "\uf043\uf048\uf041\uf050\uf054\uf045\uf052\uf020\uf053\uf045\uf056\uf045\uf04e",
+    "title": "GravitaTion",
     "pages": 17,
     "sizeMb": 1.7
    }
@@ -59,31 +59,31 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Mechanical Properties of Solids",
+    "title": "Mechanical Proper Ties of Solids",
     "pages": 13,
     "sizeMb": 1.2
    },
    {
     "ch": 2,
-    "title": "Mechanical Properties of Fluids",
+    "title": "Chapter 2",
     "pages": 22,
     "sizeMb": 2.1
    },
    {
     "ch": 3,
-    "title": "Thermal Properties of Matter",
+    "title": "Chapter 3",
     "pages": 24,
     "sizeMb": 2.2
    },
    {
     "ch": 4,
-    "title": "Thermodynamics",
+    "title": "Chapter 4",
     "pages": 18,
     "sizeMb": 1.7
    },
    {
     "ch": 5,
-    "title": "Kinetic Theory",
+    "title": "Chapter 5",
     "pages": 15,
     "sizeMb": 1.4
    },
@@ -95,7 +95,7 @@
    },
    {
     "ch": 7,
-    "title": "Waves",
+    "title": "Chapter 7",
     "pages": 22,
     "sizeMb": 1.9
    }
@@ -155,19 +155,19 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Some BaSic conceptS of chemiStry",
+    "title": "Some Basic Concepts of Chemistry",
     "pages": 21,
     "sizeMb": 1.8
    },
    {
     "ch": 2,
-    "title": "Structure of atom",
+    "title": "Structure of Atom",
     "pages": 39,
     "sizeMb": 4.3
    },
    {
     "ch": 3,
-    "title": "c laSSification of elementS and periodicity in propertieS",
+    "title": "c lassification of elements and periodicity in properties",
     "pages": 33,
     "sizeMb": 3.1
    }
@@ -206,7 +206,7 @@
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Linear Inequalities",
     "pages": 11,
     "sizeMb": 1.3
    },
@@ -224,13 +224,13 @@
    },
    {
     "ch": 8,
-    "title": "Chapter 8",
+    "title": "Sequences and Series",
     "pages": 16,
     "sizeMb": 1.6
    },
    {
     "ch": 9,
-    "title": "Chapter 9",
+    "title": "Straight Lines",
     "pages": 25,
     "sizeMb": 2.4
    },
@@ -248,19 +248,19 @@
    },
    {
     "ch": 12,
-    "title": "Chapter 12",
+    "title": "Limits and Derivatives",
     "pages": 40,
     "sizeMb": 3.3
    },
    {
     "ch": 13,
-    "title": "Chapter 13",
+    "title": "Statistics",
     "pages": 32,
     "sizeMb": 2.7
    },
    {
     "ch": 14,
-    "title": "Chapter 14",
+    "title": "Probability",
     "pages": 25,
     "sizeMb": 2.2
    }
@@ -275,7 +275,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "The Living World",
     "pages": 9,
     "sizeMb": 2.2
    },
@@ -287,37 +287,37 @@
    },
    {
     "ch": 3,
-    "title": "Plant Kingdom 23",
+    "title": "Plant Kingdom",
     "pages": 14,
     "sizeMb": 4.9
    },
    {
     "ch": 4,
-    "title": "Animal Kingdom 3737",
+    "title": "Animal Kingdom 4",
     "pages": 18,
     "sizeMb": 5.9
    },
    {
     "ch": 5,
-    "title": "Unit 2",
+    "title": "Morphology of Flowering Plants",
     "pages": 16,
     "sizeMb": 3.3
    },
    {
     "ch": 6,
-    "title": "Anatomy of Flowering Plants 71",
+    "title": "Anatomy of Flowering Plants",
     "pages": 8,
     "sizeMb": 1.8
    },
    {
     "ch": 7,
-    "title": "Structural Organisation in Animals 79",
+    "title": "Structural Organisation in Animals",
     "pages": 6,
     "sizeMb": 1.0
    },
    {
     "ch": 8,
-    "title": "Unit 3",
+    "title": "Cell: the Unit of Life",
     "pages": 19,
     "sizeMb": 6.7
    },
@@ -335,13 +335,13 @@
    },
    {
     "ch": 11,
-    "title": "Unit 4",
+    "title": "Photosynthesis in Higher Plants",
     "pages": 22,
     "sizeMb": 2.6
    },
    {
     "ch": 12,
-    "title": "Respiration in Plants 153",
+    "title": "Respiration in Plants",
     "pages": 13,
     "sizeMb": 1.6
    },
@@ -353,25 +353,25 @@
    },
    {
     "ch": 14,
-    "title": "Unit 5",
+    "title": "Breathing and Exchange of Gases",
     "pages": 12,
     "sizeMb": 2.0
    },
    {
     "ch": 15,
-    "title": "Body Fluids and Circulation 193",
+    "title": "Body Fluids and Circulation",
     "pages": 12,
     "sizeMb": 3.0
    },
    {
     "ch": 16,
-    "title": "Excretory Products and Their Elimination 205",
+    "title": "Excretory Products and Their Elimination",
     "pages": 12,
     "sizeMb": 1.7
    },
    {
     "ch": 17,
-    "title": "Locomotion and Movement 217",
+    "title": "Locomotion and Movement",
     "pages": 13,
     "sizeMb": 4.3
    },
@@ -398,67 +398,67 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "CoMpuTer sysTeM",
+    "title": "Computer System",
     "pages": 26,
     "sizeMb": 2.8
    },
    {
     "ch": 2,
-    "title": "enCodIng sCheMes and nuMber sysTeM",
+    "title": "encoding schemes and number system",
     "pages": 18,
     "sizeMb": 2.1
    },
    {
     "ch": 3,
-    "title": "eMergIng Trends",
+    "title": "emerging Trends",
     "pages": 16,
     "sizeMb": 2.3
    },
    {
     "ch": 4,
-    "title": "InTroduCTIon to probleM solvIng",
+    "title": "Introduction to Problem Solving",
     "pages": 26,
     "sizeMb": 3.2
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Getting Started with Python",
     "pages": 34,
     "sizeMb": 3.3
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Flow of Control",
     "pages": 22,
     "sizeMb": 2.5
    },
    {
     "ch": 7,
-    "title": "Chapter 7",
+    "title": "Functions",
     "pages": 32,
     "sizeMb": 2.9
    },
    {
     "ch": 8,
-    "title": "Chapter 8",
+    "title": "Strings",
     "pages": 14,
     "sizeMb": 1.5
    },
    {
     "ch": 9,
-    "title": "Chapter 9",
+    "title": "Lists",
     "pages": 18,
     "sizeMb": 1.8
    },
    {
     "ch": 10,
-    "title": "Chapter 10",
+    "title": "Tuples and Dictionaries",
     "pages": 22,
     "sizeMb": 2.2
    },
    {
     "ch": 11,
-    "title": "Chapter 11",
+    "title": "Societal Impact",
     "pages": 24,
     "sizeMb": 2.8
    }
@@ -473,49 +473,49 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Computer SyStem",
+    "title": "Computer System",
     "pages": 14,
     "sizeMb": 2.0
    },
    {
     "ch": 2,
-    "title": "emerging trendS",
+    "title": "emerging trends",
     "pages": 16,
     "sizeMb": 2.5
    },
    {
     "ch": 3,
-    "title": "Brief overview of python",
+    "title": "Brief Overview of Python",
     "pages": 24,
     "sizeMb": 2.6
    },
    {
     "ch": 4,
-    "title": "working with LiStS and diCtionarieS",
+    "title": "Working with Lists and Dictionaries",
     "pages": 26,
     "sizeMb": 2.5
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Understanding Data",
     "pages": 14,
     "sizeMb": 1.8
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Introduction to Numpy",
     "pages": 28,
     "sizeMb": 2.7
    },
    {
     "ch": 7,
-    "title": "Chapter 7",
+    "title": "Database Concepts",
     "pages": 20,
     "sizeMb": 2.5
    },
    {
     "ch": 8,
-    "title": "Chapter 8",
+    "title": "Introduction to Structured Query Language (SQL)",
     "pages": 32,
     "sizeMb": 3.2
    }
@@ -587,7 +587,7 @@
    },
    {
     "ch": 2,
-    "title": "t heory bAse oF Accounting",
+    "title": "T Heory Base of Accounting",
     "pages": 71,
     "sizeMb": 0.8
    }
@@ -632,13 +632,13 @@
    },
    {
     "ch": 6,
-    "title": "Social ReSponSibilitieS of buSineSS and",
+    "title": "Social Responsibilities of Business and",
     "pages": 18,
     "sizeMb": 1.4
    },
    {
     "ch": 7,
-    "title": "Formation of a Company",
+    "title": "Formation OfaCompany",
     "pages": 20,
     "sizeMb": 1.5
    },
@@ -677,7 +677,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Development Policies and Experience",
+    "title": "Indian Economy on the Eve of Independence",
     "pages": 15,
     "sizeMb": 2.1
    },
@@ -695,13 +695,13 @@
    },
    {
     "ch": 4,
-    "title": "Current Challenges Facing The",
+    "title": "Human Capital Formation in India",
     "pages": 18,
     "sizeMb": 2.8
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Rural Development",
     "pages": 17,
     "sizeMb": 3.0
    },
@@ -713,7 +713,7 @@
    },
    {
     "ch": 7,
-    "title": "Chapter 7",
+    "title": "Environment and Sustainable Development",
     "pages": 17,
     "sizeMb": 4.1
    },
@@ -734,13 +734,13 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "Introduction",
     "pages": 8,
     "sizeMb": 1.2
    },
    {
     "ch": 2,
-    "title": "Chapter 2",
+    "title": "Collection of Data",
     "pages": 13,
     "sizeMb": 1.7
    },
@@ -776,7 +776,7 @@
    },
    {
     "ch": 8,
-    "title": "Chapter 8",
+    "title": "Use of Statistical Tools",
     "pages": 16,
     "sizeMb": 1.8
    }
@@ -791,7 +791,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "Timeline -I",
     "pages": 28,
     "sizeMb": 3.6
    },
@@ -821,7 +821,7 @@
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Timeline -Iv",
     "pages": 30,
     "sizeMb": 3.5
    },
@@ -842,7 +842,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "Introductionpolitical Theory",
     "pages": 16,
     "sizeMb": 1.7
    },
@@ -860,7 +860,7 @@
    },
    {
     "ch": 4,
-    "title": "Social Justice",
+    "title": "Justicesocial Justice",
     "pages": 14,
     "sizeMb": 1.9
    },
@@ -968,13 +968,13 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "What is Psychology?",
     "pages": 18,
     "sizeMb": 1.8
    },
    {
     "ch": 2,
-    "title": "Chapter 2",
+    "title": "Methods of Enquiry in Psychology",
     "pages": 21,
     "sizeMb": 2.0
    },
@@ -992,19 +992,19 @@
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Learning",
     "pages": 18,
     "sizeMb": 1.8
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Human Memory",
     "pages": 14,
     "sizeMb": 1.6
    },
    {
     "ch": 7,
-    "title": "Chapter 7",
+    "title": "Thinking",
     "pages": 17,
     "sizeMb": 2.2
    },
@@ -1025,7 +1025,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "The Portrait of a Lady",
+    "title": "The Portrait OfaLady",
     "pages": 11,
     "sizeMb": 1.4
    },
@@ -1037,27 +1037,33 @@
    },
    {
     "ch": 3,
-    "title": "Chapter 3",
+    "title": "Discovering Tut: the Saga Continues",
     "pages": 14,
     "sizeMb": 1.8
    },
    {
     "ch": 4,
-    "title": "Chapter 4",
+    "title": "The Ailing Planet: the Green Movement\u2019s Role",
     "pages": 8,
     "sizeMb": 1.1
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "The Adventure",
     "pages": 14,
     "sizeMb": 1.5
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "silk road",
     "pages": 13,
     "sizeMb": 1.5
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 7,
+    "sizeMb": 1.1
    },
    {
     "ch": 12,
@@ -1079,7 +1085,7 @@
    },
    {
     "ch": 15,
-    "title": "Chapter 15",
+    "title": "Letter-writing",
     "pages": 9,
     "sizeMb": 1.2
    },
@@ -1100,7 +1106,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "The Summer of the Beautiful White Horse",
     "pages": 8,
     "sizeMb": 1.2
    },
@@ -1145,13 +1151,13 @@
    },
    {
     "ch": 2,
-    "title": "Chapter 2",
+    "title": "Electrostatic Potential",
     "pages": 36,
     "sizeMb": 3.7
    },
    {
     "ch": 3,
-    "title": "Chapter 3",
+    "title": "Current",
     "pages": 26,
     "sizeMb": 2.1
    },
@@ -1196,7 +1202,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Ray Optics",
+    "title": "Ray Optics and",
     "pages": 34,
     "sizeMb": 3.2
    },
@@ -1259,7 +1265,7 @@
    },
    {
     "ch": 4,
-    "title": "Chapter 4",
+    "title": "The d- and f- Block Elements",
     "pages": 29,
     "sizeMb": 4.0
    },
@@ -1283,6 +1289,12 @@
     "title": "Solutions",
     "pages": 34,
     "sizeMb": 4.1
+   },
+   {
+    "ch": 2,
+    "title": "Electrochemistry",
+    "pages": 34,
+    "sizeMb": 4.4
    },
    {
     "ch": 3,
@@ -1336,8 +1348,14 @@
     "sizeMb": 2.0
    },
    {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 43,
+    "sizeMb": 3.1
+   },
+   {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Application of Deriv Atives",
     "pages": 40,
     "sizeMb": 3.1
    }
@@ -1357,20 +1375,32 @@
     "sizeMb": 5.4
    },
    {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 8,
+    "sizeMb": 1.3
+   },
+   {
     "ch": 3,
-    "title": "Matrices 34",
+    "title": "Chapter 3",
     "pages": 38,
     "sizeMb": 3.2
    },
    {
     "ch": 4,
-    "title": "Determinants 76",
+    "title": "Chapter 4",
     "pages": 39,
     "sizeMb": 4.8
    },
    {
+    "ch": 5,
+    "title": "Three Dimensional Geometr Y",
+    "pages": 17,
+    "sizeMb": 2.0
+   },
+   {
     "ch": 6,
-    "title": "Application of Derivatives 147",
+    "title": "Chapter 6",
     "pages": 12,
     "sizeMb": 1.5
    },
@@ -1396,10 +1426,22 @@
     "sizeMb": 35.1
    },
    {
+    "ch": 2,
+    "title": "Human Reproduction",
+    "pages": 0,
+    "sizeMb": 51.4
+   },
+   {
     "ch": 3,
     "title": "Reproductive Health",
     "pages": 10,
     "sizeMb": 1.2
+   },
+   {
+    "ch": 4,
+    "title": "Principles of Inheritance and V Ariation",
+    "pages": 28,
+    "sizeMb": 18.3
    },
    {
     "ch": 5,
@@ -1421,7 +1463,7 @@
    },
    {
     "ch": 8,
-    "title": "Micr obes in Human W elfare",
+    "title": "Micr Obes in Human W Elfare",
     "pages": 12,
     "sizeMb": 12.3
    },
@@ -1466,19 +1508,19 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "exCepTIon handlIng in pyThon",
+    "title": "exception handling in python",
     "pages": 18,
     "sizeMb": 1.7
    },
    {
     "ch": 2,
-    "title": "fIle handlIng in pyThon",
+    "title": "file handling in python",
     "pages": 20,
     "sizeMb": 1.7
    },
    {
     "ch": 3,
-    "title": "sTaCk",
+    "title": "stack",
     "pages": 14,
     "sizeMb": 1.4
    },
@@ -1514,7 +1556,7 @@
    },
    {
     "ch": 9,
-    "title": "(Sql)",
+    "title": "Structured Query Language (SQL)",
     "pages": 50,
     "sizeMb": 4.0
    },
@@ -1553,43 +1595,43 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "QueryIng and sQl funCTIons",
+    "title": "Querying and Sql Functions",
     "pages": 26,
     "sizeMb": 2.8
    },
    {
     "ch": 2,
-    "title": "daTa handlIng usIng pandas - I",
+    "title": "data handling using pandas - I",
     "pages": 36,
     "sizeMb": 3.2
    },
    {
     "ch": 3,
-    "title": "daTa handlIng usIng pandas - II",
+    "title": "Data Handling Using Pandas - II",
     "pages": 42,
     "sizeMb": 3.7
    },
    {
     "ch": 4,
-    "title": "ploTTIng daTa usIng MaTploTlIb",
+    "title": "Plotting Data Using Matplotlib",
     "pages": 32,
     "sizeMb": 3.8
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Internet and Web",
     "pages": 30,
     "sizeMb": 4.2
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Societal Impacts",
     "pages": 28,
     "sizeMb": 3.2
    },
    {
     "ch": 7,
-    "title": "Chapter 7",
+    "title": "Project Based Learning",
     "pages": 16,
     "sizeMb": 1.9
    }
@@ -1610,13 +1652,13 @@
    },
    {
     "ch": 2,
-    "title": "Reconstitution of a Partnership Firm \u2013 Admission",
+    "title": "Reconstitution OfaPartnership Firm \u2013 Admission",
     "pages": 59,
     "sizeMb": 4.2
    },
    {
     "ch": 3,
-    "title": "Reconstitution of a Partnership Firm \u2013",
+    "title": "Reconstitution OfaPartnership Firm \u2013",
     "pages": 49,
     "sizeMb": 3.6
    },
@@ -1649,13 +1691,13 @@
    },
    {
     "ch": 3,
-    "title": "Financial Statements of a Company",
+    "title": "Financial Statements OfaCompany",
     "pages": 27,
     "sizeMb": 2.3
    },
    {
     "ch": 4,
-    "title": "Chapter 4",
+    "title": "Analysis of Financial Statements",
     "pages": 23,
     "sizeMb": 2.1
    },
@@ -1667,7 +1709,7 @@
    },
    {
     "ch": 6,
-    "title": "Chapter 6",
+    "title": "Cash Flow Statement",
     "pages": 46,
     "sizeMb": 3.5
    }
@@ -1682,49 +1724,49 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Nature aNd SigNificaNce of MaNageMeNt",
+    "title": "Nature and Significance of Management",
     "pages": 29,
     "sizeMb": 2.7
    },
    {
     "ch": 2,
-    "title": "PriNciPleS of MaNageMeNt",
+    "title": "Principles of Management",
     "pages": 39,
     "sizeMb": 3.3
    },
    {
     "ch": 3,
-    "title": "BuSiNeSS eNviroNMeNt",
+    "title": "Business Environment",
     "pages": 22,
     "sizeMb": 2.2
    },
    {
     "ch": 4,
-    "title": "PlaNNiNg",
+    "title": "Planning",
     "pages": 18,
     "sizeMb": 1.9
    },
    {
     "ch": 5,
-    "title": "o rgaNiSiNg",
+    "title": "o rganising",
     "pages": 30,
     "sizeMb": 2.8
    },
    {
     "ch": 6,
-    "title": "StaffiNg",
+    "title": "Staffing",
     "pages": 30,
     "sizeMb": 2.8
    },
    {
     "ch": 7,
-    "title": "d irectiNg",
+    "title": "d irecting",
     "pages": 32,
     "sizeMb": 2.9
    },
    {
     "ch": 8,
-    "title": "c oNtrolliNg",
+    "title": "c ontrolling",
     "pages": 14,
     "sizeMb": 1.8
    }
@@ -1739,19 +1781,19 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "n ature and signiFicance oF ManageMent",
+    "title": "N Ature and Significance of Management",
     "pages": 27,
     "sizeMb": 2.8
    },
    {
     "ch": 2,
-    "title": "PrinciPles oF ManageMent",
+    "title": "Principles of Management",
     "pages": 47,
     "sizeMb": 4.2
    },
    {
     "ch": 3,
-    "title": "Business environMent",
+    "title": "Business Environment",
     "pages": 16,
     "sizeMb": 2.1
    }
@@ -1829,13 +1871,13 @@
    },
    {
     "ch": 4,
-    "title": "The Theor the TheorThe Theor the TheorThe Theor y of the F y of the Fy of the F y of the Fy of the F irm irmirm irmirm",
+    "title": "Chapter 4",
     "pages": 18,
     "sizeMb": 2.3
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Market Equilibrium",
     "pages": 17,
     "sizeMb": 2.1
    }
@@ -1856,7 +1898,7 @@
    },
    {
     "ch": 2,
-    "title": "Themes in Indian History28",
+    "title": "Chapter 2",
     "pages": 25,
     "sizeMb": 3.8
    },
@@ -1868,7 +1910,7 @@
    },
    {
     "ch": 4,
-    "title": "Themes in Indian History82",
+    "title": "Chapter 4",
     "pages": 33,
     "sizeMb": 8.9
    }
@@ -1889,19 +1931,19 @@
    },
    {
     "ch": 2,
-    "title": "Themes in Indian History \u2013 Part Ii140",
+    "title": "Chapter 2",
     "pages": 30,
     "sizeMb": 4.3
    },
    {
     "ch": 3,
-    "title": "Themes in Indian History \u2013 Part Ii170",
+    "title": "Chapter 3",
     "pages": 26,
     "sizeMb": 4.9
    },
    {
     "ch": 4,
-    "title": "Themes in Indian History \u2013 Part Ii196",
+    "title": "Chapter 4",
     "pages": 31,
     "sizeMb": 4.6
    }
@@ -1915,10 +1957,22 @@
   "label": "Themes in Indian History III",
   "chapters": [
    {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 31,
+    "sizeMb": 3.5
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 28,
+    "sizeMb": 3.3
+   },
+   {
     "ch": 3,
     "title": "Chapter 3",
-    "pages": 0,
-    "sizeMb": 0.2
+    "pages": 30,
+    "sizeMb": 4.1
    },
    {
     "ch": 4,
@@ -1937,9 +1991,15 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "Chapter 1",
+    "title": "The End of Bipolarity",
     "pages": 14,
     "sizeMb": 1.5
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 14,
+    "sizeMb": 1.8
    },
    {
     "ch": 3,
@@ -1949,13 +2009,13 @@
    },
    {
     "ch": 4,
-    "title": "Chapter 4",
-    "pages": 0,
-    "sizeMb": 0.3
+    "title": "International Organisations",
+    "pages": 18,
+    "sizeMb": 1.9
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Security in the Contemporary World",
     "pages": 18,
     "sizeMb": 2.2
    },
@@ -1964,6 +2024,12 @@
     "title": "Chapter 6",
     "pages": 18,
     "sizeMb": 3.1
+   },
+   {
+    "ch": 7,
+    "title": "Globalisation",
+    "pages": 16,
+    "sizeMb": 27.3
    }
   ]
  },
@@ -1982,7 +2048,7 @@
    },
    {
     "ch": 2,
-    "title": "Chapter 2",
+    "title": "Politics in India Sinc Independence",
     "pages": 18,
     "sizeMb": 3.8
    },
@@ -2033,13 +2099,13 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "At At",
+    "title": "Variations in Psychological Attributes",
     "pages": 22,
     "sizeMb": 2.1
    },
    {
     "ch": 2,
-    "title": "Chapter 2",
+    "title": "Self and Personality",
     "pages": 27,
     "sizeMb": 2.5
    },
@@ -2051,13 +2117,13 @@
    },
    {
     "ch": 4,
-    "title": "Chapter 4",
+    "title": "Psychological Disorders",
     "pages": 20,
     "sizeMb": 1.9
    },
    {
     "ch": 5,
-    "title": "Chapter 5",
+    "title": "Therapeutic Approaches",
     "pages": 15,
     "sizeMb": 1.6
    },
@@ -2069,7 +2135,7 @@
    },
    {
     "ch": 7,
-    "title": "Processesprocessesprocessesprocessesprocesses",
+    "title": "Chapter 7",
     "pages": 12,
     "sizeMb": 1.5
    }
@@ -2084,39 +2150,51 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "The LasT Lesson Alphonse Daudet",
+    "title": "The Last Lesson Alphonse Daudet",
     "pages": 12,
     "sizeMb": 1.7
    },
    {
     "ch": 2,
-    "title": "LosT spring Anees Jung",
+    "title": "Lost Spring Anees Jung",
     "pages": 10,
     "sizeMb": 1.5
    },
    {
-    "ch": 4,
-    "title": "The raTTrap Selma Lagerlof",
+    "ch": 3,
+    "title": "Deep Water William Douglas",
     "pages": 0,
     "sizeMb": 0.2
    },
    {
+    "ch": 4,
+    "title": "The Rattrap Selma Lagerlof",
+    "pages": 0,
+    "sizeMb": 0.3
+   },
+   {
     "ch": 5,
-    "title": "inDigo Louis Fischer",
+    "title": "indigo Louis Fischer",
     "pages": 11,
     "sizeMb": 1.5
    },
    {
     "ch": 6,
-    "title": "poeTs anD pancakes Asokamitran",
+    "title": "Poets and Pancakes Asokamitran",
     "pages": 10,
     "sizeMb": 1.4
    },
    {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 9,
+    "sizeMb": 1.3
+   },
+   {
     "ch": 8,
-    "title": "going pLaces A. R. Barton",
-    "pages": 0,
-    "sizeMb": 0.3
+    "title": "Going Places A. R. Barton",
+    "pages": 12,
+    "sizeMb": 1.5
    },
    {
     "ch": 11,
@@ -2131,10 +2209,22 @@
     "sizeMb": 0.7
    },
    {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 2,
+    "sizeMb": 0.4
+   },
+   {
     "ch": 14,
     "title": "Chapter 14",
     "pages": 3,
     "sizeMb": 0.4
+   },
+   {
+    "ch": 15,
+    "title": "Chapter 15",
+    "pages": 5,
+    "sizeMb": 0.6
    }
   ]
  },
@@ -2147,7 +2237,7 @@
   "chapters": [
    {
     "ch": 1,
-    "title": "The Thir d Level Jack Finney",
+    "title": "The ThirdLevel Jack Finney",
     "pages": 7,
     "sizeMb": 1.4
    },
@@ -2156,6 +2246,24 @@
     "title": "Chapter 2",
     "pages": 10,
     "sizeMb": 1.6
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 6,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 23,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 5,
+    "title": "On the Face of It",
+    "pages": 15,
+    "sizeMb": 1.9
    },
    {
     "ch": 6,
