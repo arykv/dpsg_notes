@@ -239,6 +239,12 @@ def do_chapter(args):
     }
 
 
+# Suffixes that only ever appear as the tail of a longer word.
+FRAGMENT = re.compile(
+    r"\b(a?tions?|atives?|ives|ments?|ness|sions?|ances?|ences?|ity|ical|ology|ing)\b",
+    re.I,
+)
+
 SAFE_CHARS = re.compile(r"[A-Za-z0-9 ,.'’\-–—:;()&/?!]")
 
 
@@ -271,6 +277,23 @@ def join_split_letters(t: str) -> str:
             t,
         )
     return t
+
+
+def fix_inner_caps(t: str) -> str:
+    """"The LasT Lesson" -> "The Last Lesson".
+
+    Small-caps headings extract with the capitals still encoded, so a capital
+    turns up mid-word. All-caps tokens are left alone — they're acronyms.
+    """
+    def word(m: "re.Match[str]") -> str:
+        w = m.group(0)
+        if w.isupper() or w.islower():
+            return w
+        if len(w) > 1 and re.search(r"[A-Z]", w[1:]):
+            return w[0].upper() + w[1:].lower()
+        return w
+
+    return re.sub(r"[A-Za-z]+", word, t)
 
 
 def titlecase(t: str) -> str:
@@ -321,7 +344,7 @@ def tidy_book(book: dict) -> None:
             continue
         if c["title"].startswith("Chapter "):
             continue
-        t = join_split_letters(c["title"])
+        t = fix_inner_caps(join_split_letters(c["title"]))
         if messy_case(t):
             t = titlecase(t)
         c["title"] = re.sub(r"\s+", " ", t).strip()
@@ -344,9 +367,12 @@ def looks_like_title(t: str) -> bool:
         return False
     if not re.search(r"[A-Za-z]{3}", t):
         return False
-    # "Gravit a Tion" — letter-spaced type that can't be rejoined without also
-    # breaking real single-letter words. Better to fall back to "Chapter N".
+    # "Gravit a Tion" / "Deriv Atives" — letter-spaced display type breaks words
+    # apart, and rejoining is unsafe because "a" and "I" are real words. A
+    # leftover fragment is the tell; fall back to "Chapter N" instead.
     if re.search(r"\b[b-hj-z]\b", t):
+        return False
+    if re.search(FRAGMENT, t):
         return False
     return True
 
