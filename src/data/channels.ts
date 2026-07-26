@@ -4,7 +4,8 @@ export interface StudySource {
   name: string
   /** @handle for YouTube, empty for anything else. */
   handle: string
-  href: string
+  /** Omitted for anything that isn't a link. */
+  href?: string
   /** Subjects this covers, as a student would say them. */
   subjects: string[]
   /** Aryan's own words. First person, because it's his experience. */
@@ -27,7 +28,7 @@ export const MY_RESOURCES: StudySource[] = [
     handle: '@ScienceandFun',
     href: 'https://www.youtube.com/@ScienceandFun',
     subjects: ['Physics', 'Chemistry'],
-    note: 'Ashu Ghai sir carried both my Physics and Chemistry across 11th and 12th. He goes slowly enough that it actually sticks, and the full chapters are free. If a topic isn’t clicking in class, start here.',
+    note: 'Ashu Ghai sir carried both my Physics and Chemistry across 11th and 12th. Full chapters, free, explained slowly enough that they actually stick. Most of my physics happened in the week before the paper and this is why it was survivable.',
   },
   {
     id: 'ncert-wallah',
@@ -35,7 +36,7 @@ export const MY_RESOURCES: StudySource[] = [
     handle: '@NCERTWallah',
     href: 'https://www.youtube.com/@NCERTWallah',
     subjects: ['Chemistry'],
-    note: 'Good second option for Chemistry. Useful when a chapter needs explaining a different way to the one you already heard.',
+    note: 'Second option for Chemistry when Ashu sir’s explanation isn’t landing. Two people explaining the same chapter differently is often what makes it click.',
   },
   {
     id: 'ushank-ghai',
@@ -43,23 +44,23 @@ export const MY_RESOURCES: StudySource[] = [
     handle: '@UshankGhai',
     href: 'https://www.youtube.com/@UshankGhai',
     subjects: ['Mathematics'],
-    note: 'All my maths came from here. Worth watching the chapter before the class rather than after — it makes the school period make sense instead of the other way round.',
+    note: 'All my maths came from here. I never watched ahead of class — it was always the night before, and it still worked. A chapter you thought was impossible turns out to be about forty minutes of video.',
   },
   {
     id: 'grand-academy',
-    name: 'The Grand Academy',
-    handle: '@thegrandacademy',
-    href: 'https://www.youtube.com/@thegrandacademy',
+    name: 'GrandAcad',
+    handle: '@GrandAcad',
+    href: 'https://www.youtube.com/@GrandAcad',
     subjects: ['English'],
-    note: 'English is the paper everyone assumes they’ll be fine in and then isn’t. This is where I got the answer structure and the writing-section formats right.',
+    note: 'English is the paper everyone assumes they’ll be fine in and then isn’t. One-shot revisions here got me the answer structure and the writing formats the night before, which is genuinely all it takes for this paper.',
   },
   {
     id: 'taniya-sharma',
-    name: 'Taniya Sharma',
-    handle: '@TaniyaSharma',
-    href: 'https://www.youtube.com/@TaniyaSharma',
+    name: 'English by Taniya Sharma',
+    handle: '@EnglishClassesbyTaniyaSharma',
+    href: 'https://www.youtube.com/@EnglishClassesbyTaniyaSharma',
     subjects: ['English'],
-    note: 'Used alongside Grand Academy for English — good for chapter and character work when you need a second explanation of the same thing.',
+    note: 'Used alongside GrandAcad for English. Good for chapters and characters when you’ve not opened the book all year and need the whole thing in one sitting.',
   },
   {
     id: 'mosh',
@@ -67,7 +68,7 @@ export const MY_RESOURCES: StudySource[] = [
     handle: '@programmingwithmosh',
     href: 'https://www.youtube.com/@programmingwithmosh',
     subjects: ['Computer Science', 'Python'],
-    note: 'For Python, watch the six-hour full course in one or two sittings and type along — don’t just watch it. That single video covers more than the syllabus needs.',
+    note: 'For Python, this one six-hour video covers more than the syllabus needs. Do it in one or two sittings and type along instead of just watching — that’s the difference between it working and not.',
     highlight: {
       label: 'Python Full Course for Beginners (6 hrs)',
       href: 'https://www.youtube.com/watch?v=_uQrJ0TkZlc',
@@ -79,15 +80,14 @@ export const MY_RESOURCES: StudySource[] = [
     handle: '',
     href: 'https://chatgpt.com/',
     subjects: ['Every subject'],
-    note: 'Genuinely underrated as a study tool if you use it properly. Upload the NCERT chapter or the material your school gave you as a PDF, then make it quiz you on that document, explain the parts you’re stuck on, and mark your answers. Studying from your own syllabus beats asking it questions from memory — and never paste an answer into a paper without checking it against the book.',
+    note: 'Genuinely underrated if you use it properly. Upload the NCERT chapter or your school’s PDF, then make it quiz you on that document, explain what you’re stuck on, and mark your answers. Working from your own syllabus beats asking it from memory. It’s also the fastest way to get through a chapter at 1am — just check anything important against the book before you write it in a paper.',
   },
   {
     id: 'school-material',
-    name: 'Your school material',
+    name: 'The material school gave you',
     handle: '',
-    href: '/library',
     subjects: ['Computer Science theory', 'SQL'],
-    note: 'For CS theory and SQL I just followed what school gave us, and it was enough. Not everything needs a YouTube playlist — sometimes the printed material is already the right answer.',
+    note: 'For CS theory and SQL I just followed what school handed out and it was enough — I never needed a channel for either. Not everything needs a playlist. Dig out the sheets you were given; they’re usually closer to the paper than anything online.',
   },
 ]
 
@@ -95,7 +95,7 @@ export const MY_RESOURCES: StudySource[] = [
 export const MY_RESULT = {
   percentage: '92.8%',
   label: 'Class 12 CBSE',
-  note: 'Not a topper score, and that’s the point — this is what a normal amount of work with the right material gets you.',
+  note: 'I was a last-minute studier the whole way through, and this is still what it came to. If it’s the night before and you feel like you know nothing — it is genuinely not over. Me and my friends did it this way more than once.',
 }
 
 export interface Channel {

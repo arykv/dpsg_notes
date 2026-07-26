@@ -104,7 +104,9 @@ function MyStack() {
 
       <div className="mt-5 space-y-2.5">
         {MY_RESOURCES.map((s) => {
-          const external = s.href.startsWith('http')
+          // Not everything on this list is a link — one of them is a stack of
+          // sheets your school already handed you.
+          const linked = Boolean(s.href)
           return (
             <motion.div
               key={s.id}
@@ -113,7 +115,7 @@ function MyStack() {
             >
               <div className="flex items-start gap-3.5">
                 <span className="text-mark border-[var(--mark)]/40 mt-0.5 grid size-8 shrink-0 place-items-center rounded-[5px] border">
-                  {external ? <Play className="size-3.5 fill-current" /> : <BookOpen className="size-3.5" />}
+                  {linked ? <Play className="size-3.5 fill-current" /> : <BookOpen className="size-3.5" />}
                 </span>
 
                 <div className="min-w-0 flex-1">
@@ -129,16 +131,17 @@ function MyStack() {
                   </p>
 
                   <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
-                    <a
-                      href={s.href}
-                      {...(external
-                        ? { target: '_blank', rel: 'noreferrer noopener' }
-                        : {})}
-                      className="text-accent group inline-flex items-center gap-1 text-[13px] font-medium"
-                    >
-                      {s.handle || (external ? 'Open' : 'Open the library')}
-                      <ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                    </a>
+                    {linked && (
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="text-accent group inline-flex items-center gap-1 text-[13px] font-medium"
+                      >
+                        {s.handle || 'Open'}
+                        <ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </a>
+                    )}
 
                     {s.highlight && (
                       <a
