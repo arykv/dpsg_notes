@@ -219,7 +219,11 @@
   }
 
   /* A marigold highlighter swipe behind a phrase. Stops are percentages so the
-     band tracks the text however large the headline is set. */
+     band tracks the text however large the headline is set.
+
+     On paper it's a full swipe, the way a highlighter actually behaves. On the
+     dark board a fill behind pale text would fight the text, so it becomes the
+     underscore you'd draw in pen instead. */
   .marked {
     display: inline;
     box-decoration-break: clone;
@@ -227,10 +231,20 @@
     padding-inline: 0.06em;
     background-image: linear-gradient(
       to bottom,
-      transparent 24%,
-      color-mix(in srgb, var(--color-mark-400) 34%, transparent) 24%,
-      color-mix(in srgb, var(--color-mark-400) 34%, transparent) 92%,
-      transparent 92%
+      transparent 22%,
+      color-mix(in srgb, var(--color-mark-400) 40%, transparent) 22%,
+      color-mix(in srgb, var(--color-mark-400) 40%, transparent) 94%,
+      transparent 94%
+    );
+  }
+
+  .dark .marked {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 82%,
+      var(--color-mark-400) 82%,
+      var(--color-mark-400) 94%,
+      transparent 94%
     );
   }
 
