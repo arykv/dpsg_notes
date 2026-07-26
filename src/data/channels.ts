@@ -12,6 +12,8 @@ export interface StudySource {
   note: string
   /** An optional single link worth calling out — one video, one page. */
   highlight?: { label: string; href: string }
+  /** A second channel the same teacher posts on. */
+  alsoAt?: { label: string; href: string }
 }
 
 /**
@@ -24,10 +26,14 @@ export interface StudySource {
 export const MY_RESOURCES: StudySource[] = [
   {
     id: 'science-and-fun',
-    name: 'Science and Fun — Ashu Sir',
-    handle: '@ScienceandFun',
-    href: 'https://www.youtube.com/@ScienceandFun',
+    name: 'Ashu Ghai sir',
+    handle: '@AshuGhai11th12th',
+    href: 'https://www.youtube.com/@AshuGhai11th12th',
     subjects: ['Physics', 'Chemistry'],
+    alsoAt: {
+      label: 'Also on @ScienceAndFunEducation',
+      href: 'https://www.youtube.com/@ScienceAndFunEducation',
+    },
     note: 'Ashu Ghai sir carried both my Physics and Chemistry across 11th and 12th. Full chapters, free, explained slowly enough that they actually stick. Most of my physics happened in the week before the paper and this is why it was survivable.',
   },
   {
@@ -40,10 +46,14 @@ export const MY_RESOURCES: StudySource[] = [
   },
   {
     id: 'ushank-ghai',
-    name: 'Ushank Sir',
+    name: 'Ushank Ghai sir',
     handle: '@UshankGhai',
     href: 'https://www.youtube.com/@UshankGhai',
     subjects: ['Mathematics'],
+    alsoAt: {
+      label: 'Also on @ScienceAndFunEducation',
+      href: 'https://www.youtube.com/@ScienceAndFunEducation',
+    },
     note: 'All my maths came from here. I never watched ahead of class — it was always the night before, and it still worked. A chapter you thought was impossible turns out to be about forty minutes of video.',
   },
   {

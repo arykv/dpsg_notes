@@ -143,6 +143,18 @@ function MyStack() {
                       </a>
                     )}
 
+                    {s.alsoAt && (
+                      <a
+                        href={s.alsoAt.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="text-faint hover:text-[var(--text)] inline-flex items-center gap-1 text-[13px] transition-colors"
+                      >
+                        <Play className="size-3 fill-current" />
+                        {s.alsoAt.label}
+                      </a>
+                    )}
+
                     {s.highlight && (
                       <a
                         href={s.highlight.href}
