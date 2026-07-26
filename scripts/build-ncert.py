@@ -71,7 +71,7 @@ NOISE = re.compile(
 )
 
 
-def fetch(url: str, timeout: int = 45, attempts: int = 3) -> bytes | None:
+def fetch(url: str, timeout: int = 60, attempts: int = 4) -> bytes | None:
     """Shell out to curl — this machine sits behind a TLS-intercepting proxy
     that Python's own certificate store doesn't trust, but the system one does.
 
@@ -86,7 +86,12 @@ def fetch(url: str, timeout: int = 45, attempts: int = 3) -> bytes | None:
             )
             data = r.stdout
             if data[:4] == b"%PDF":
-                return data
+                # A truncated download still starts with %PDF, so the header is
+                # not enough — without the trailing %%EOF the text layer comes
+                # out garbled and every title from it is junk. Retry instead.
+                if b"%%EOF" in data[-2048:]:
+                    return data
+                continue
             # A missing chapter answers with a few bytes of non-PDF. Only an
             # empty body means the connection actually dropped, so that's the
             # only case worth retrying.
@@ -300,7 +305,7 @@ def tidy_book(book: dict) -> None:
     banned |= {f"{subject} part {n}".lower() for n in ("i", "ii", "iii")}
 
     counts = collections.Counter(c["title"].lower() for c in book["chapters"])
-    repeated = {t for t, n in counts.items() if n > 1 and not t.startswith("chapter ")}
+    repeated = {t for t, n in counts.items() if n > 2 and not t.startswith("chapter ")}
 
     for c in book["chapters"]:
         low = c["title"].lower().strip()
@@ -338,6 +343,10 @@ def looks_like_title(t: str) -> bool:
     if len(SAFE_CHARS.findall(t)) < len(t) * 0.9:
         return False
     if not re.search(r"[A-Za-z]{3}", t):
+        return False
+    # "Gravit a Tion" — letter-spaced type that can't be rejoined without also
+    # breaking real single-letter words. Better to fall back to "Chapter N".
+    if re.search(r"\b[b-hj-z]\b", t):
         return False
     return True
 

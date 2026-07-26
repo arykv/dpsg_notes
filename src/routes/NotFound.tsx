@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
-import { useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import { ButtonLink } from '@/components/ui/Button'
+import { legacyTarget } from '@/data/legacy-routes'
 
 /**
  * A 404 that behaves like a teacher rather than an error page: it says what
@@ -11,6 +12,11 @@ import { ButtonLink } from '@/components/ui/Button'
  */
 export default function NotFound() {
   const { pathname } = useLocation()
+
+  // Old links still circulate in class groups; send them where the file went.
+  const moved = legacyTarget(pathname)
+  if (moved) return <Navigate to={moved} replace />
+
   const looksLegacy = pathname.endsWith('.html')
 
   return (
