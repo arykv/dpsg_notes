@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#052E27" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FBF8F0" media="(prefers-color-scheme: light)" />
+
+    <title>DPSG Notes — everything you need for school, in one place</title>
+    <meta
+      name="description"
+      content="Notes, past papers, syllabus, bell timings and calculators for DPS Gandhinagar students. Search everything in one place. Free, no login, built by students."
+    />
+    <link rel="canonical" href="https://dps-gandhinagar.in/" />
+    <link rel="icon" href="/school-crest.jpg" />
+    <link rel="apple-touch-icon" href="/school-crest.jpg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DPSG Notes" />
+    <meta property="og:title" content="DPSG Notes — the student hub for DPS Gandhinagar" />
+    <meta
+      property="og:description"
+      content="Notes, past papers, syllabus, bell timings and calculators. Search everything in one place."
+    />
+    <meta property="og:image" content="https://dps-gandhinagar.in/school-campus.jpg" />
+    <meta property="og:url" content="https://dps-gandhinagar.in/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..700;1,400..600&family=Azeret+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,600..800&display=swap"
+    />
+
+    <script>
+      // Resolve the theme before first paint so the page never flashes the wrong one.
+      (function () {
+        try {
+          var stored = localStorage.getItem('dpsg.theme')
+          var dark = stored ? stored === 'dark' : true
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
