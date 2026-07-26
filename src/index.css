@@ -1,0 +1,300 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   DPSG Notes — design tokens
+
+   The whole look comes from one object every student here already owns: a
+   school register. Bottle-green board, warm paper, faint horizontal ruling,
+   and a single red margin line down the left. Marigold is the marking colour —
+   it appears where something is happening right now, and nowhere else.
+
+   The green is a *ground*, not an accent on black. That commitment is the
+   point: this should look like school stationery, not a dashboard.
+--------------------------------------------------------------------------- */
+
+@theme {
+  --color-board-900: #04231e;
+  --color-board-800: #052e27;
+  --color-board-700: #0a3b32;
+  --color-board-600: #0e453a;
+  --color-board-500: #17564a;
+  --color-board-400: #1f6b5c;
+
+  /* Marigold — the marking colour. */
+  --color-mark-600: #b3701a;
+  --color-mark-500: #d8901f;
+  --color-mark-400: #f2a93b;
+  --color-mark-300: #f6c877;
+
+  /* Red pen. Reserved for corrections and things that have run out. */
+  --color-pen-600: #c63b2f;
+  --color-pen-500: #e4574a;
+
+  --font-display: 'Bricolage Grotesque', 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Azeret Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-shimmer: shimmer 1.6s var(--ease-out-quint) infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* --- Semantic surfaces ---------------------------------------------------- */
+
+@layer base {
+  /* Light is a notebook page. */
+  :root {
+    --canvas: #fbf8f0;
+    --surface: #ffffff;
+    --surface-2: #f4f0e4;
+    --surface-hover: #ede8d8;
+    --line: #e2dac6;
+    --line-strong: #c8bda2;
+    --text: #0f2019;
+    --text-muted: #4c5f56;
+    --text-faint: #7b8b81;
+    --accent: var(--color-board-700);
+    --accent-text: var(--color-board-700);
+    --mark: var(--color-mark-600);
+    --pen: var(--color-pen-600);
+    --rule: rgb(15 32 25 / 0.055);
+    --glass: rgb(251 248 240 / 0.82);
+    --shadow-card: 0 1px 1px rgb(15 32 25 / 0.04);
+
+    color-scheme: light;
+  }
+
+  /* Dark is the register cover. */
+  .dark {
+    --canvas: #052e27;
+    --surface: #0a3b32;
+    --surface-2: #0e453a;
+    --surface-hover: #135045;
+    --line: #17564a;
+    --line-strong: #24705f;
+    --text: #f1ede0;
+    --text-muted: #a9bfb4;
+    --text-faint: #7e988c;
+    --accent: var(--color-mark-400);
+    --accent-text: var(--color-mark-400);
+    --mark: var(--color-mark-400);
+    --pen: var(--color-pen-500);
+    --rule: rgb(241 237 224 / 0.05);
+    --glass: rgb(5 46 39 / 0.86);
+    --shadow-card: none;
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Faint horizontal ruling, on a 30px rhythm, over the whole page. */
+  body {
+    background-color: var(--canvas);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0 29px,
+      var(--rule) 29px 30px
+    );
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-variation-settings: 'wdth' 88;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-mark-400);
+    color: #241703;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--mark);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+}
+
+@layer utilities {
+  .surface {
+    background-color: var(--surface);
+  }
+  .surface-2 {
+    background-color: var(--surface-2);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+  .text-faint {
+    color: var(--text-faint);
+  }
+  .text-accent {
+    color: var(--accent-text);
+  }
+  .text-mark {
+    color: var(--mark);
+  }
+  .text-pen {
+    color: var(--pen);
+  }
+  .bg-canvas {
+    background-color: var(--canvas);
+  }
+  .border-line {
+    border-color: var(--line);
+  }
+  .border-line-strong {
+    border-color: var(--line-strong);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass {
+    background-color: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* The red margin line every Indian school notebook has, down the left of the
+     content column. It is the one piece of decoration on the site. */
+  .register {
+    position: relative;
+  }
+  .register::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    left: 0.75rem;
+    width: 1px;
+    background: color-mix(in srgb, var(--pen) 42%, transparent);
+    pointer-events: none;
+  }
+  @media (min-width: 640px) {
+    .register::before {
+      left: 3.25rem;
+    }
+  }
+
+  /* Micro-label: mono caps for eyebrows, field labels and data legends. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  /* A marigold highlighter swipe behind a phrase. Stops are percentages so the
+     band tracks the text however large the headline is set.
+
+     On paper it's a full swipe, the way a highlighter actually behaves. On the
+     dark board a fill behind pale text would fight the text, so it becomes the
+     underscore you'd draw in pen instead. */
+  .marked {
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding-inline: 0.06em;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 22%,
+      color-mix(in srgb, var(--color-mark-400) 40%, transparent) 22%,
+      color-mix(in srgb, var(--color-mark-400) 40%, transparent) 94%,
+      transparent 94%
+    );
+  }
+
+  .dark .marked {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 82%,
+      var(--color-mark-400) 82%,
+      var(--color-mark-400) 94%,
+      transparent 94%
+    );
+  }
+
+  .dedication {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Wide display setting for the few places a headline should stretch. */
+  .display-wide {
+    font-variation-settings: 'wdth' 100;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Radix accordion needs the measured height it hands us as a CSS variable. */
+@keyframes acc-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+@keyframes acc-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
