@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
-import { ArrowUpRight, Lock, Mail, Play, Quote } from 'lucide-react'
+import { ArrowUpRight, BookOpen, Lock, Mail, Play } from 'lucide-react'
 import { LINKS, LINK_CATEGORIES } from '@/data/links'
-import { CHANNELS } from '@/data/channels'
+import { MORE_CHANNELS, MY_RESOURCES, MY_RESULT } from '@/data/channels'
 import { SectionHead } from '@/components/ui/primitives'
 import { ButtonLink } from '@/components/ui/Button'
 import { inView, rise, stagger } from '@/lib/motion'
@@ -12,11 +12,12 @@ export default function Resources() {
     <div className="register mx-auto max-w-4xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
         eyebrow="Resources"
-        title="Everything worth opening, and nothing that isn’t"
-        description="Every link on this page has been checked by hand. If one breaks, tell us and it goes — a directory is only useful if you can trust every row in it."
+        title="Where to actually learn this stuff"
+        description="The channels and sites I used myself, then everything else worth opening. Every link has been checked by hand — a directory is only useful if you can trust every row in it."
       />
 
-      <Channels />
+      <MyStack />
+      <MoreChannels />
 
       <div className="mt-16 space-y-12 pb-4">
         {LINK_CATEGORIES.map((cat) => {
@@ -74,58 +75,113 @@ export default function Resources() {
 
 /* -------------------------------------------------------------------------- */
 
-function Channels() {
-  const [pick, ...rest] = [...CHANNELS].sort((a, b) => Number(b.pick) - Number(a.pick))
-
+/**
+ * The section juniors will trust most — one person naming what he used and
+ * what it got him, rather than a directory of everything that exists.
+ */
+function MyStack() {
   return (
     <motion.section initial="hidden" animate="show" variants={stagger(0.04)}>
-      <h2 className="text-lg">Teachers worth your evening</h2>
-      <p className="text-muted mt-1 mb-4 text-[13px]">
-        Free channels that cover the CBSE syllabus properly, not clip farms.
+      <h2 className="text-lg">What I actually studied from</h2>
+      <p className="text-muted mt-1 text-[13px]">
+        Not a list of everything out there — just the channels I used myself, subject by
+        subject.
       </p>
 
-      {/* The one with a real story behind it gets the space to tell it. */}
-      {pick && (
-        <motion.a
-          variants={rise}
-          href={pick.href}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="group surface border-line-strong mb-3 block rounded-[6px] border p-5 transition-colors hover:border-[var(--mark)]"
-        >
-          <div className="flex items-start gap-4">
-            <span className="text-mark border-[var(--mark)]/45 grid size-10 shrink-0 place-items-center rounded-[5px] border">
-              <Play className="size-4 fill-current" />
-            </span>
+      {/* The result, up front. It's the only reason this list is worth reading. */}
+      <motion.div
+        variants={rise}
+        className="border-line-strong mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-y py-4"
+      >
+        <span className="font-display text-mark text-3xl font-bold tabular">
+          {MY_RESULT.percentage}
+        </span>
+        <span className="eyebrow">{MY_RESULT.label}</span>
+        <span className="text-muted min-w-0 flex-1 text-[13px] leading-relaxed">
+          {MY_RESULT.note}
+        </span>
+      </motion.div>
 
-            <div className="min-w-0 flex-1">
-              <div className="flex flex-wrap items-center gap-2">
-                <h3 className="text-[17px]">{pick.name}</h3>
-                <span className="eyebrow">Aryan’s pick</span>
+      <div className="mt-5 space-y-2.5">
+        {MY_RESOURCES.map((s) => {
+          const external = s.href.startsWith('http')
+          return (
+            <motion.div
+              key={s.id}
+              variants={rise}
+              className="surface border-line rounded-[6px] border p-4 sm:p-5"
+            >
+              <div className="flex items-start gap-3.5">
+                <span className="text-mark border-[var(--mark)]/40 mt-0.5 grid size-8 shrink-0 place-items-center rounded-[5px] border">
+                  {external ? <Play className="size-3.5 fill-current" /> : <BookOpen className="size-3.5" />}
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+                    <h3 className="text-[16px]">{s.name}</h3>
+                    <span className="text-faint font-mono text-[10px] tracking-[0.1em] uppercase">
+                      {s.subjects.join(' · ')}
+                    </span>
+                  </div>
+
+                  <p className="dedication text-muted mt-2 text-[15px] leading-relaxed">
+                    {s.note}
+                  </p>
+
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+                    <a
+                      href={s.href}
+                      {...(external
+                        ? { target: '_blank', rel: 'noreferrer noopener' }
+                        : {})}
+                      className="text-accent group inline-flex items-center gap-1 text-[13px] font-medium"
+                    >
+                      {s.handle || (external ? 'Open' : 'Open the library')}
+                      <ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </a>
+
+                    {s.highlight && (
+                      <a
+                        href={s.highlight.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="text-faint hover:text-[var(--text)] inline-flex items-center gap-1 text-[13px] transition-colors"
+                      >
+                        <Play className="size-3 fill-current" />
+                        {s.highlight.label}
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <p className="text-muted mt-1 text-[13px]">{pick.bestFor}</p>
+            </motion.div>
+          )
+        })}
+      </div>
 
-              {pick.note && (
-                <blockquote className="border-[var(--pen)]/40 mt-4 border-l-2 pl-4">
-                  <Quote className="text-pen mb-1.5 size-3" aria-hidden />
-                  <p className="dedication text-[15px] leading-relaxed">{pick.note}</p>
-                  <footer className="text-faint mt-2 font-mono text-[10px] tracking-[0.14em] uppercase">
-                    Aryan Rao · Class of 2026
-                  </footer>
-                </blockquote>
-              )}
+      <p className="text-faint mt-4 text-xs leading-relaxed">
+        Nobody paid for a place on this list, and nothing here costs money.
+      </p>
+    </motion.section>
+  )
+}
 
-              <span className="text-accent mt-4 inline-flex items-center gap-1 text-[13px] font-medium">
-                Open {pick.handle}
-                <ArrowUpRight className="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </span>
-            </div>
-          </div>
-        </motion.a>
-      )}
+function MoreChannels() {
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={inView}
+      variants={stagger(0.03)}
+      className="mt-16"
+    >
+      <h2 className="text-lg">Others worth knowing about</h2>
+      <p className="text-muted mt-1 mb-4 text-[13px]">
+        Checked, free, and strong for subjects I didn’t take.
+      </p>
 
       <div className="grid gap-2.5 sm:grid-cols-2">
-        {rest.map((c) => (
+        {MORE_CHANNELS.map((c) => (
           <motion.a
             key={c.id}
             variants={rise}

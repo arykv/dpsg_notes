@@ -2,6 +2,7 @@ import Fuse, { type IFuseOptions } from 'fuse.js'
 import { RESOURCES } from '@/data/resources'
 import { SUBJECTS, subjectName } from '@/data/subjects'
 import { LINKS } from '@/data/links'
+import { MORE_CHANNELS, MY_RESOURCES } from '@/data/channels'
 import { TOOLS } from '@/data/tools'
 import { KIND_LABELS } from './format'
 
@@ -12,7 +13,7 @@ import { KIND_LABELS } from './format'
  */
 export interface SearchItem {
   id: string
-  type: 'resource' | 'subject' | 'tool' | 'link' | 'page'
+  type: 'resource' | 'subject' | 'tool' | 'link' | 'channel' | 'page'
   title: string
   subtitle: string
   to: string
@@ -105,6 +106,22 @@ export const SEARCH_ITEMS: SearchItem[] = [
     subtitle: t.blurb,
     to: `/tools#${t.id}`,
     keywords: t.keywords,
+  })),
+  ...MY_RESOURCES.map<SearchItem>((r) => ({
+    id: `used-${r.id}`,
+    type: 'channel',
+    title: r.name,
+    subtitle: `What Aryan used for ${r.subjects.join(', ')}`,
+    to: '/resources',
+    keywords: `${r.handle} ${r.subjects.join(' ')} youtube channel studied recommended`,
+  })),
+  ...MORE_CHANNELS.map<SearchItem>((c) => ({
+    id: `channel-${c.id}`,
+    type: 'channel',
+    title: c.name,
+    subtitle: c.bestFor,
+    to: '/resources',
+    keywords: `${c.handle} ${c.subjects.join(' ')} youtube channel video`,
   })),
   ...LINKS.map<SearchItem>((l) => ({
     id: `link-${l.id}`,

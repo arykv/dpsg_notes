@@ -15,6 +15,7 @@ import {
   Link2,
   Moon,
   Percent,
+  Play,
   Sun,
 } from 'lucide-react'
 import { cn } from '@/lib/cn'
@@ -30,6 +31,7 @@ const TYPE_ICON: Record<SearchItem['type'], typeof FileText> = {
   subject: Library,
   tool: Calculator,
   link: Link2,
+  channel: Play,
   page: Hash,
 }
 
@@ -37,6 +39,7 @@ const TYPE_LABEL: Record<SearchItem['type'], string> = {
   resource: 'Notes',
   subject: 'Subjects',
   tool: 'Tools',
+  channel: 'Learn from',
   link: 'Outside links',
   page: 'Pages',
 }
