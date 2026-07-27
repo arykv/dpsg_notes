@@ -205,11 +205,35 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
 - **The Desk** — drag-and-drop binder assembly, saved to `localStorage`
 
 ### Blocked or needs decisions
-- **OSM paywall.** He wants ~3 free pages then a paywall. Two blockers: a paywall on a static
-  site is cosmetic (public URLs are fetchable), and he can't take payments until April 2027.
-  Recommended: ship *only* preview pages, keep full scans off the server, collect interest by
-  email. Also — sell the **analysis**, not raw scans; CBSE releases these for personal
-  verification.
+- **OSM answer sheets — decided 28 Jul 2026.** *Computer Science (98) goes up free in full.*
+  The other four (Physics, Chemistry, Maths, English) are paywalled.
+
+  Source PDFs are in `~/Downloads`, not yet in the repo:
+
+  | Subject | File | Pages |
+  |---|---|---|
+  | Computer Science | `5CB3A505-527F-49BA-B866-87C1B07A0241-2.pdf` | 35 |
+  | Physics | `1E6C7DA5-BF1C-49F3-99B0-637F5231BEAF.pdf` | 35 |
+  | Chemistry | `0DF9A2C7-1765-4F8A-BC96-70A5D5C59566.pdf` | 35 |
+  | Mathematics | `1D11A343-8B06-45AB-94B1-FF70D3FC6C0E.pdf` | 43 |
+  | English Core | `A8C772D1-B5C5-41D9-8237-9F21ACA3BAAB-2.pdf` | 35 |
+
+  Page 1 of each is the **question-wise marks summary** as real text — no name, no roll number,
+  just a barcode. It's the most interesting page and the safest to show, so it's the natural
+  free preview for the paywalled four. Pages 2+ are pure scans of his handwriting.
+
+  **Outstanding before publishing the CS one: nobody has visually inspected pages 2–35.** Extract
+  the page images (`pip install 'pypdf[image]'`) and look for a roll number or name written on
+  the booklet. Do not publish unchecked.
+
+  Two blockers on the paywall itself: a paywall on a static site is cosmetic — anything under
+  `public/` is fetchable by URL, so paid PDFs must stay out of the deployment entirely. And he
+  can't take payments until April 2027. So build: CS free, marks-summary previews for the rest,
+  and an email-capture instead of a checkout.
+
+  Standing advice he's heard once: sell the **analysis** (reconstructed, annotated, typeset)
+  rather than raw scans. CBSE releases these for personal verification, and the typeset version
+  is more useful anyway.
 - **Print pre-orders**, **contributor uploads + ₹25/copy royalties** (needs a backend),
   **multi-school**.
 
