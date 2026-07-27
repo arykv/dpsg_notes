@@ -1,0 +1,7 @@
+# Vercel builds from source, so local build output is dead weight on upload.
+dist
+.ssr
+node_modules
+
+# The original hand-written HTML site, kept in git for history only.
+legacy

@@ -5,3 +5,5 @@ dist
 .vite
 scripts/__pycache__
 .ssr
+.vercel
+.env*
