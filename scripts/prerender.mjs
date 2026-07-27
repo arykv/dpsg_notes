@@ -62,6 +62,14 @@ function withMeta(html, page, appHtml) {
 function schemaFor(page) {
   const url = SITE.origin + page.path
 
+  const author = {
+    '@type': 'Person',
+    '@id': SITE.origin + '/#author',
+    name: 'Aryan Rao',
+    url: 'https://github.com/arykv',
+    affiliation: { '@type': 'EducationalOrganization', name: 'Delhi Public School, Gandhinagar' },
+  }
+
   const site = {
     '@type': 'WebSite',
     '@id': SITE.origin + '/#website',
@@ -69,6 +77,10 @@ function schemaFor(page) {
     name: SITE.name,
     description: PAGES[0].description,
     inLanguage: 'en-IN',
+    author: { '@id': SITE.origin + '/#author' },
+    creator: { '@id': SITE.origin + '/#author' },
+    copyrightYear: new Date().getFullYear(),
+    copyrightHolder: { '@id': SITE.origin + '/#author' },
     potentialAction: {
       '@type': 'SearchAction',
       target: { '@type': 'EntryPoint', urlTemplate: SITE.origin + '/library?q={search_term_string}' },
@@ -84,6 +96,7 @@ function schemaFor(page) {
     description: page.description,
     isPartOf: { '@id': SITE.origin + '/#website' },
     inLanguage: 'en-IN',
+    author: { '@id': SITE.origin + '/#author' },
     about: {
       '@type': 'EducationalOrganization',
       name: 'Delhi Public School, Gandhinagar',
@@ -101,7 +114,7 @@ function schemaFor(page) {
     }
   }
 
-  return { '@context': 'https://schema.org', '@graph': [site, webPage] }
+  return { '@context': 'https://schema.org', '@graph': [author, site, webPage] }
 }
 
 let written = 0

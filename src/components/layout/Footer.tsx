@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { Github, Mail } from 'lucide-react'
 
+/** Stamped at build time so the prerendered HTML and the client never disagree. */
+const YEAR = __BUILD_YEAR__
+
 const COLUMNS = [
   {
     title: 'Find things',
@@ -87,7 +90,24 @@ export function Footer() {
           <p>
             Not an official DPS Gandhinagar site. Notes belong to the students who wrote them.
           </p>
-          <p className="tabular">Class of 2026 · Aryan Rao</p>
+          {/* Quiet, but on every page and machine-readable via rel="author". */}
+          <p className="tabular">
+            <span>&copy; {YEAR} DPSG Notes</span>
+            <span aria-hidden className="mx-1.5 opacity-50">
+              ·
+            </span>
+            <span>
+              Built by{' '}
+              <a
+                href="https://github.com/arykv"
+                target="_blank"
+                rel="author noreferrer noopener"
+                className="hover:text-[var(--text)] underline decoration-dotted underline-offset-2 transition-colors"
+              >
+                Aryan Rao
+              </a>
+            </span>
+          </p>
         </div>
       </div>
     </footer>
