@@ -73,6 +73,15 @@ const PAGES: SearchItem[] = [
       'marksheet marks result 95.2 92.8 moderation grace marks osm answer script evidence proof boards',
   },
   {
+    id: 'page-paper',
+    type: 'page',
+    title: 'What happens to your paper',
+    subtitle: 'Inside a real evaluated CBSE answer script',
+    to: '/paper',
+    keywords:
+      'answer script osm evaluated copy checking examiner marking scanned barcode question wise marks summary re-evaluation photocopy how are papers checked',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

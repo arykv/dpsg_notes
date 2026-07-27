@@ -28,6 +28,7 @@ const COLUMNS = [
     links: [
       { label: 'Results & proof', to: '/results' },
       { label: 'CBSE moderation', to: '/results#moderation' },
+      { label: 'What happens to your paper', to: '/paper' },
       { label: 'About', to: '/about' },
       { label: 'Add your notes', to: '/about#contribute' },
     ],

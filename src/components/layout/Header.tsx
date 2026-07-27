@@ -14,16 +14,26 @@ function isSection(pathname: string, to: string): boolean {
   return pathname === base || pathname.startsWith(base + '/')
 }
 
+/**
+ * `compact: true` means the item is dropped from the desktop bar and lives only
+ * in the mobile menu. The bar has a hard budget — the period readout sits to
+ * its left and both have to fit on a laptop — so anything reachable another way
+ * gives up its slot. School day is exactly that: the period readout beside it
+ * already links there.
+ */
 const NAV = [
   { to: '/library', label: 'Library' },
   { to: '/chapters/class-11', label: 'Chapters' },
   { to: '/strategy', label: 'Strategy' },
   { to: '/results', label: 'Results' },
+  { to: '/paper', label: 'Your paper' },
   { to: '/resources', label: 'Resources' },
   { to: '/tools', label: 'Tools' },
-  { to: '/day', label: 'School day' },
+  { to: '/day', label: 'School day', compact: true },
   { to: '/about', label: 'About' },
 ]
+
+const DESKTOP_NAV = NAV.filter((item) => !item.compact)
 
 export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
   const { theme, toggle } = useTheme()
@@ -58,14 +68,14 @@ export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
         <span className="border-line mx-1 hidden h-5 w-px border-l lg:block" />
         <PeriodBar compact />
 
-        <nav className="ml-auto hidden items-center gap-0.5 md:flex">
-          {NAV.map((item) => (
+        <nav className="ml-auto hidden shrink-0 items-center gap-0.5 md:flex">
+          {DESKTOP_NAV.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={() =>
                 cn(
-                  'relative rounded-[5px] px-3 py-1.5 text-[13px] font-medium transition-colors',
+                  'relative rounded-[5px] px-3 py-1.5 text-[13px] font-medium whitespace-nowrap transition-colors',
                   isSection(pathname, item.to)
                     ? 'text-[var(--text)]'
                     : 'text-muted hover:text-[var(--text)]',

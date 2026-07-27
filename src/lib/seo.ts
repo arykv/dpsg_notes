@@ -193,6 +193,26 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/paper',
+    title: 'What happens to your CBSE paper after you hand it in',
+    description:
+      'Inside a real evaluated Class 12 answer script, bought back from CBSE and read page by page. How papers are scanned and marked on screen, what every stamp and code on the booklet means, the full question-wise marks summary, and six things it changed about how I would write a paper.',
+    intent: [
+      'how are cbse papers checked',
+      'cbse on screen marking osm',
+      'cbse evaluated answer sheet photocopy',
+      'what does a checked cbse answer sheet look like',
+      'cbse question wise marks summary',
+      'cbse re-evaluation photocopy process',
+    ],
+    og: {
+      kicker: 'The answer script',
+      headline: 'What happens to your paper after you hand it in',
+      stat: '35',
+      statLabel: 'pages, read one by one',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:
