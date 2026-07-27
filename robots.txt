@@ -1,0 +1,8 @@
+# Crawl freely — every page here carries <meta name="robots" content="noindex">.
+# Blocking here instead would leave the old indexed URLs stranded, because a
+# crawler that can't fetch the page never sees the noindex.
+User-agent: *
+Allow: /
+
+# The real site.
+Sitemap: https://allnighter.in/sitemap.xml

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>dps-gandhinagar.in — Aryan Rao, Class of 2026</title>
+    <meta
+      name="description"
+      content="This domain belongs to Aryan Rao, DPS Gandhinagar, Class of 2026. The notes site it used to hold now lives at allnighter.in."
+    />
+
+    <!-- Crawlable but not indexable, on purpose. This page must never compete
+         with allnighter.in — and a robots.txt block would stop crawlers from
+         ever reading this line, which is the opposite of what we want. -->
+    <meta name="robots" content="noindex, follow" />
+
+    <meta name="theme-color" content="#052e27" />
+    <link rel="icon" href="data:," />
+
+    <style>
+      /* One page, no build, no fonts to fetch. It should be on screen before
+         you have finished reading the address bar. */
+      :root {
+        --canvas: #052e27;
+        --surface: #0a3b32;
+        --line: #17564a;
+        --text: #f1ede0;
+        --muted: #a9bfb4;
+        --faint: #7e988c;
+        --mark: #f2a93b;
+        --pen: #e4574a;
+        color-scheme: dark;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --canvas: #fbf8f0;
+          --surface: #ffffff;
+          --line: #e2dac6;
+          --text: #0f2019;
+          --muted: #4c5f56;
+          --faint: #7b8b81;
+          --mark: #b3701a;
+          --pen: #c63b2f;
+          color-scheme: light;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      /* Faint ruling on a 30px rhythm — the same register allnighter.in is
+         built on, so this reads as the same hand. */
+      body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 2rem 1.25rem;
+        background-color: var(--canvas);
+        background-image: repeating-linear-gradient(
+          to bottom,
+          transparent 0 29px,
+          color-mix(in srgb, var(--text) 5%, transparent) 29px 30px
+        );
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.55;
+      }
+
+      main {
+        position: relative;
+        width: 100%;
+        max-width: 32rem;
+        padding-left: 1.5rem;
+      }
+
+      /* The red margin line every Indian school notebook has. */
+      main::before {
+        content: '';
+        position: absolute;
+        inset-block: -0.5rem;
+        left: 0;
+        width: 1px;
+        background: color-mix(in srgb, var(--pen) 45%, transparent);
+      }
+
+      .eyebrow {
+        font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+        font-size: 0.625rem;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+
+      h1 {
+        margin-top: 0.75rem;
+        font-size: clamp(2.75rem, 12vw, 4.5rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      h1 .wave {
+        color: var(--mark);
+      }
+
+      .owner {
+        margin-top: 1.5rem;
+        font-size: 1.0625rem;
+      }
+
+      .owner strong {
+        font-weight: 600;
+      }
+
+      .note {
+        margin-top: 1rem;
+        color: var(--muted);
+        font-size: 0.9375rem;
+      }
+
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 0.9375rem 1.125rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--surface);
+        color: inherit;
+        text-decoration: none;
+        transition:
+          border-color 0.15s ease,
+          transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .card:hover,
+      .card:focus-visible {
+        border-color: var(--mark);
+        transform: translateY(-1px);
+      }
+
+      .card:focus-visible {
+        outline: 2px solid var(--mark);
+        outline-offset: 3px;
+      }
+
+      .card-title {
+        display: block;
+        font-weight: 600;
+        font-size: 0.9375rem;
+      }
+
+      .card-sub {
+        display: block;
+        margin-top: 0.125rem;
+        color: var(--muted);
+        font-size: 0.8125rem;
+      }
+
+      .card-arrow {
+        flex: none;
+        color: var(--mark);
+        font-size: 1.125rem;
+      }
+
+      footer {
+        margin-top: 2.25rem;
+        color: var(--faint);
+        font-size: 0.75rem;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p class="eyebrow">dps-gandhinagar.in</p>
+
+      <h1>Hii! <span class="wave">:)</span></h1>
+
+      <p class="owner">
+        This domain is owned by <strong>Aryan Rao</strong>, DPS Gandhinagar, Class of 2026.
+      </p>
+
+      <p class="note">
+        It used to hold a notes site for my school. That turned into something bigger and rather
+        more useful, so it moved.
+      </p>
+
+      <a class="card" href="https://allnighter.in">
+        <span>
+          <span class="card-title">All Nighter</span>
+          <span class="card-sub"
+            >Free CBSE notes, chapters and calculators for Class 10, 11 and 12</span
+          >
+        </span>
+        <span class="card-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <footer>Nothing else here. Go study. &mdash; Aryan</footer>
+    </main>
+  </body>
+</html>
