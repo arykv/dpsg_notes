@@ -3,9 +3,9 @@ import { useLocation } from 'react-router-dom'
 
 export const SITE = {
   name: 'All Nighter',
-  origin: 'https://dps-gandhinagar.in',
+  origin: 'https://allnighter.in',
   /** Used when a page has nothing more specific to say. */
-  image: 'https://dps-gandhinagar.in/school-campus.jpg',
+  image: 'https://allnighter.in/school-campus.jpg',
 }
 
 export interface PageMeta {
@@ -128,7 +128,7 @@ export const PAGES: PageMeta[] = [
     title: 'About All Nighter & how to add your notes',
     description:
       'A student-run study library — who made it, why it’s free, and how to send in your own notes to be published with your name on them.',
-    intent: ['dpsg notes contribute', 'submit notes dps gandhinagar'],
+    intent: ['all nighter contribute notes', 'submit cbse notes'],
   },
 ]
 
