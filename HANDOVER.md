@@ -2,6 +2,11 @@
 
 Everything a new session needs to pick this up. Written 28 July 2026.
 
+> **Read `VISION.md` first.** This file is the technical state of the repo; that
+> one is the product direction, and it is newer. Where they disagree — most
+> importantly on the answer-sheet paywall, which no longer exists — `VISION.md`
+> wins.
+
 ---
 
 ## 1. What this is
@@ -62,7 +67,15 @@ His OSM (evaluated answer sheets) versus his marksheet:
 
 Three exact matches prove the OSM "Total Marks" field really is the theory total — so Chemistry
 and Physics genuinely gained marks. **Documented proof that CBSE moderation is real.** Almost
-nobody has both documents and thinks to compare them. This is not yet on the site and should be.
+nobody has both documents and thinks to compare them.
+
+**Shipped 28 Jul 2026 at `/results`** — both marksheets rebuilt as components plus this
+comparison, with the headline the numbers give you: **+9 marks, 91.0% → 92.8%.** Every figure on
+that page is computed from the per-subject marks in `src/data/results.ts`, so a typo shows up as a
+wrong percentage rather than as a quiet lie. `MY_RESULTS` now derives from there too.
+
+Per `VISION.md`, this is no longer "one asset" — it is the site's front door, and the pillar it
+opens ("what happens to your paper after you hand it in") is the top content priority.
 
 ---
 
@@ -191,9 +204,10 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
 
 ## 8. What's next
 
+> Sequencing now lives in `VISION.md` §10 (Wave 0 → 4). Traffic work comes before features.
+
 ### Content-complete v1 — no backend needed
-1. **Trust section** — both marksheets as components + the moderation comparison. *Highest value,
-   still not built.* Needs: which OSM pages he'll show redacted.
+1. ~~**Trust section**~~ — **done**, `/results`. See §2.
 2. **Book shelf** — MTG and others, with the required Amazon Associates disclosure.
    Needs: exact titles from him.
 3. **Wall charts** — the list already exists in `strategy.ts`; turn 3 into designed A3 PDFs,
@@ -205,10 +219,25 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
 - **The Desk** — drag-and-drop binder assembly, saved to `localStorage`
 
 ### Blocked or needs decisions
-- **OSM answer sheets — decided 28 Jul 2026.** *Computer Science (98) goes up free in full.*
-  The other four (Physics, Chemistry, Maths, English) are paywalled.
+- **OSM answer sheets — decision REVERSED, see `VISION.md` §4.** There is no paywall and no
+  published scans. **The analysis is free for all five subjects; the original scans are never
+  published.** Nobody wants to buy 35 pages of someone else's handwriting — they want to
+  understand how marks are awarded. The analysis was always the product; the scans were only ever
+  the evidence. (The earlier plan — CS free in full, the other four paywalled — also contradicted
+  "everything essential stays free", and a paywall on a static site is cosmetic regardless.)
 
-  Source PDFs are in `~/Downloads`, not yet in the repo:
+  **Privacy check on Computer Science is COMPLETE** (28 Jul 2026). All 35 pages rendered and
+  visually inspected, and the cover QR decoded — it is `817445528`, the same barcode already
+  printed as text on page 1. No name, no roll number, no parents' names, no DOB anywhere in the
+  document. The per-page QR stamps are ~25px of scan data and are undecodable by anyone.
+  Page 1 also independently confirms the moderation table: it prints `Total Marks: 68` for CS,
+  matching the marksheet's theory column exactly.
+
+  Useful method note for the other four: `pymupdf` renders pages (`page.get_pixmap(dpi=105)`) and
+  OpenCV's `QRCodeDetector` decodes the cover QR at 600 dpi. Page 1 of each script is real text,
+  so `page.get_text()` reads the marks summary directly.
+
+  Source PDFs are in `~/Downloads`, and stay out of the repo:
 
   | Subject | File | Pages |
   |---|---|---|
@@ -219,21 +248,12 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
   | English Core | `A8C772D1-B5C5-41D9-8237-9F21ACA3BAAB-2.pdf` | 35 |
 
   Page 1 of each is the **question-wise marks summary** as real text — no name, no roll number,
-  just a barcode. It's the most interesting page and the safest to show, so it's the natural
-  free preview for the paywalled four. Pages 2+ are pure scans of his handwriting.
+  just a barcode. Pages 2+ are pure scans of his handwriting. Every page still to be inspected
+  individually before any of it informs published copy; only CS has been checked so far.
 
-  **Outstanding before publishing the CS one: nobody has visually inspected pages 2–35.** Extract
-  the page images (`pip install 'pypdf[image]'`) and look for a roll number or name written on
-  the booklet. Do not publish unchecked.
-
-  Two blockers on the paywall itself: a paywall on a static site is cosmetic — anything under
-  `public/` is fetchable by URL, so paid PDFs must stay out of the deployment entirely. And he
-  can't take payments until April 2027. So build: CS free, marks-summary previews for the rest,
-  and an email-capture instead of a checkout.
-
-  Standing advice he's heard once: sell the **analysis** (reconstructed, annotated, typeset)
-  rather than raw scans. CBSE releases these for personal verification, and the typeset version
-  is more useful anyway.
+  What gets built from these: **educational walkthroughs, typeset.** Per question — what was
+  asked, what he wrote, what the examiner did to it, why the mark went the way it did, and how
+  he'd answer it today. Free, all five subjects. The scans stay private and stay out of `git`.
 - **Print pre-orders**, **contributor uploads + ₹25/copy royalties** (needs a backend),
   **multi-school**.
 

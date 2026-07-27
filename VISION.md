@@ -1,0 +1,275 @@
+# All Nighter — product direction
+
+Settled 28 July 2026, between Aryan and Claude, working from
+`All_Nighter_Strategy_Vision.md`. This supersedes that draft wherever they
+disagree — and they disagree in several important places.
+
+`HANDOVER.md` is the technical state of the repo. **This file is why.** When the
+two conflict, this one is newer.
+
+---
+
+## 1. Positioning
+
+> **All Nighter isn't where you study all year. It's where you go when you didn't.**
+
+Rejected: *"the operating system for CBSE students."* It's startup language, it
+demands infinite breadth, and it fights the one question that governs this
+project — *does this save a stressed student time?*
+
+The positioning above is defensible precisely because **no coaching company can
+honestly say it.** PW, Vedantu and Unacademy are built on long-term subscription
+engagement; "you can survive this in one night" destroys their model. Aryan
+scored 95.2% and 92.8% as a last-minute studier, twice. That asymmetry is the
+entire moat, and it is not clonable.
+
+### The governing principle
+
+> **Don't become broader. Become deeper.**
+
+Own one emotional moment completely: the student who has just realised the exam
+is tomorrow and needs someone trustworthy. Expansion means going deeper into the
+CBSE exam machine, not sideways into more boards.
+
+---
+
+## 2. The signature experience — "Pull an all nighter"
+
+The strategy draft listed nine features: *How Cooked Am I · Can I Still Score
+90 · Need 33 Marks · Panic Meter · Marks Predictor · Survival Kit Generator · If
+You Only Have 2 Hours · Emergency Revision Mode · Last Night Planner.*
+
+**They are all one feature.** Every one takes *(what you've got, how long you've
+got)* and returns *(an honest verdict, a plan)*. Nine names would be nine
+shallow toys on a Tools page. Build one thing instead.
+
+The brand name becomes the verb. One button:
+
+```
+Tomorrow's exam?  Let's survive it.
+[ Pull an all nighter → ]
+```
+
+Three questions — **three taps, not three text fields.** At 11pm on a phone in
+the dark, typing is a tax:
+
+| Question | Interaction |
+|---|---|
+| Which paper? | Tap a subject chip |
+| When is it? | Pre-filled from the CBSE date sheet, one tap to confirm |
+| How prepared are you? | Three honest options, not a slider |
+
+Then the site empties out: countdown, hour-by-hour plan to the exam, and *inside
+that plan* the chapters, formula sheets, PYQs and videos for those hours.
+Nothing else on screen.
+
+### Two rules for the verdict
+
+1. **Never flatter.** If they're cooked, say cooked. The credibility of this
+   entire site is that it doesn't lie about marks — that has to hold here too.
+2. **Never hopeless.** Brutal about the situation, never about the person. There
+   is always a plan, even if the plan is small.
+
+### The sleep recommendation is the most important part
+
+A study site telling you to stop studying and go to bed is the moment a student
+screenshots it and sends it to a friend. It is also just true. Do not soften it
+into a suggestion.
+
+---
+
+## 3. Moderation is the front door, not a feature
+
+The strategy draft listed "moderation evidence" as one bullet among eleven. It is
+the only unclonable, search-winnable asset this project owns. Nobody else in
+India has both documents and thought to line them up.
+
+`/results` ships the evidence: **+9 marks across five papers, 91.0% → 92.8%,
+three subjects matching exactly.**
+
+The pillar it opens — **"what actually happens to your paper after you hand it
+in"** — is the highest-priority content on the roadmap. It is unowned, it answers
+high-anxiety queries with no authoritative answer anywhere (`is cbse moderation
+real`, `does cbse give grace marks`), and it is *reassuring*, which is the
+emotional job this site does.
+
+Material already in hand from the Computer Science script: the barcode, the QR
+stamp on every page, the examiner's green ticks and red circles, the "Blank Page"
+stamps, the rough-work page, the OSM ordering window, and the +7 on Chemistry.
+
+---
+
+## 4. Answer sheets — decided, and it reverses the earlier plan
+
+**There is no paywall. There was never going to be a working one.**
+
+| | |
+|---|---|
+| **Free, all five subjects** | The analysis — annotations, why each mark was awarded, why marks were lost, how he'd answer it today, what moderation did |
+| **Never published** | The original full scans |
+
+Reasoning: the earlier plan (CS free, four subjects paywalled) contradicted
+*"everything essential stays free"*, and a paywall on a static site is cosmetic
+anyway — anything under `public/` is fetchable by URL. More to the point,
+**nobody wants to buy 35 pages of someone else's handwriting.** They want to
+understand how marks are awarded. The analysis was always the product; the scans
+were only ever the evidence.
+
+This supersedes HANDOVER.md §8's "Computer Science free in full, the other four
+paywalled."
+
+**Privacy check on the CS script is complete** — all 35 pages inspected
+28 Jul 2026, plus the cover QR decoded (`817445528`, the same barcode already
+printed as text on page 1). No name, no roll number, no parents' names, no DOB
+anywhere in the document. Even so, under the decision above the raw scans stay
+out of the repo; only the analysis is published.
+
+---
+
+## 5. What we don't build
+
+**No AI chatbot. No AI answer evaluator.** Students already have ChatGPT, Gemini,
+Claude and Perplexity free in their pocket, and all four are better than anything
+we'd ship. It saves zero time versus what they have, it costs money per query on
+a project with ₹0 revenue, and one confidently wrong answer burns the only asset
+we own. Our advantage is curation, honesty and knowing what a student actually
+needs — not intelligence.
+
+**No parent section.** A tab written for parents collides with a voice built on
+*"I've been through this."* Instead: **one printable page, no tab.** The student
+sends it to their mum. That makes it a gift the student gives rather than a room
+the site keeps — and unlike a tab, it travels through family WhatsApp.
+
+**No school-ambassador programme yet.** Build the product first and see whether
+students want to contribute. Don't engineer a community before product-market
+fit.
+
+---
+
+## 6. Notes stay handwritten, wrapped in HTML
+
+A handwritten note's value *is* the handwriting; converting it to a webpage
+destroys what made it worth having. But PDF-only is invisible to Google.
+
+So each note gets a page that carries: **a summary, the topics covered, quick
+navigation, and a download button** — with the handwritten document as the
+primary content. Authenticity intact, discoverability fixed.
+
+(Currently moot: Uday's 8 handwritten PDFs are archived to `archive/notes/` and
+off the site. This is the pattern to apply when notes return.)
+
+---
+
+## 7. Email — 5 to 10 a year, every one earning its place
+
+No newsletter. Nobody reads a newsletter. Send only:
+
+- The OSM ordering window opening — **and closing**
+- Date sheet released
+- A major new moderation article
+- A significant new calculator
+- A new printable revision kit
+
+This is the one email a CBSE student genuinely wants, it's time-critical, nothing
+else on the internet does it well, and **it returns every year on its own.** Frame
+every capture on the site as deadline alerts, never as "subscribe".
+
+---
+
+## 8. Voice
+
+Useful is the floor. Memorable is the goal. The small moments are what students
+remember:
+
+> *"You're medium rare."*
+> *"Go sleep. Seriously."*
+> *"You've done enough for tonight."*
+> *"Drink some water."*
+
+Honest, warm, never a motivational poster. Never *"wake up at 5 AM."* Always
+*"I've already been through this, here's exactly what you need."*
+
+Imperfection builds trust: his worst paper, the methods that failed, the marks
+that were bad. Keep publishing those.
+
+---
+
+## 9. Growth
+
+**The link preview is the product.** For most WhatsApp impressions the OG card is
+the entire experience. One generic sitewide image is leaving the single cheapest
+win on the table — per-page cards carrying a *number* (*"+9 marks. CBSE
+moderation is real."*) will outperform any feature here for an afternoon's work.
+
+Distribution: Google, WhatsApp, Reddit, friends. Never advertising. The target
+sentence is *"bro, just use All Nighter"* — which is why the flagship feature is
+named so that the sentence says itself.
+
+---
+
+## 10. Sequence
+
+Traffic before features. **The site currently has no Search Console submission at
+all** — building experiences for zero visitors is malpractice.
+
+### Wave 0 — unglamorous, highest ROI, days not weeks
+- Search Console + sitemap, both domains
+- Kill the stale `dps-gandhinagar.in` copy — it is currently splitting the
+  project's own search authority with duplicate content
+- Rename the repo to `allnighter`
+- Per-page OG images
+
+### Wave 1 — the moat
+- `/results` — **built**
+- The Computer Science answer-script walkthrough
+- The moderation explainer
+- "What happens to your paper after you hand it in"
+
+### Wave 2 — the signature
+Pull an all nighter.
+
+> ⚠️ **Content dependency, not yet costed.** The experience promises important
+> chapters, formula sheets, PYQs and last-minute videos *per subject*. Today the
+> site has NCERT chapter links and channel recommendations — no formula sheets,
+> no PYQs, no ranking of which chapters actually matter. The shell is a few days'
+> work and would be empty.
+>
+> **So: do one subject completely before widening.** Pick the highest-anxiety,
+> highest-volume paper, build it end to end, prove the experience is worth
+> having, then repeat. Five shallow subjects is the failure mode.
+
+### Wave 3 — the loop
+Deadline alerts · the parent one-pager · wall charts as free A3 PDFs (which
+double as the first real demand test for printed products)
+
+### Wave 4 — only if 1–3 land
+Pre-orders · contributors · other boards
+
+---
+
+## 11. The tension to decide consciously, not drift into
+
+The moat is **one person's honest voice with receipts.** Phase 3 of the strategy
+draft was *more schools, more boards, ambassadors.*
+
+These are in direct opposition. Fifty contributors and one honest voice cannot
+coexist — scale the contributors and *"here's my worst paper"* becomes *"here's
+our content,"* which is the moment the trust evaporates.
+
+Current call: **a small permanent authority over a big generic platform.** Expand
+by depth, not breadth.
+
+Open and worth answering early: Aryan is class of 2026. Who runs this in 2028,
+and does the voice survive the handover?
+
+---
+
+## 12. Revenue
+
+₹0 for now, deliberately. He is 17 until April 2027, which blocks every Indian
+payment gateway (18+ with PAN). That constraint is doing the strategy a favour —
+build assets, not income.
+
+When money does arrive it comes from **convenience and physical objects**: printed
+revision kits, flashcards, wall charts, planners, offline packs. Never from
+information. Students pay for convenience; parents pay for quality.
