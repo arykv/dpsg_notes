@@ -43,6 +43,27 @@ export default function Paper() {
         said that instead of guessing.
       </motion.p>
 
+      {/* The document itself, offered before any of the claims about it. */}
+      <motion.aside
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+        className="surface border-line-strong mt-8 rounded-[6px] border p-5"
+      >
+        <p className="eyebrow">Don't take my word for it</p>
+        <h2 className="mt-1.5 text-[17px]">The whole script is on this site, all 35 pages</h2>
+        <p className="text-muted mt-2 text-[14px] leading-relaxed">
+          Every page of the evaluated paper, exactly as CBSE returned it — the ticks, the crosses,
+          the blank pages and the rough work. Only the script's barcode is covered. Everything
+          claimed below can be checked against it.
+        </p>
+        <div className="mt-4">
+          <ButtonLink to="/paper/script" size="sm" variant="mark">
+            See all 35 pages
+          </ButtonLink>
+        </div>
+      </motion.aside>
+
       <Journey />
       <Anatomy />
       <MarksSummary />

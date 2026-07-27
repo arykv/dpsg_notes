@@ -143,6 +143,29 @@ export const MODERATION: ModerationRow[] = [
 
 export const moderationGain = (r: ModerationRow) => r.marksheet - r.osm
 
+/**
+ * Chemistry's question-wise marks add up to 51.5, and the script prints 52.
+ *
+ * It is the only one of the five that doesn't reconcile exactly, and there's a
+ * clean reason: it's the only paper with an *odd* number of half-marks (11).
+ * Physics had 10, English 4, Maths 2 — all even, so they landed on whole
+ * numbers and needed no rounding at all. Computer Science was marked in whole
+ * marks throughout.
+ *
+ * So a fractional script total is rounded up before moderation is applied,
+ * which makes Chemistry's real journey 51.5 → 52 → 59.
+ */
+export const CHEMISTRY_RAW = 51.5
+
+/** Half-marks counted in each script's question-wise summary. */
+export const HALF_MARKS: Record<string, number> = {
+  'Computer Science': 0,
+  Mathematics: 2,
+  'English Core': 4,
+  Physics: 10,
+  Chemistry: 11,
+}
+
 /** Total marks added across all five papers. */
 export const TOTAL_MODERATION = MODERATION.reduce((n, r) => n + moderationGain(r), 0)
 

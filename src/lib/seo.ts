@@ -213,6 +213,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/paper/script',
+    title: 'A real evaluated CBSE answer script — all 35 pages',
+    description:
+      'My whole Class 12 Computer Science answer book exactly as CBSE returned it after evaluation: every page, every tick, every red cross, the blank pages and the rough work. Only the script barcode is covered. Probably the only complete evaluated CBSE script published anywhere.',
+    intent: [
+      'cbse evaluated answer sheet sample',
+      'what does a checked cbse answer sheet look like',
+      'cbse answer script photocopy example',
+      'cbse topper answer sheet computer science',
+      'osm answer book scan',
+    ],
+    og: {
+      kicker: 'The whole document',
+      headline: 'A real evaluated CBSE answer script, every page',
+      stat: '35',
+      statLabel: 'pages, nothing left out',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:

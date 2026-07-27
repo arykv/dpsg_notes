@@ -123,6 +123,17 @@ export function Marksheet({ sheet }: { sheet: MarksheetData }) {
         </span>
       </motion.div>
 
+      {/* The practical column deserves a warning label. */}
+      {hasInternal && (
+        <p className="border-line text-muted border-t px-5 py-3 text-[12px] leading-relaxed">
+          <span className="eyebrow mr-2">On that column</span>
+          Don't read too much into the practical marks. At my school they only ever ran 28 to 30 out
+          of 30 — I never saw 25 or 26 on anyone's, and getting less than that would have meant
+          something had actually gone wrong. Other schools may mark them differently. It's the
+          theory column that's earned in the exam hall, and it's the only one CBSE moderates.
+        </p>
+      )}
+
       {/* The withheld fields. Naming them is the trust signal. */}
       <div className="border-line text-faint flex items-start gap-2.5 border-t px-5 py-3 text-[12px] leading-relaxed">
         <EyeOff className="mt-0.5 size-3.5 shrink-0" aria-hidden />

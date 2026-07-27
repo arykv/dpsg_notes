@@ -82,6 +82,15 @@ const PAGES: SearchItem[] = [
       'answer script osm evaluated copy checking examiner marking scanned barcode question wise marks summary re-evaluation photocopy how are papers checked',
   },
   {
+    id: 'page-script',
+    type: 'page',
+    title: 'My whole answer script',
+    subtitle: 'All 35 pages of a real evaluated CBSE paper',
+    to: '/paper/script',
+    keywords:
+      'answer sheet scan evaluated copy real example what does a checked paper look like osm computer science 083 evidence proof pages',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

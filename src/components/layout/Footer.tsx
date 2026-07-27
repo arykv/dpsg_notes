@@ -29,6 +29,7 @@ const COLUMNS = [
       { label: 'Results & proof', to: '/results' },
       { label: 'CBSE moderation', to: '/results#moderation' },
       { label: 'What happens to your paper', to: '/paper' },
+      { label: 'A real answer script', to: '/paper/script' },
       { label: 'About', to: '/about' },
       { label: 'Add your notes', to: '/about#contribute' },
     ],

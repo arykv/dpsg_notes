@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { ArrowUpRight, Equal, Plus } from 'lucide-react'
 import {
+  CHEMISTRY_RAW,
   CLASS_10,
   CLASS_12,
   EXACT_MATCHES,
@@ -237,6 +238,15 @@ function ModerationEvidence() {
           Nine marks across five papers. On the aggregate it's the difference between{' '}
           {formatPercent(PERCENT_WITHOUT_MODERATION)} and {formatPercent(withModeration)} — small
           enough that nobody would notice, large enough to move a cutoff.
+        </p>
+        <p>
+          There's a smaller adjustment underneath it that I only found by adding the question-wise
+          marks up by hand. On four of the five scripts the individual marks total exactly the
+          figure printed at the top. On Chemistry they come to <strong>{CHEMISTRY_RAW}</strong> and
+          the script prints <strong>52</strong>. Chemistry is also the only paper with an odd number
+          of half-marks — eleven of them, against ten in Physics, four in English and two in Maths,
+          all of which paired up into whole numbers. So a fraction gets rounded up before moderation
+          is applied at all, and Chemistry's real journey is {CHEMISTRY_RAW} → 52 → 59.
         </p>
         <p>
           Two things follow from this, and they pull in opposite directions. Moderation is real, so
