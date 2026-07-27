@@ -194,16 +194,16 @@ function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
             variants={rise}
             className="mt-8 max-w-4xl text-[2.4rem] leading-[1.02] sm:text-[3.4rem] lg:text-[4rem]"
           >
-            Every note, paper and timing this school runs on —{' '}
-            <span className="marked">in one place</span>.
+            Everything you need at{' '}
+            <span className="marked">11pm the night before</span>.
           </motion.h1>
 
           <motion.p
             variants={rise}
             className="text-muted mt-6 max-w-lg text-[15px] leading-relaxed"
           >
-            Free, no login, and nothing buried six clicks deep. Start typing and it&rsquo;ll be
-            open before you finish the word.
+            Every NCERT chapter, notes, calculators and honest exam strategy — for Class 10,
+            11 and 12. Free, no login, and nothing buried six clicks deep.
           </motion.p>
 
           <div className="mt-9 grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">

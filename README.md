@@ -1,11 +1,13 @@
-# DPSG Notes
+# All Nighter
 
-The student hub for **Delhi Public School, Gandhinagar** — notes, every NCERT chapter, bell
-timings, CBSE calculators and a checked directory of everything else, in one searchable place.
+**Everything you need at 11pm the night before.** Every NCERT chapter for Class 10, 11 and 12,
+handwritten notes, CBSE calculators, honest exam strategy and a checked directory of free
+resources — in one searchable place.
 
-Live at **[dps-gandhinagar.in](https://dps-gandhinagar.in)**.
+Live at **[allnighter.in](https://allnighter.in)**, and at
+**[dps-gandhinagar.in](https://dps-gandhinagar.in)** where it started.
 
-> Built by students, for students. Not an official school site.
+> Built by students, for students. Not affiliated with any school or board.
 
 ---
 

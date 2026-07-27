@@ -44,10 +44,10 @@ export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
         <Link
           to="/"
           className="group flex shrink-0 items-center gap-2.5"
-          aria-label="DPSG Notes — home"
+          aria-label="All Nighter — home"
         >
           <span className="border-line-strong text-mark grid h-7 place-items-center rounded-[3px] border px-1.5 font-mono text-[11px] font-medium tracking-[0.1em]">
-            DPSG
+            AN
           </span>
           <span className="font-display hidden text-[15px] font-bold tracking-tight sm:block">
             Notes

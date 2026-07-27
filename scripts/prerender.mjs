@@ -67,7 +67,6 @@ function schemaFor(page) {
     '@id': SITE.origin + '/#author',
     name: 'Aryan Rao',
     url: 'https://github.com/arykv',
-    affiliation: { '@type': 'EducationalOrganization', name: 'Delhi Public School, Gandhinagar' },
   }
 
   const site = {
@@ -97,10 +96,7 @@ function schemaFor(page) {
     isPartOf: { '@id': SITE.origin + '/#website' },
     inLanguage: 'en-IN',
     author: { '@id': SITE.origin + '/#author' },
-    about: {
-      '@type': 'EducationalOrganization',
-      name: 'Delhi Public School, Gandhinagar',
-    },
+    about: { '@type': 'Thing', name: 'CBSE Class 10, 11 and 12 study material' },
   }
 
   // Breadcrumbs on anything below the root.

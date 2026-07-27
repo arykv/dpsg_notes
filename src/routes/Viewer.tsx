@@ -35,9 +35,9 @@ export default function Viewer() {
   }, [resource, push])
 
   useEffect(() => {
-    if (resource) document.title = `${resource.title} — DPSG Notes`
+    if (resource) document.title = `${resource.title} — All Nighter`
     return () => {
-      document.title = 'DPSG Notes — everything you need for school, in one place'
+      document.title = 'All Nighter — everything you need at 11pm the night before'
     }
   }, [resource])
 

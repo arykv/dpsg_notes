@@ -40,12 +40,12 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5">
               <span className="border-line-strong text-mark grid h-7 place-items-center rounded-[3px] border px-1.5 font-mono text-[11px] font-medium tracking-[0.1em]">
-                DPSG
+                AN
               </span>
               <span className="font-display text-[15px] font-bold tracking-tight">Notes</span>
             </div>
             <p className="text-muted mt-4 max-w-xs text-sm leading-relaxed">
-              A student-run library for DPS Gandhinagar. Free, no sign-up, and it stays that way.
+              A study library run by students, for students. Free, no sign-up, and it stays that way.
             </p>
             <div className="mt-5 flex gap-2">
               <a
@@ -88,11 +88,11 @@ export function Footer() {
 
         <div className="border-line text-faint mt-12 flex flex-col gap-3 border-t pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>
-            Not an official DPS Gandhinagar site. Notes belong to the students who wrote them.
+            Not affiliated with any school or board. Notes belong to the students who wrote them.
           </p>
           {/* Quiet, but on every page and machine-readable via rel="author". */}
           <p className="tabular">
-            <span>&copy; {YEAR} DPSG Notes</span>
+            <span>&copy; {YEAR} All Nighter</span>
             <span aria-hidden className="mx-1.5 opacity-50">
               ·
             </span>

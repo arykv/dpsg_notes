@@ -135,8 +135,8 @@ export function CommandPalette({
                   'rounded-[8px] border shadow-[0_32px_80px_-24px_rgb(0_0_0/0.55)]',
                 )}
               >
-                <Dialog.Title className="sr-only">Search DPSG Notes</Dialog.Title>
-                <Command shouldFilter={false} loop label="Search DPSG Notes">
+                <Dialog.Title className="sr-only">Search All Nighter</Dialog.Title>
+                <Command shouldFilter={false} loop label="Search All Nighter">
             <div className="border-line flex items-center gap-3 border-b px-4">
               <Command.Input
                 autoFocus

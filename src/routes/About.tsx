@@ -43,7 +43,7 @@ export default function About() {
       <SectionHead
         eyebrow="About"
         title="A library, not a product"
-        description="Built by students at DPS Gandhinagar, for students at DPS Gandhinagar."
+        description="Started at DPS Gandhinagar, open to anyone sitting the same papers."
       />
 
       <motion.div
@@ -102,7 +102,7 @@ export default function About() {
 
           <div className="mt-6 flex flex-wrap gap-2">
             <ButtonLink
-              to="mailto:dpsgnotes@gmail.com?subject=Notes%20for%20DPSG%20Notes"
+              to="mailto:dpsgnotes@gmail.com?subject=Notes%20for%20All%20Nighter"
               external
               variant="primary"
               size="md"

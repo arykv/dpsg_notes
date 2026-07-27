@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 export const SITE = {
-  name: 'DPSG Notes',
+  name: 'All Nighter',
   origin: 'https://dps-gandhinagar.in',
   /** Used when a page has nothing more specific to say. */
   image: 'https://dps-gandhinagar.in/school-campus.jpg',
@@ -30,10 +30,15 @@ export interface PageMeta {
 export const PAGES: PageMeta[] = [
   {
     path: '/',
-    title: 'DPSG Notes — free notes, NCERT chapters & CBSE tools for DPS Gandhinagar',
+    title: 'All Nighter — everything you need at 11pm the night before',
     description:
-      'Free study site for DPS Gandhinagar students. Handwritten notes, all 316 NCERT chapters for Class 11 and 12, CBSE percentage and attendance calculators, bell timings. No login, no ads.',
-    intent: ['dps gandhinagar notes', 'dpsg notes', 'dps gandhinagar study material'],
+      'Free CBSE study site for Class 10, 11 and 12. All 395 NCERT chapters, handwritten notes, percentage and attendance calculators, and honest exam strategy from a student who scored 95.2% and 92.8% studying last minute. No login, no ads.',
+    intent: [
+      'cbse study material class 10 11 12',
+      'ncert chapters pdf free',
+      'last minute cbse revision',
+      'dps gandhinagar notes',
+    ],
   },
   {
     path: '/chapters/class-10',
@@ -120,9 +125,9 @@ export const PAGES: PageMeta[] = [
   },
   {
     path: '/about',
-    title: 'About DPSG Notes & how to add your notes',
+    title: 'About All Nighter & how to add your notes',
     description:
-      'A student-run library for DPS Gandhinagar — who made it, why it’s free, and how to send in your own notes to be published with your name on them.',
+      'A student-run study library — who made it, why it’s free, and how to send in your own notes to be published with your name on them.',
     intent: ['dpsg notes contribute', 'submit notes dps gandhinagar'],
   },
 ]

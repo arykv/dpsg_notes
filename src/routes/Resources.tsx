@@ -259,7 +259,7 @@ function Contribute() {
         trust what they find.
       </p>
       <ButtonLink
-        to="mailto:dpsgnotes@gmail.com?subject=Resource%20for%20DPSG%20Notes&body=What%20it%20is%3A%0AClass%20and%20subject%3A%0AYour%20name%20(for%20credit)%3A%0A%0A(attach%20the%20file%20or%20paste%20the%20link)"
+        to="mailto:dpsgnotes@gmail.com?subject=Resource%20for%20All%20Nighter&body=What%20it%20is%3A%0AClass%20and%20subject%3A%0AYour%20name%20(for%20credit)%3A%0A%0A(attach%20the%20file%20or%20paste%20the%20link)"
         external
         variant="primary"
         size="md"
