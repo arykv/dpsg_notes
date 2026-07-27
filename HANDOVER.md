@@ -258,10 +258,36 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
   **multi-school**.
 
 ### Admin still outstanding
-- `dps-gandhinagar.in` → add to Vercel as a redirect (currently a stale Pages copy — duplicate
-  content risk)
-- Google Search Console + sitemap submission — never done, for either domain
-- Rename the repo to `allnighter`
+
+- ~~`dps-gandhinagar.in`~~ — **done 28 Jul 2026.** It was not merely stale: GitHub Pages was
+  serving a *stuck deployment of the whole site*, frozen at whatever the last (since-deleted)
+  workflow run built. It 404'd on every route added after it and competed with allnighter.in for
+  the same content. Pages now publishes the orphan **`legacy-domain`** branch — one page saying
+  who owns the domain, `noindex, follow` on every page, `404.html` so old deep links land
+  somewhere human. Editing it: push to `legacy-domain`; don't merge `main` into it and don't
+  delete its `CNAME`. Note the Pages API does **not** rebuild when you change the source branch —
+  `gh api -X POST repos/<owner>/<repo>/pages/builds` after any change.
+
+- **Google Search Console — still not done, and it needs Aryan's Google login.** Everything on
+  our side is ready: `robots.txt` allows everything and points at the sitemap, `sitemap.xml` is
+  regenerated on every build with all 12 routes, every route is prerendered with its own title,
+  description, canonical and OG card. The remaining steps are:
+
+  1. <https://search.google.com/search-console> → add a **Domain** property for `allnighter.in`
+     (domain, not URL-prefix — it covers www and both protocols in one).
+  2. It will give a **TXT record** to add at the registrar. That's the only verification method
+     for a domain property.
+  3. Sitemaps → submit `sitemap.xml`.
+  4. URL Inspection → request indexing for `/`, `/results` and `/paper` by hand. Those three are
+     the pages worth ranking first.
+  5. **Do not add `dps-gandhinagar.in` as a property to get it indexed** — it's deliberately
+     `noindex` now. Only add it if you want to use *Removals* to flush the old URLs faster; they
+     will drop out on their own as Google recrawls and hits the 404s.
+
+- Rename the repo to `allnighter` — deliberately left until last, because renaming can disturb
+  Vercel's Git connection and it isn't worth risking a working deploy pipeline mid-session.
+  After renaming: `git remote set-url origin …`, then push a trivial commit and confirm Vercel
+  still builds. If it doesn't, reconnect the repo in the Vercel dashboard.
 
 ---
 

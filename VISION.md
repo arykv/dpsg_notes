@@ -213,17 +213,26 @@ Traffic before features. **The site currently has no Search Console submission a
 all** — building experiences for zero visitors is malpractice.
 
 ### Wave 0 — unglamorous, highest ROI, days not weeks
-- Search Console + sitemap, both domains
-- Kill the stale `dps-gandhinagar.in` copy — it is currently splitting the
-  project's own search authority with duplicate content
-- Rename the repo to `allnighter`
-- Per-page OG images
+- ~~Kill the duplicate `dps-gandhinagar.in` copy~~ — **done.** See HANDOVER §8.
+- ~~Per-page OG images~~ — **done.** Every route renders its own card at build
+  time, leading with a number where there's an honest one.
+- Search Console + sitemap — **blocked on Aryan's Google login.** Everything on
+  our side is ready; the exact steps are in HANDOVER §8.
+- Rename the repo to `allnighter` — last, so a rename can't disturb Vercel's Git
+  connection while there's still work shipping.
 
 ### Wave 1 — the moat
-- `/results` — **built**
-- The Computer Science answer-script walkthrough
-- The moderation explainer
-- "What happens to your paper after you hand it in"
+- ~~`/results`~~ — **shipped.** Both marksheets plus the moderation receipt.
+- ~~"What happens to your paper after you hand it in"~~ — **shipped** at
+  `/paper`. The journey, the anatomy of the booklet, the full transcribed
+  question-wise marks summary, and six lessons. Its best moment is arithmetic:
+  the unasterisked rows total 68, exactly the printed total, which turns the
+  footnote from a claim into a proof.
+- Still to do: the per-question Computer Science walkthrough — what was asked,
+  what he wrote, what the examiner did to it, and how he'd answer it today.
+  That one needs Aryan, not just the document.
+- Still to do: the same treatment for the other four subjects. Each needs its
+  35 pages inspected individually first; only CS has been checked.
 
 ### Wave 2 — the signature
 Pull an all nighter.
