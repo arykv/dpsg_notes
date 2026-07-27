@@ -95,6 +95,15 @@ export const MY_RESOURCES: StudySource[] = [
     },
   },
   {
+    id: 'experiential-physics',
+    name: 'Experiential Physics',
+    handle: '@experientialphysics',
+    href: 'https://www.youtube.com/@experientialphysics',
+    grades: [11, 12],
+    subjects: ['Physics practicals'],
+    note: 'This is my own school physics teacher, and the videos are lovely. Practicals are 30 marks and most people prepare for them the night before — this is the shortcut to doing them properly.',
+  },
+  {
     id: 'chatgpt',
     name: 'ChatGPT',
     handle: '',

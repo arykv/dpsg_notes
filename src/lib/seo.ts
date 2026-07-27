@@ -88,6 +88,19 @@ export const PAGES: PageMeta[] = [
     ],
   },
   {
+    path: '/strategy',
+    title: 'CBSE exam strategy from a 95.2% and 92.8% student — what actually worked',
+    description:
+      'How to use the 15 minutes of reading time, what order to attempt in, why you should never cut an answer, what to do when you run out of time, and an honest subject-by-subject account including the paper I got wrong. Plus what CBSE moderation really looks like.',
+    intent: [
+      'cbse exam strategy class 12',
+      'how to score good marks in cbse boards',
+      'cbse reading time 15 minutes tips',
+      'cbse moderation grace marks',
+      'how to write board exam answers',
+    ],
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:

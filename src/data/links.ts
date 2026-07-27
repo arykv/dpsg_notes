@@ -19,6 +19,20 @@ export const LINKS: ResourceLink[] = [
     category: 'cbse',
   },
   {
+    id: 'cbse-curriculum-2026',
+    label: 'Curriculum & chapter-wise weightage 2025–26',
+    href: 'https://cbseacademic.nic.in/curriculum_2026.html',
+    description: 'The official syllabus per subject, including how many marks each unit carries. Plan revision from this, not from a guess.',
+    category: 'cbse',
+  },
+  {
+    id: 'cbse-curriculum-2027',
+    label: 'Curriculum & weightage 2026–27',
+    href: 'https://cbseacademic.nic.in/curriculum_2027.html',
+    description: 'Next session’s syllabus, for whoever is starting the year.',
+    category: 'cbse',
+  },
+  {
     id: 'cbse-sqp-12',
     label: 'Class 12 sample papers',
     href: 'https://cbseacademic.nic.in/SQP_CLASSXII_2025-26.html',
