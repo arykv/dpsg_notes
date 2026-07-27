@@ -2,7 +2,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import App from './App'
 
-export { PAGES, SITE } from './lib/seo'
+export { PAGES, SITE, ogImageFor } from './lib/seo'
 
 /**
  * Renders one route to HTML at build time.

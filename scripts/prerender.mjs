@@ -11,12 +11,20 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { buildOgImages } from './og.mjs'
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const dist = join(root, 'dist')
 
 const ssr = join(root, '.ssr')
-const { render, PAGES, SITE } = await import(join(ssr, 'entry-server.js'))
+const { render, PAGES, SITE, ogImageFor } = await import(join(ssr, 'entry-server.js'))
+
+// Link previews first — a card that failed to render should fail the build,
+// not ship as a broken image in someone's WhatsApp.
+const cards = await buildOgImages(PAGES, join(dist, 'og'))
+console.log(
+  `\nOG cards (${cards.length}, ${cards.reduce((n, c) => n + c.kb, 0).toFixed(0)} kB total)`,
+)
 
 const template = await readFile(join(dist, 'index.html'), 'utf8')
 
@@ -26,6 +34,7 @@ const attr = (s) =>
 
 function withMeta(html, page, appHtml) {
   const url = SITE.origin + page.path
+  const image = ogImageFor(page.path)
   let out = html
 
   out = out.replace(/<title>[\s\S]*?<\/title>/, `<title>${attr(page.title)}</title>`)
@@ -48,6 +57,10 @@ function withMeta(html, page, appHtml) {
   out = out.replace(
     /<meta property="og:url"[^>]*>/,
     `<meta property="og:url" content="${attr(url)}" />`,
+  )
+  out = out.replace(
+    /<meta property="og:image"[^>]*>/,
+    `<meta property="og:image" content="${attr(image)}" />\n    <meta property="og:image:width" content="1200" />\n    <meta property="og:image:height" content="630" />\n    <meta name="twitter:image" content="${attr(image)}" />`,
   )
 
   out = out.replace('</head>', `  <script type="application/ld+json">${JSON.stringify(schemaFor(page))}</script>\n  </head>`)

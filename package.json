@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "The student hub for DPS Gandhinagar \u2014 notes, papers, tools and everything else in one place.",
+  "description": "The student hub for DPS Gandhinagar — notes, papers, tools and everything else in one place.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir .ssr && node scripts/prerender.mjs",
@@ -26,6 +26,7 @@
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^26.1.1",
     "@types/react": "^19.1.12",

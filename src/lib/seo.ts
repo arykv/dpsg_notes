@@ -8,6 +8,27 @@ export const SITE = {
   image: 'https://allnighter.in/school-campus.jpg',
 }
 
+/**
+ * The link preview.
+ *
+ * Most shares of this site are one student sending it to another the night
+ * before a paper, and in that message the card *is* the product — it gets seen
+ * far more often than the page does. So every route gets its own, and leads
+ * with a number wherever there's an honest one to lead with.
+ *
+ * `scripts/og.mjs` renders these to PNG at build time.
+ */
+export interface OgCard {
+  /** Mono caps line above everything. Two or three words. */
+  kicker: string
+  /** The claim. Wrapped and auto-shrunk to fit, but shorter always reads better. */
+  headline: string
+  /** The one big marigold figure. Omit when the page has no honest number. */
+  stat?: string
+  /** What the figure means, in mono caps beside it. */
+  statLabel?: string
+}
+
 export interface PageMeta {
   path: string
   title: string
@@ -15,6 +36,13 @@ export interface PageMeta {
   /** Extra terms this page should be findable by. Not a keywords meta tag —
    *  these are worked into the visible copy, which is what actually counts. */
   intent: string[]
+  og: OgCard
+}
+
+/** Where a page's card lives once built. `/chapters/class-10` → `/og/chapters-class-10.png`. */
+export function ogImageFor(path: string): string {
+  const slug = path === '/' ? 'home' : path.replace(/^\/|\/$/g, '').replace(/\//g, '-')
+  return `${SITE.origin}/og/${slug}.png`
 }
 
 /**
@@ -39,6 +67,12 @@ export const PAGES: PageMeta[] = [
       'last minute cbse revision',
       'dps gandhinagar notes',
     ],
+    og: {
+      kicker: 'Free CBSE study site',
+      headline: 'Everything you need at 11pm the night before',
+      stat: '395',
+      statLabel: 'NCERT chapters',
+    },
   },
   {
     path: '/chapters/class-10',
@@ -50,6 +84,12 @@ export const PAGES: PageMeta[] = [
       'class 10 science ncert pdf',
       'class 10 sst ncert chapter pdf',
     ],
+    og: {
+      kicker: 'NCERT Class 10',
+      headline: 'Every chapter, as a direct PDF',
+      stat: '84',
+      statLabel: 'chapters',
+    },
   },
   {
     path: '/chapters/class-11',
@@ -61,6 +101,12 @@ export const PAGES: PageMeta[] = [
       'class 11 physics ncert pdf',
       'class 11 chemistry ncert chapter pdf',
     ],
+    og: {
+      kicker: 'NCERT Class 11',
+      headline: 'Every chapter, as a direct PDF',
+      stat: '161',
+      statLabel: 'chapters',
+    },
   },
   {
     path: '/chapters/class-12',
@@ -72,6 +118,12 @@ export const PAGES: PageMeta[] = [
       'class 12 physics ncert pdf',
       'class 12 chemistry ncert chapter pdf',
     ],
+    og: {
+      kicker: 'NCERT Class 12',
+      headline: 'Every chapter, as a direct PDF',
+      stat: '150',
+      statLabel: 'chapters',
+    },
   },
   {
     path: '/library',
@@ -79,6 +131,10 @@ export const PAGES: PageMeta[] = [
     description:
       'Handwritten notes scanned and shared by students, filterable by class, stream and subject. Every file credited to whoever wrote it. Free to read and download.',
     intent: ['class 11 handwritten notes pdf', 'physics handwritten notes class 11'],
+    og: {
+      kicker: 'Notes library',
+      headline: 'Handwritten notes, credited to whoever wrote them',
+    },
   },
   {
     path: '/tools',
@@ -91,6 +147,12 @@ export const PAGES: PageMeta[] = [
       '75 percent attendance calculator',
       'cgpa to percentage cbse',
     ],
+    og: {
+      kicker: 'CBSE calculators',
+      headline: 'Best of five, attendance, and what your last paper needs',
+      stat: '6',
+      statLabel: 'calculators',
+    },
   },
   {
     path: '/strategy',
@@ -104,6 +166,12 @@ export const PAGES: PageMeta[] = [
       'cbse moderation grace marks',
       'how to write board exam answers',
     ],
+    og: {
+      kicker: 'Exam strategy',
+      headline: 'What I actually did in the exam hall',
+      stat: '92.8%',
+      statLabel: 'studying last minute',
+    },
   },
   {
     path: '/results',
@@ -117,6 +185,12 @@ export const PAGES: PageMeta[] = [
       'osm answer sheet vs marksheet difference',
       'how many marks does cbse add',
     ],
+    og: {
+      kicker: 'The evidence',
+      headline: 'CBSE moderation is real. Here’s the receipt.',
+      stat: '+9',
+      statLabel: 'marks, across five papers',
+    },
   },
   {
     path: '/resources',
@@ -128,6 +202,10 @@ export const PAGES: PageMeta[] = [
       'free cbse study resources',
       'cbse sample papers download',
     ],
+    og: {
+      kicker: 'Verified channels',
+      headline: 'The channels I actually studied from, and nothing else',
+    },
   },
   {
     path: '/day',
@@ -135,6 +213,10 @@ export const PAGES: PageMeta[] = [
     description:
       'See which period is running right now and how many minutes are left. Set your section’s bell timings once and this device remembers them.',
     intent: ['school bell timings', 'what period is it'],
+    og: {
+      kicker: 'School day',
+      headline: 'Which period is running, and how long is left',
+    },
   },
   {
     path: '/about',
@@ -142,6 +224,10 @@ export const PAGES: PageMeta[] = [
     description:
       'A student-run study library — who made it, why it’s free, and how to send in your own notes to be published with your name on them.',
     intent: ['all nighter contribute notes', 'submit cbse notes'],
+    og: {
+      kicker: 'About',
+      headline: 'A study library run by students, free and staying that way',
+    },
   },
 ]
 
@@ -165,11 +251,19 @@ export function useSeo(override?: { title?: string; description?: string }) {
     const title = override?.title ?? base.title
     const description = override?.description ?? base.description
 
+    // Only routes we actually have a card for; anything else keeps the last
+    // one rather than pointing at a 404 image.
+    const image = BY_PATH.has(pathname) ? ogImageFor(pathname) : undefined
+
     document.title = title
     setMeta('name', 'description', description)
     setMeta('property', 'og:title', title)
     setMeta('property', 'og:description', description)
     setMeta('property', 'og:url', SITE.origin + pathname)
+    if (image) {
+      setMeta('property', 'og:image', image)
+      setMeta('name', 'twitter:image', image)
+    }
     setLink('canonical', SITE.origin + pathname)
   }, [pathname, override?.title, override?.description])
 }
