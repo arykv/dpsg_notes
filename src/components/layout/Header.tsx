@@ -8,9 +8,15 @@ import { snap } from '@/lib/motion'
 import { Hint, Kbd } from '@/components/ui/primitives'
 import { PeriodBar } from '@/components/PeriodBar'
 
+/** Chapters has two pages under it, so a nav item matches its whole section. */
+function isSection(pathname: string, to: string): boolean {
+  const base = to.startsWith('/chapters') ? '/chapters' : to
+  return pathname === base || pathname.startsWith(base + '/')
+}
+
 const NAV = [
   { to: '/library', label: 'Library' },
-  { to: '/chapters', label: 'Chapters' },
+  { to: '/chapters/class-11', label: 'Chapters' },
   { to: '/resources', label: 'Resources' },
   { to: '/tools', label: 'Tools' },
   { to: '/day', label: 'School day' },
@@ -55,25 +61,30 @@ export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
             <NavLink
               key={item.to}
               to={item.to}
-              className={({ isActive }) =>
+              className={() =>
                 cn(
                   'relative rounded-[5px] px-3 py-1.5 text-[13px] font-medium transition-colors',
-                  isActive ? 'text-[var(--text)]' : 'text-muted hover:text-[var(--text)]',
+                  isSection(pathname, item.to)
+                    ? 'text-[var(--text)]'
+                    : 'text-muted hover:text-[var(--text)]',
                 )
               }
             >
-              {({ isActive }) => (
-                <>
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      transition={snap}
-                      className="surface-2 absolute inset-0 rounded-[5px]"
-                    />
-                  )}
-                  <span className="relative z-10">{item.label}</span>
-                </>
-              )}
+              {() => {
+                const isActive = isSection(pathname, item.to)
+                return (
+                  <>
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-pill"
+                        transition={snap}
+                        className="surface-2 absolute inset-0 rounded-[5px]"
+                      />
+                    )}
+                    <span className="relative z-10">{item.label}</span>
+                  </>
+                )
+              }}
             </NavLink>
           ))}
         </nav>
@@ -145,7 +156,7 @@ export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
                   onClick={() => setMenuOpen(false)}
                   className={cn(
                     'rounded-[5px] px-3 py-2.5 text-[15px] font-medium transition-colors',
-                    pathname === item.to
+                    isSection(pathname, item.to)
                       ? 'surface-2 text-[var(--text)]'
                       : 'text-muted active:surface-2',
                   )}

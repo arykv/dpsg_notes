@@ -8,9 +8,11 @@ const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({
 })
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() =>
-    document.documentElement.classList.contains('dark') ? 'dark' : 'light',
-  )
+  const [theme, setTheme] = useState<Theme>(() => {
+    // No document when this renders during the prerender step.
+    if (typeof document === 'undefined') return 'dark'
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+  })
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')

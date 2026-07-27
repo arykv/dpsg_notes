@@ -3,6 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 /** State that survives a refresh. Falls back gracefully in private windows. */
 export function useLocalStorage<T>(key: string, initial: T) {
   const [value, setValue] = useState<T>(() => {
+    // Prerendering has no localStorage; everyone starts on the default there.
+    if (typeof window === 'undefined') return initial
     try {
       const raw = localStorage.getItem(key)
       return raw ? (JSON.parse(raw) as T) : initial

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { motion } from 'motion/react'
 import * as Accordion from '@radix-ui/react-accordion'
 import { ChevronDown, Download, ExternalLink, Search } from 'lucide-react'
@@ -25,7 +25,12 @@ const STREAMS: (Stream | 'all')[] = ['all', 'science', 'commerce', 'arts']
  */
 export default function Chapters() {
   const [params, setParams] = useSearchParams()
-  const grade = (Number(params.get('class')) || 11) as Grade
+  const { classSlug } = useParams<{ classSlug?: string }>()
+  const navigate = useNavigate()
+
+  // The class lives in the path, not a query string, so each year is a real
+  // page that can be linked to, shared and indexed on its own.
+  const grade = (classSlug === 'class-12' ? 12 : 11) as Grade
   const stream = (params.get('stream') as Stream | null) ?? 'all'
   const [query, setQuery] = useState('')
   const search = useDebounced(query, 100).trim().toLowerCase()
@@ -67,7 +72,7 @@ export default function Chapters() {
     <div className="register mx-auto max-w-4xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
         eyebrow="NCERT · chapterwise"
-        title="Every chapter, one click away"
+        title={`Class ${grade} NCERT chapters, one click each`}
         description="The actual NCERT PDFs, straight from ncert.nic.in — no ad walls, no sign-up, no “download” button that opens three tabs. Papers are set from these books."
       />
 
@@ -75,7 +80,9 @@ export default function Chapters() {
         <Segmented
           label="Class"
           value={String(grade)}
-          onChange={(v) => setParam('class', v)}
+          onChange={(v) =>
+            navigate(`/chapters/class-${v}${stream === 'all' ? '' : `?stream=${stream}`}`)
+          }
           options={[
             { value: '11', label: 'Class 11' },
             { value: '12', label: 'Class 12' },
@@ -142,7 +149,16 @@ export default function Chapters() {
         />
       )}
 
-      <p className="text-faint border-line mt-6 border-t pt-5 text-xs leading-relaxed">
+      <p className="border-line mt-6 border-t pt-5 text-sm">
+        <Link
+          to={`/chapters/class-${grade === 11 ? 12 : 11}`}
+          className="text-accent font-medium underline underline-offset-2"
+        >
+          Looking for Class {grade === 11 ? 12 : 11}? All its NCERT chapters are here.
+        </Link>
+      </p>
+
+      <p className="text-faint mt-4 text-xs leading-relaxed">
         These files are hosted by NCERT and open from ncert.nic.in. Nothing is copied or
         re-uploaded here — this is only a faster index into them.
       </p>
@@ -172,7 +188,14 @@ function BookRow({ book }: { book: NcertBook }) {
           </Accordion.Trigger>
         </Accordion.Header>
 
-        <Accordion.Content className="overflow-hidden data-[state=closed]:animate-[acc-up_180ms_ease] data-[state=open]:animate-[acc-down_220ms_ease]">
+        {/* forceMount keeps every chapter name in the HTML even while its book
+            is collapsed. It costs nothing visually — a closed panel is height 0
+            — and it means all 316 titles are in the page a crawler receives
+            rather than appearing only after someone clicks. */}
+        <Accordion.Content
+          forceMount
+          className="overflow-hidden data-[state=closed]:h-0 data-[state=closed]:animate-[acc-up_180ms_ease] data-[state=open]:animate-[acc-down_220ms_ease]"
+        >
           <ol className="border-line divide-y divide-[var(--line)] border-t">
             {book.chapters.map((c) => (
               <li key={c.ch}>

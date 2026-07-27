@@ -9,6 +9,7 @@ import { TooltipProvider } from '@/components/ui/primitives'
 import { ThemeProvider } from '@/lib/theme'
 import { useHotkey } from '@/lib/hooks'
 import { page } from '@/lib/motion'
+import { useSeo } from '@/lib/seo'
 import Home from '@/routes/Home'
 
 // Home ships in the entry bundle because it's what most visits load; the rest
@@ -25,6 +26,10 @@ const NotFound = lazy(() => import('@/routes/NotFound'))
 export default function App() {
   const [paletteOpen, setPaletteOpen] = useState(false)
   const location = useLocation()
+
+  // Prerendered HTML carries the right tags on first paint; this keeps them
+  // correct for every route change after that.
+  useSeo()
 
   useHotkey(
     useCallback((e: KeyboardEvent) => (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k', []),
@@ -66,7 +71,8 @@ export default function App() {
                     <Route path="/library/:id" element={<Viewer />} />
                     <Route path="/tools" element={<Tools />} />
                     <Route path="/day" element={<SchoolDay />} />
-                    <Route path="/chapters" element={<Chapters />} />
+                    <Route path="/chapters" element={<Navigate to="/chapters/class-11" replace />} />
+                    <Route path="/chapters/:classSlug" element={<Chapters />} />
                     <Route path="/resources" element={<Resources />} />
                     <Route path="/links" element={<Navigate to="/resources" replace />} />
                     <Route path="/about" element={<About />} />

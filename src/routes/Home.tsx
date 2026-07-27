@@ -284,7 +284,7 @@ function ChaptersCallout() {
         title="Every chapter of every book, one click"
         description="Straight from ncert.nic.in — no ad walls, no sign-up, no “download” that opens three tabs. Chapter names come out of the PDFs themselves, so the list matches the rationalised syllabus."
         action={
-          <ButtonLink to="/chapters" variant="secondary" size="sm">
+          <ButtonLink to="/chapters/class-11" variant="secondary" size="sm">
             Open chapters
             <ArrowRight className="size-3.5" />
           </ButtonLink>
@@ -295,7 +295,7 @@ function ChaptersCallout() {
         {rows.map((r) => (
           <Link
             key={r.grade}
-            to={`/chapters?class=${r.grade}`}
+            to={`/chapters/class-${r.grade}`}
             className="group flex items-baseline gap-4 py-4 transition-colors hover:bg-[var(--surface-hover)]"
           >
             <span className="font-display w-24 shrink-0 text-xl font-bold">Class {r.grade}</span>
@@ -329,7 +329,7 @@ function Stat({ value, label }: { value: string; label: string }) {
 
 function QuickActions() {
   const actions = [
-    { to: '/chapters', icon: BookOpen, label: 'NCERT chapters', hint: 'Class 11 & 12, one click each' },
+    { to: '/chapters/class-11', icon: BookOpen, label: 'NCERT chapters', hint: 'Class 11 & 12, one click each' },
     { to: '/resources', icon: Play, label: 'Who to learn from', hint: 'Free channels that cover CBSE' },
     { to: '/tools#percentage', icon: Calculator, label: 'Work out my percentage', hint: 'Best of five' },
     { to: '/day', icon: Clock, label: 'Bell timings', hint: 'And what period it is' },

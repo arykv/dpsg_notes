@@ -3,12 +3,13 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "The student hub for DPS Gandhinagar — notes, papers, tools and everything else in one place.",
+  "description": "The student hub for DPS Gandhinagar \u2014 notes, papers, tools and everything else in one place.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && cp dist/index.html dist/404.html",
+    "build": "tsc --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:client": "vite build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

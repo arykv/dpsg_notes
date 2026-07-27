@@ -197,7 +197,7 @@ export default function Viewer() {
 
           <p className="text-faint mt-4 px-1 text-xs leading-relaxed">
             Written by a student, not the school. Cross-check anything that looks off against the{' '}
-            <Link to="/chapters" className="underline underline-offset-2">
+            <Link to={`/chapters/class-${resource.grade}`} className="underline underline-offset-2">
               NCERT book
             </Link>
             .

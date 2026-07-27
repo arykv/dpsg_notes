@@ -16,7 +16,7 @@ const COLUMNS = [
     links: [
       { label: 'Calculators', to: '/tools' },
       { label: 'Bell timings', to: '/day' },
-      { label: 'NCERT chapters', to: '/chapters' },
+      { label: 'NCERT chapters', to: '/chapters/class-11' },
       { label: 'Resources & channels', to: '/resources' },
     ],
   },

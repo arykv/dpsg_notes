@@ -52,7 +52,7 @@ const PAGES: SearchItem[] = [
     type: 'page',
     title: 'NCERT chapters',
     subtitle: 'Every Class 11 and 12 chapter PDF',
-    to: '/chapters',
+    to: '/chapters/class-11',
     keywords: 'ncert chapter book textbook pdf class 11 12 chapterwise download',
   },
   {
