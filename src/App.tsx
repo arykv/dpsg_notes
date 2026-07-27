@@ -21,6 +21,7 @@ const SchoolDay = lazy(() => import('@/routes/SchoolDay'))
 const Chapters = lazy(() => import('@/routes/Chapters'))
 const Resources = lazy(() => import('@/routes/Resources'))
 const Strategy = lazy(() => import('@/routes/Strategy'))
+const Results = lazy(() => import('@/routes/Results'))
 const About = lazy(() => import('@/routes/About'))
 const NotFound = lazy(() => import('@/routes/NotFound'))
 
@@ -76,6 +77,7 @@ export default function App() {
                     <Route path="/chapters/:classSlug" element={<Chapters />} />
                     <Route path="/resources" element={<Resources />} />
                     <Route path="/strategy" element={<Strategy />} />
+                    <Route path="/results" element={<Results />} />
                     <Route path="/links" element={<Navigate to="/resources" replace />} />
                     <Route path="/about" element={<About />} />
                     <Route path="*" element={<NotFound />} />

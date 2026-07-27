@@ -64,6 +64,15 @@ const PAGES: SearchItem[] = [
     keywords: 'portals resources official websites cbse ncert youtube channel video science and fun',
   },
   {
+    id: 'page-results',
+    type: 'page',
+    title: 'Results & proof',
+    subtitle: 'Both marksheets, and proof moderation is real',
+    to: '/results',
+    keywords:
+      'marksheet marks result 95.2 92.8 moderation grace marks osm answer script evidence proof boards',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

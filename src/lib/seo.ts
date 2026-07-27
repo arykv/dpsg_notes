@@ -106,6 +106,19 @@ export const PAGES: PageMeta[] = [
     ],
   },
   {
+    path: '/results',
+    title: 'My CBSE marksheets, and proof that moderation is real',
+    description:
+      'Both my board marksheets in full — 95.2% in Class 10 and 92.8% in Class 12 — rebuilt subject by subject, never scanned. Then my evaluated answer scripts next to the marksheet they became: three subjects match exactly, two gained marks. Documented proof that CBSE moderation happens.',
+    intent: [
+      'is cbse moderation real',
+      'cbse grace marks proof',
+      'cbse moderation policy class 12',
+      'osm answer sheet vs marksheet difference',
+      'how many marks does cbse add',
+    ],
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:

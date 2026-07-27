@@ -207,11 +207,9 @@ export const MY_RESOURCES_10: StudySource[] = [
   },
 ]
 
-/** The result, stated plainly. It's why any of the above is worth reading. */
-export const MY_RESULTS = [
-  { percentage: '95.2%', label: 'Class 10 CBSE, 2024', grade: 10 as const },
-  { percentage: '92.8%', label: 'Class 12 CBSE, 2026', grade: 12 as const },
-]
+/** The result, stated plainly. It's why any of the above is worth reading.
+ *  Computed from the per-subject marks so it can't drift from /results. */
+export { MY_RESULTS } from './results'
 
 export const MY_RESULT_NOTE =
   'I was a last-minute studier both years, and this is still what it came to. If it’s the night before and you feel like you know nothing — it is genuinely not over. Me and my friends did it this way more than once.'

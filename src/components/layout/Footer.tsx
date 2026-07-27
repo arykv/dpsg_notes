@@ -26,6 +26,8 @@ const COLUMNS = [
   {
     title: 'This site',
     links: [
+      { label: 'Results & proof', to: '/results' },
+      { label: 'CBSE moderation', to: '/results#moderation' },
       { label: 'About', to: '/about' },
       { label: 'Add your notes', to: '/about#contribute' },
     ],

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { AlertTriangle, Copy, Check, Quote } from 'lucide-react'
 import {
@@ -40,6 +41,12 @@ export default function Strategy() {
             <span className="eyebrow">{r.label}</span>
           </span>
         ))}
+        <Link
+          to="/results"
+          className="text-muted ml-auto self-center text-[13px] underline decoration-dotted underline-offset-4 transition-colors hover:text-[var(--text)]"
+        >
+          See both marksheets
+        </Link>
       </div>
 
       {/* The one claim everything else follows from. */}

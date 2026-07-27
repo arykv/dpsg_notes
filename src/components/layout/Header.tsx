@@ -18,6 +18,7 @@ const NAV = [
   { to: '/library', label: 'Library' },
   { to: '/chapters/class-11', label: 'Chapters' },
   { to: '/strategy', label: 'Strategy' },
+  { to: '/results', label: 'Results' },
   { to: '/resources', label: 'Resources' },
   { to: '/tools', label: 'Tools' },
   { to: '/day', label: 'School day' },
