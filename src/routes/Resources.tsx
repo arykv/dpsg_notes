@@ -1,8 +1,16 @@
 import { motion } from 'motion/react'
 import { ArrowUpRight, BookOpen, Lock, Mail, Play } from 'lucide-react'
 import { LINKS, LINK_CATEGORIES } from '@/data/links'
-import { MORE_CHANNELS, MY_RESOURCES, MY_RESULT } from '@/data/channels'
-import { SectionHead } from '@/components/ui/primitives'
+import {
+  MORE_CHANNELS,
+  MY_RESOURCES,
+  MY_RESOURCES_10,
+  MY_RESULTS,
+  MY_RESULT_NOTE,
+} from '@/data/channels'
+import { useState } from 'react'
+import type { StudySource } from '@/data/channels'
+import { SectionHead, Segmented } from '@/components/ui/primitives'
 import { ButtonLink } from '@/components/ui/Button'
 import { inView, rise, stagger } from '@/lib/motion'
 import { cn } from '@/lib/cn'
@@ -80,30 +88,48 @@ export default function Resources() {
  * what it got him, rather than a directory of everything that exists.
  */
 function MyStack() {
+  // Class 10 and Class 12 needed different teachers. Showing one list to both
+  // would send half the readers to the wrong place.
+  const [year, setYear] = useState<'10' | '12'>('12')
+  const list: StudySource[] = year === '10' ? MY_RESOURCES_10 : MY_RESOURCES
+
   return (
     <motion.section initial="hidden" animate="show" variants={stagger(0.04)}>
       <h2 className="text-lg">What I actually studied from</h2>
       <p className="text-muted mt-1 text-[13px]">
         Not a list of everything out there — just the channels I used myself, subject by
-        subject.
+        subject, in each year.
       </p>
 
-      {/* The result, up front. It's the only reason this list is worth reading. */}
-      <motion.div
-        variants={rise}
-        className="border-line-strong mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-y py-4"
-      >
-        <span className="font-display text-mark text-3xl font-bold tabular">
-          {MY_RESULT.percentage}
-        </span>
-        <span className="eyebrow">{MY_RESULT.label}</span>
-        <span className="text-muted min-w-0 flex-1 text-[13px] leading-relaxed">
-          {MY_RESULT.note}
-        </span>
+      {/* Both results up front. They're the only reason this list is worth reading. */}
+      <motion.div variants={rise} className="border-line-strong mt-4 border-y py-4">
+        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-2">
+          {MY_RESULTS.map((r) => (
+            <span key={r.label} className="flex items-baseline gap-2.5">
+              <span className="font-display text-mark text-3xl font-bold tabular">
+                {r.percentage}
+              </span>
+              <span className="eyebrow">{r.label}</span>
+            </span>
+          ))}
+        </div>
+        <p className="text-muted mt-3 text-[13px] leading-relaxed">{MY_RESULT_NOTE}</p>
       </motion.div>
 
-      <div className="mt-5 space-y-2.5">
-        {MY_RESOURCES.map((s) => {
+      <motion.div variants={rise} className="mt-5">
+        <Segmented
+          label="Year"
+          value={year}
+          onChange={setYear}
+          options={[
+            { value: '10', label: 'Class 10' },
+            { value: '12', label: 'Class 11 & 12' },
+          ]}
+        />
+      </motion.div>
+
+      <div className="mt-4 space-y-2.5">
+        {list.map((s) => {
           // Not everything on this list is a link — one of them is a stack of
           // sheets your school already handed you.
           const linked = Boolean(s.href)

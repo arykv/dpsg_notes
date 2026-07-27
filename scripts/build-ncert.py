@@ -64,6 +64,19 @@ BOOKS = [
     ("lepy1", 12, "psychology", "arts", ""),
     ("lefl1", 12, "english", "common", "Flamingo"),
     ("levt1", 12, "english", "common", "Vistas"),
+    # --- Class 10 ---------------------------------------------------------
+    ("jesc1", 10, "science", "common", ""),
+    ("jemh1", 10, "maths", "common", ""),
+    ("jess1", 10, "social-science", "common", "History — India and the Contemporary World II"),
+    ("jess2", 10, "social-science", "common", "Geography — Contemporary India II"),
+    ("jess3", 10, "social-science", "common", "Civics — Democratic Politics II"),
+    ("jess4", 10, "social-science", "common", "Economics — Understanding Economic Development"),
+    ("jeff1", 10, "english", "common", "First Flight"),
+    ("jefp1", 10, "english", "common", "Footprints Without Feet"),
+    ("jhsp1", 10, "hindi", "common", "Sparsh"),
+    ("jhsn1", 10, "hindi", "common", "Sanchayan"),
+    ("jhkt1", 10, "hindi", "common", "Kshitij"),
+    ("jhkr1", 10, "hindi", "common", "Kritika"),
 ]
 
 NOISE = re.compile(

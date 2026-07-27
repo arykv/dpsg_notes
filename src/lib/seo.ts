@@ -36,6 +36,17 @@ export const PAGES: PageMeta[] = [
     intent: ['dps gandhinagar notes', 'dpsg notes', 'dps gandhinagar study material'],
   },
   {
+    path: '/chapters/class-10',
+    title: 'NCERT Class 10 chapters — every PDF, chapter by chapter',
+    description:
+      'Every NCERT Class 10 chapter as a direct PDF: Science, Maths, Social Science (History, Geography, Civics, Economics), English First Flight and Footprints, and Hindi. No ads, no sign-up, straight from ncert.nic.in.',
+    intent: [
+      'ncert class 10 pdf download chapter wise',
+      'class 10 science ncert pdf',
+      'class 10 sst ncert chapter pdf',
+    ],
+  },
+  {
     path: '/chapters/class-11',
     title: 'NCERT Class 11 chapters — every PDF, chapter by chapter',
     description:

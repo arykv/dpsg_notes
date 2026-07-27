@@ -491,7 +491,7 @@
    },
    {
     "ch": 4,
-    "title": "Working with Lists and Dictionaries",
+    "title": "working with Lists and Dictionaries",
     "pages": 26,
     "sizeMb": 2.5
    },
@@ -1037,7 +1037,7 @@
    },
    {
     "ch": 3,
-    "title": "Discovering Tut: the Saga Continues",
+    "title": "Discovering Tut: The Saga Continues",
     "pages": 14,
     "sizeMb": 1.8
    },
@@ -1420,28 +1420,10 @@
   "label": "",
   "chapters": [
    {
-    "ch": 1,
-    "title": "Sexual Reproduction in Flowering Plants",
-    "pages": 25,
-    "sizeMb": 35.1
-   },
-   {
-    "ch": 2,
-    "title": "Human Reproduction",
-    "pages": 15,
-    "sizeMb": 61.5
-   },
-   {
     "ch": 3,
     "title": "Reproductive Health",
     "pages": 10,
     "sizeMb": 1.2
-   },
-   {
-    "ch": 4,
-    "title": "Principles of Inheritance and V Ariation",
-    "pages": 28,
-    "sizeMb": 18.3
    },
    {
     "ch": 5,
@@ -1460,12 +1442,6 @@
     "title": "Human Health and Disease",
     "pages": 22,
     "sizeMb": 4.3
-   },
-   {
-    "ch": 8,
-    "title": "Micr Obes in Human W Elfare",
-    "pages": 12,
-    "sizeMb": 12.3
    },
    {
     "ch": 9,
@@ -1601,7 +1577,7 @@
    },
    {
     "ch": 2,
-    "title": "Data Handling Using pandas - I",
+    "title": "Data Handling Using Pandas - I",
     "pages": 36,
     "sizeMb": 3.2
    },
@@ -1658,7 +1634,7 @@
    },
    {
     "ch": 3,
-    "title": "Reconstitution of a Partnership Firm",
+    "title": "Reconstitution of a Partnership Firm \u2013",
     "pages": 49,
     "sizeMb": 3.6
    },
@@ -2024,12 +2000,6 @@
     "title": "Chapter 6",
     "pages": 18,
     "sizeMb": 3.1
-   },
-   {
-    "ch": 7,
-    "title": "Globalisation",
-    "pages": 16,
-    "sizeMb": 27.3
    }
   ]
  },
@@ -2192,7 +2162,7 @@
    },
    {
     "ch": 8,
-    "title": "Going Places A. R. Barton",
+    "title": "going Places A. R. Barton",
     "pages": 12,
     "sizeMb": 1.5
    },
@@ -2270,6 +2240,600 @@
     "title": "Chapter 6",
     "pages": 7,
     "sizeMb": 1.3
+   }
+  ]
+ },
+ {
+  "code": "jesc1",
+  "grade": 10,
+  "subject": "science",
+  "stream": "common",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chemical Reactions and Equations",
+    "pages": 16,
+    "sizeMb": 4.0
+   },
+   {
+    "ch": 2,
+    "title": "Acids, Bases and Salts",
+    "pages": 20,
+    "sizeMb": 3.8
+   },
+   {
+    "ch": 3,
+    "title": "Metals and Non-metals",
+    "pages": 21,
+    "sizeMb": 2.8
+   },
+   {
+    "ch": 4,
+    "title": "Carbon and its Compounds",
+    "pages": 21,
+    "sizeMb": 11.8
+   },
+   {
+    "ch": 5,
+    "title": "Life Processes",
+    "pages": 21,
+    "sizeMb": 8.6
+   },
+   {
+    "ch": 6,
+    "title": "Control and Coordination",
+    "pages": 13,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 7,
+    "title": "How Do Organisms Reproduce?",
+    "pages": 15,
+    "sizeMb": 3.9
+   },
+   {
+    "ch": 8,
+    "title": "Heredity",
+    "pages": 6,
+    "sizeMb": 17.3
+   },
+   {
+    "ch": 9,
+    "title": "Light \u2013 Reflection and Refraction",
+    "pages": 27,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 10,
+    "title": "The Human Eye and the Colourful World",
+    "pages": 10,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 11,
+    "title": "Electricity",
+    "pages": 24,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 12,
+    "title": "Magnetic Effects of Electric Current",
+    "pages": 13,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 13,
+    "title": "Our Environment",
+    "pages": 10,
+    "sizeMb": 4.0
+   }
+  ]
+ },
+ {
+  "code": "jemh1",
+  "grade": 10,
+  "subject": "maths",
+  "stream": "common",
+  "label": "",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Real Numbers",
+    "pages": 9,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 2,
+    "title": "Polynomials",
+    "pages": 14,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 3,
+    "title": "Pair of Linear Equations in Two Variables",
+    "pages": 14,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 4,
+    "title": "Quadratic Equations",
+    "pages": 11,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 5,
+    "title": "Arithmetic Progressions",
+    "pages": 24,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 6,
+    "title": "Triangles",
+    "pages": 26,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 7,
+    "title": "Coordinate Geometry",
+    "pages": 14,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 8,
+    "title": "Introduction to Trigonometry",
+    "pages": 20,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 9,
+    "title": "Some Applications of Trigonometry",
+    "pages": 11,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 10,
+    "title": "Chapter 10",
+    "pages": 10,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 7,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 12,
+    "title": "Surface Areas and Volumes",
+    "pages": 10,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 13,
+    "title": "Statistics",
+    "pages": 31,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 14,
+    "title": "Chapter 14",
+    "pages": 16,
+    "sizeMb": 1.8
+   }
+  ]
+ },
+ {
+  "code": "jess1",
+  "grade": 10,
+  "subject": "social-science",
+  "stream": "common",
+  "label": "History \u2014 India and the Contemporary World II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Resources and Development",
+    "pages": 12,
+    "sizeMb": 1.7
+   },
+   {
+    "ch": 2,
+    "title": "Forest and Wildlife Resources",
+    "pages": 6,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 3,
+    "title": "Water Resources",
+    "pages": 11,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 4,
+    "title": "Agriculture",
+    "pages": 12,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 5,
+    "title": "Minerals and Energy Resources",
+    "pages": 16,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 6,
+    "title": "Manufacturing Industries",
+    "pages": 13,
+    "sizeMb": 1.6
+   },
+   {
+    "ch": 7,
+    "title": "Lifelines of National Economy",
+    "pages": 13,
+    "sizeMb": 2.1
+   }
+  ]
+ },
+ {
+  "code": "jess2",
+  "grade": 10,
+  "subject": "social-science",
+  "stream": "common",
+  "label": "Geography \u2014 Contemporary India II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Notes for Teachersnotes for the Teacher",
+    "pages": 16,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 20,
+    "sizeMb": 2.9
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 16,
+    "sizeMb": 3.2
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 20,
+    "sizeMb": 3.4
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 19,
+    "sizeMb": 3.0
+   }
+  ]
+ },
+ {
+  "code": "jess3",
+  "grade": 10,
+  "subject": "social-science",
+  "stream": "common",
+  "label": "Civics \u2014 Democratic Politics II",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Events and Processes",
+    "pages": 28,
+    "sizeMb": 5.4
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 22,
+    "sizeMb": 4.8
+   },
+   {
+    "ch": 3,
+    "title": "Section Ii",
+    "pages": 28,
+    "sizeMb": 5.8
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 24,
+    "sizeMb": 5.7
+   },
+   {
+    "ch": 5,
+    "title": "Section Iii",
+    "pages": 26,
+    "sizeMb": 5.2
+   }
+  ]
+ },
+ {
+  "code": "jess4",
+  "grade": 10,
+  "subject": "social-science",
+  "stream": "common",
+  "label": "Economics \u2014 Understanding Economic Development",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Power-sharing",
+    "pages": 12,
+    "sizeMb": 1.8
+   },
+   {
+    "ch": 2,
+    "title": "Federalism",
+    "pages": 16,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 3,
+    "title": "Gender, Religion and Caste",
+    "pages": 17,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 4,
+    "title": "Overview",
+    "pages": 17,
+    "sizeMb": 3.4
+   },
+   {
+    "ch": 5,
+    "title": "Outcomes of Democracy",
+    "pages": 12,
+    "sizeMb": 2.1
+   }
+  ]
+ },
+ {
+  "code": "jeff1",
+  "grade": 10,
+  "subject": "english",
+  "stream": "common",
+  "label": "First Flight",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "A Letter to God",
+    "pages": 15,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 2,
+    "title": "Nelson Mandela: Long Walk to Fr Eedom",
+    "pages": 16,
+    "sizeMb": 2.1
+   },
+   {
+    "ch": 3,
+    "title": "Two Stories About Flying",
+    "pages": 16,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 4,
+    "title": "From the Diary of Anne Frank",
+    "pages": 15,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 5,
+    "title": "Glimpses of India",
+    "pages": 17,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 14,
+    "sizeMb": 1.9
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 17,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 8,
+    "title": "The Sermon at Benares",
+    "pages": 9,
+    "sizeMb": 1.5
+   },
+   {
+    "ch": 9,
+    "title": "Chapter 9",
+    "pages": 21,
+    "sizeMb": 2.3
+   }
+  ]
+ },
+ {
+  "code": "jefp1",
+  "grade": 10,
+  "subject": "english",
+  "stream": "common",
+  "label": "Footprints Without Feet",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "A Triumph of Sur Gery",
+    "pages": 7,
+    "sizeMb": 2.5
+   },
+   {
+    "ch": 2,
+    "title": "Read and Find Out",
+    "pages": 6,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 3,
+    "title": "The Midnight Visitor",
+    "pages": 6,
+    "sizeMb": 2.4
+   },
+   {
+    "ch": 4,
+    "title": "A Question of T Rust",
+    "pages": 6,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 6,
+    "sizeMb": 2.2
+   },
+   {
+    "ch": 6,
+    "title": "The Making of a Scientist",
+    "pages": 7,
+    "sizeMb": 2.3
+   },
+   {
+    "ch": 7,
+    "title": "The Necklace",
+    "pages": 8,
+    "sizeMb": 2.6
+   },
+   {
+    "ch": 8,
+    "title": "Bholi",
+    "pages": 9,
+    "sizeMb": 2.7
+   },
+   {
+    "ch": 9,
+    "title": "The Book That Saved the Earth",
+    "pages": 15,
+    "sizeMb": 3.9
+   }
+  ]
+ },
+ {
+  "code": "jhsp1",
+  "grade": 10,
+  "subject": "hindi",
+  "stream": "common",
+  "label": "Sparsh",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Chapter 1",
+    "pages": 7,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 5,
+    "sizeMb": 1.1
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 7,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 4,
+    "title": "Chapter 4",
+    "pages": 6,
+    "sizeMb": 1.1
+   },
+   {
+    "ch": 5,
+    "title": "Chapter 5",
+    "pages": 5,
+    "sizeMb": 1.0
+   },
+   {
+    "ch": 6,
+    "title": "Chapter 6",
+    "pages": 5,
+    "sizeMb": 1.0
+   },
+   {
+    "ch": 7,
+    "title": "Chapter 7",
+    "pages": 5,
+    "sizeMb": 1.2
+   },
+   {
+    "ch": 8,
+    "title": "Chapter 8",
+    "pages": 17,
+    "sizeMb": 2.0
+   },
+   {
+    "ch": 9,
+    "title": "Chapter 9",
+    "pages": 9,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 10,
+    "title": "rrk\u00a1jk&okehjks Dfkk /",
+    "pages": 12,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 11,
+    "title": "Chapter 11",
+    "pages": 10,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 12,
+    "title": "Chapter 12",
+    "pages": 8,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 13,
+    "title": "Chapter 13",
+    "pages": 10,
+    "sizeMb": 1.4
+   },
+   {
+    "ch": 14,
+    "title": "Dkjrwl /",
+    "pages": 10,
+    "sizeMb": 1.4
+   }
+  ]
+ },
+ {
+  "code": "jhkr1",
+  "grade": 10,
+  "subject": "hindi",
+  "stream": "common",
+  "label": "Kritika",
+  "chapters": [
+   {
+    "ch": 1,
+    "title": "Ekrk Dk V\u00a1Py",
+    "pages": 9,
+    "sizeMb": 1.0
+   },
+   {
+    "ch": 2,
+    "title": "Chapter 2",
+    "pages": 14,
+    "sizeMb": 1.3
+   },
+   {
+    "ch": 3,
+    "title": "Chapter 3",
+    "pages": 5,
+    "sizeMb": 0.5
    }
   ]
  }

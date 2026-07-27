@@ -71,7 +71,7 @@ export default function App() {
                     <Route path="/library/:id" element={<Viewer />} />
                     <Route path="/tools" element={<Tools />} />
                     <Route path="/day" element={<SchoolDay />} />
-                    <Route path="/chapters" element={<Navigate to="/chapters/class-11" replace />} />
+                    <Route path="/chapters" element={<Navigate to="/chapters/class-10" replace />} />
                     <Route path="/chapters/:classSlug" element={<Chapters />} />
                     <Route path="/resources" element={<Resources />} />
                     <Route path="/links" element={<Navigate to="/resources" replace />} />

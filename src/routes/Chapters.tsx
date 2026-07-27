@@ -30,7 +30,7 @@ export default function Chapters() {
 
   // The class lives in the path, not a query string, so each year is a real
   // page that can be linked to, shared and indexed on its own.
-  const grade = (classSlug === 'class-12' ? 12 : 11) as Grade
+  const grade = (classSlug === 'class-10' ? 10 : classSlug === 'class-12' ? 12 : 11) as Grade
   const stream = (params.get('stream') as Stream | null) ?? 'all'
   const [query, setQuery] = useState('')
   const search = useDebounced(query, 100).trim().toLowerCase()
@@ -84,12 +84,13 @@ export default function Chapters() {
             navigate(`/chapters/class-${v}${stream === 'all' ? '' : `?stream=${stream}`}`)
           }
           options={[
+            { value: '10', label: 'Class 10' },
             { value: '11', label: 'Class 11' },
             { value: '12', label: 'Class 12' },
           ]}
         />
 
-        <div className="flex flex-wrap gap-1.5">
+        <div className={cn('flex flex-wrap gap-1.5', grade === 10 && 'hidden')}>
           {STREAMS.map((s) => (
             <button
               key={s}
@@ -149,14 +150,19 @@ export default function Chapters() {
         />
       )}
 
-      <p className="border-line mt-6 border-t pt-5 text-sm">
-        <Link
-          to={`/chapters/class-${grade === 11 ? 12 : 11}`}
-          className="text-accent font-medium underline underline-offset-2"
-        >
-          Looking for Class {grade === 11 ? 12 : 11}? All its NCERT chapters are here.
-        </Link>
-      </p>
+      <nav className="border-line mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t pt-5 text-sm">
+        {([10, 11, 12] as const)
+          .filter((g) => g !== grade)
+          .map((g) => (
+            <Link
+              key={g}
+              to={`/chapters/class-${g}`}
+              className="text-accent font-medium underline underline-offset-2"
+            >
+              All Class {g} NCERT chapters
+            </Link>
+          ))}
+      </nav>
 
       <p className="text-faint mt-4 text-xs leading-relaxed">
         These files are hosted by NCERT and open from ncert.nic.in. Nothing is copied or

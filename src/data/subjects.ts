@@ -21,7 +21,7 @@ export const SUBJECTS: Subject[] = [
     id: 'maths',
     name: 'Mathematics',
     code: 'MA',
-    grades: [11, 12],
+    grades: [10, 11, 12],
     streams: ['science', 'commerce'],
     blurb: 'Worked solutions, not just answers. Sets to calculus.',
   },
