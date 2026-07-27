@@ -6,7 +6,7 @@ import { PeriodBar } from '@/components/PeriodBar'
 import { ResourceCard } from '@/components/ResourceCard'
 import { ButtonLink } from '@/components/ui/Button'
 import { Kbd, SectionHead } from '@/components/ui/primitives'
-import { RECENT_RESOURCES, RESOURCES, countBySubject, getResource } from '@/data/resources'
+import { RECENT_RESOURCES, countBySubject, getResource } from '@/data/resources'
 import { SUBJECTS } from '@/data/subjects'
 import { TOOLS } from '@/data/tools'
 import { NCERT_BOOKS, NCERT_CHAPTER_COUNT, booksFor } from '@/data/ncert'
@@ -55,6 +55,7 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
 
         <QuickActions />
 
+        {stocked.length > 0 && (
         <motion.section
           initial="hidden"
           whileInView="show"
@@ -119,6 +120,9 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
             </div>
           )}
         </motion.section>
+        )}
+
+        {stocked.length === 0 && <NotesWanted />}
 
         <ChaptersCallout />
 
@@ -169,7 +173,7 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
  * search box is the product and it gets the space.
  */
 function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
-  const subjectCount = new Set(RESOURCES.map((r) => r.subject)).size
+  const subjectCount = new Set(NCERT_BOOKS.map((b) => b.subject)).size
 
   return (
     <section className="border-line border-b">
@@ -238,7 +242,7 @@ function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
                 variants={rise}
                 className="border-line mt-6 grid grid-cols-3 divide-x divide-[var(--line)] border-y"
               >
-                <Stat value={String(RESOURCES.length)} label="files" />
+                <Stat value={String(NCERT_CHAPTER_COUNT)} label="chapters" />
                 <Stat value={String(subjectCount)} label="subjects" />
                 <Stat value="₹0" label="forever" />
               </motion.dl>
@@ -311,6 +315,38 @@ function ChaptersCallout() {
             <ArrowRight className="text-faint size-3.5 shrink-0 transition-transform group-hover:translate-x-0.5" />
           </Link>
         ))}
+      </motion.div>
+    </motion.section>
+  )
+}
+
+/**
+ * Shown while the student-notes library is empty. An honest ask reads far
+ * better than fifteen subjects each labelled "still empty" — and it's the only
+ * thing that actually fills the shelf.
+ */
+function NotesWanted() {
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={inView}
+      variants={stagger(0.04)}
+      className="mt-20"
+    >
+      <SectionHead
+        eyebrow="The shelf"
+        title="This part is waiting on you"
+        description="Every NCERT chapter is already here. What isn’t, yet, is the good stuff — the handwritten notes seniors actually revised from."
+      />
+      <motion.div variants={rise} className="border-line rounded-[8px] border border-dashed p-6">
+        <p className="text-[15px] leading-relaxed">
+          If you have notes worth passing down, send them in. They go up credited to you by
+          name, free for everyone, and they stay here long after you&rsquo;ve left.
+        </p>
+        <ButtonLink to="/about#contribute" variant="primary" size="md" className="mt-5">
+          Send your notes
+        </ButtonLink>
       </motion.div>
     </motion.section>
   )

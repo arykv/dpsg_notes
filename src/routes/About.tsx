@@ -4,7 +4,6 @@ import { ChevronDown, Github, Mail, Upload } from 'lucide-react'
 import { ButtonLink } from '@/components/ui/Button'
 import { SectionHead } from '@/components/ui/primitives'
 import { inView, rise, stagger } from '@/lib/motion'
-import { RESOURCES } from '@/data/resources'
 
 const FAQ = [
   {
@@ -67,9 +66,9 @@ export default function About() {
             it anyway.
           </p>
           <p className="text-muted mt-4 text-[15px] leading-relaxed">
-            {RESOURCES.length} files are hosted here directly; the rest of it points at material
-            that was already free and just badly signposted. It grows when people send things in,
-            which is the entire model.
+            Almost nothing here is hosted by us — it points at material that was already free
+            and just badly signposted. The one part that has to be built from scratch is the
+            handwritten notes library, and that only grows when people send things in.
           </p>
         </motion.div>
 
