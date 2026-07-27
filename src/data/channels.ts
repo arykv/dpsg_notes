@@ -131,11 +131,17 @@ export const MY_RESOURCES_10: StudySource[] = [
   {
     id: 'ashu-10',
     name: 'Ashu Ghai sir',
-    handle: '@ScienceAndFunEducation',
-    href: 'https://www.youtube.com/@ScienceAndFunEducation',
+    // He runs separate channels per year — this is the 9th/10th one. Sending a
+    // Class 10 student to the 11th/12th channel is the wrong syllabus entirely.
+    handle: '@AshuGhai9th10th',
+    href: 'https://www.youtube.com/@AshuGhai9th10th',
     grades: [10],
     subjects: ['Science'],
-    note: 'The same sir who carried me through 11th and 12th, and I started with him in 10th. Full chapters, free, slow enough to actually follow.',
+    note: 'The same sir who carried me through 11th and 12th, and I started with him in 10th. Full chapters, free, slow enough to actually follow. Make sure you’re on his 9th & 10th channel, not the 11th & 12th one.',
+    alsoAt: {
+      label: 'Also on @ScienceAndFunEducation',
+      href: 'https://www.youtube.com/@ScienceAndFunEducation',
+    },
   },
   {
     id: 'prashant-kirad',
@@ -149,11 +155,11 @@ export const MY_RESOURCES_10: StudySource[] = [
   {
     id: 'ushank-10',
     name: 'Ushank Ghai sir',
-    handle: '@AshuGhai11th12th',
-    href: 'https://www.youtube.com/@AshuGhai11th12th',
+    handle: '@AshuGhai9th10th',
+    href: 'https://www.youtube.com/@AshuGhai9th10th',
     grades: [10],
     subjects: ['Mathematics'],
-    note: 'Maths, on the same channel as Ashu sir.',
+    note: 'Maths, on the same 9th & 10th channel as Ashu sir.',
     alsoAt: {
       label: 'Also on @ScienceAndFunEducation',
       href: 'https://www.youtube.com/@ScienceAndFunEducation',
