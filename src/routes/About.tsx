@@ -110,7 +110,7 @@ export default function About() {
               dpsgnotes@gmail.com
             </ButtonLink>
             <ButtonLink
-              to="https://github.com/arykv/dpsg_notes"
+              to="https://github.com/arykv/allnighter"
               external
               variant="secondary"
               size="md"

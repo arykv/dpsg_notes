@@ -52,7 +52,7 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-2">
               <a
-                href="https://github.com/arykv/dpsg_notes"
+                href="https://github.com/arykv/allnighter"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Source on GitHub"

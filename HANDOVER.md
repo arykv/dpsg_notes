@@ -21,10 +21,10 @@ competitor will.
 | | |
 |---|---|
 | Live | https://allnighter.in |
-| Repo | `github.com/arykv/dpsg_notes` — **not yet renamed** to `allnighter` |
+| Repo | `github.com/arykv/allnighter` — renamed 28 Jul 2026 (old URLs redirect) |
 | Local | `~/Documents/dpsg-notes` |
 | Hosting | Vercel, project `allnighter` under `arykvs-projects`, auto-deploys from `main` |
-| Old domain | `dps-gandhinagar.in` — still on GitHub Pages serving a **stale copy**, must become a redirect |
+| Old domain | `dps-gandhinagar.in` — GitHub Pages, orphan `legacy-domain` branch, one `noindex` page. See §8 |
 | Vercel CLI | installed, logged in as `arykv` |
 
 ---
