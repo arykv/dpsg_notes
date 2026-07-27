@@ -15,7 +15,8 @@ import { fileURLToPath } from 'node:url'
 const root = dirname(dirname(fileURLToPath(import.meta.url)))
 const dist = join(root, 'dist')
 
-const { render, PAGES, SITE } = await import(join(dist, 'server', 'entry-server.js'))
+const ssr = join(root, '.ssr')
+const { render, PAGES, SITE } = await import(join(ssr, 'entry-server.js'))
 
 const template = await readFile(join(dist, 'index.html'), 'utf8')
 

@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react(), tailwindcss()],
   define: {
     __BUILD_YEAR__: JSON.stringify(new Date().getFullYear()),
@@ -14,6 +14,9 @@ export default defineConfig({
   build: {
     target: 'es2022',
     cssMinify: 'lightningcss',
+    // The SSR bundle is a build-time tool, not something to deploy — and
+    // copying public/ into it duplicated every PDF.
+    copyPublicDir: !isSsrBuild,
     rollupOptions: {
       output: {
         // Keep the first paint tiny: React + router ship in the entry, everything
@@ -28,4 +31,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))
