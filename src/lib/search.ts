@@ -91,6 +91,15 @@ const PAGES: SearchItem[] = [
       'answer sheet scan evaluated copy real example what does a checked paper look like osm computer science 083 evidence proof pages',
   },
   {
+    id: 'guide-class-12-chemistry',
+    type: 'page',
+    title: 'Class 12 Chemistry, put together',
+    subtitle: 'Every unit, what it is worth, and what to do first',
+    to: '/guide/class-12-chemistry',
+    keywords:
+      'chemistry class 12 syllabus weightage unit wise marks electrochemistry biomolecules organic physical inorganic guide what to study first deleted syllabus',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

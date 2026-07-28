@@ -232,6 +232,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/guide/class-12-chemistry',
+    title: 'Class 12 Chemistry — every unit, its marks, and what to study first',
+    description:
+      'The whole of CBSE Class 12 Chemistry in one place: official unit-wise weightage for all 70 theory marks, what each unit actually asks, where the marks really are, and the order to study in if you are short on time. Written by a student who scored 89 and will tell you why it should have been more.',
+    intent: [
+      'class 12 chemistry weightage 2026',
+      'cbse class 12 chemistry unit wise marks',
+      'which chapters are important class 12 chemistry',
+      'class 12 chemistry how to study last minute',
+      'cbse chemistry electrochemistry weightage',
+    ],
+    og: {
+      kicker: 'Class 12 Chemistry',
+      headline: 'Every unit, its marks, and what to study first',
+      stat: '70',
+      statLabel: 'marks, mapped',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:

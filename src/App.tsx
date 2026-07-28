@@ -24,6 +24,7 @@ const Strategy = lazy(() => import('@/routes/Strategy'))
 const Results = lazy(() => import('@/routes/Results'))
 const Paper = lazy(() => import('@/routes/Paper'))
 const Script = lazy(() => import('@/routes/Script'))
+const Guide = lazy(() => import('@/routes/Guide'))
 const About = lazy(() => import('@/routes/About'))
 const NotFound = lazy(() => import('@/routes/NotFound'))
 
@@ -82,6 +83,7 @@ export default function App() {
                     <Route path="/results" element={<Results />} />
                     <Route path="/paper" element={<Paper />} />
                     <Route path="/paper/script" element={<Script />} />
+                    <Route path="/guide/:slug" element={<Guide />} />
                     <Route path="/links" element={<Navigate to="/resources" replace />} />
                     <Route path="/about" element={<About />} />
                     <Route path="*" element={<NotFound />} />
