@@ -136,8 +136,12 @@ page-by-page look caught it.
 **Privacy check on the CS script is complete** — all 35 pages inspected
 28 Jul 2026, plus the cover QR decoded (`817445528`, the same barcode already
 printed as text on page 1). No name, no roll number, no parents' names, no DOB
-anywhere in the document. Even so, under the decision above the raw scans stay
-out of the repo; only the analysis is published.
+anywhere in the document. That is what made publishing it possible.
+
+The source PDFs still stay out of git; what ships is the redacted render under
+`public/script/`, produced by `scripts/redact.py`. That script re-runs QR
+detection over its own output at two scales and exits non-zero if anything still
+decodes, so a bad render fails the build rather than reaching the site.
 
 ---
 
