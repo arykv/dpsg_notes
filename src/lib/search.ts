@@ -86,9 +86,18 @@ const PAGES: SearchItem[] = [
     type: 'page',
     title: 'My whole answer script',
     subtitle: 'All 35 pages of a real evaluated CBSE paper',
-    to: '/paper/script',
+    to: '/paper/script/computer-science',
     keywords:
       'answer sheet scan evaluated copy real example what does a checked paper look like osm computer science 083 evidence proof pages',
+  },
+  {
+    id: 'guide-class-12-physics',
+    type: 'page',
+    title: 'Class 12 Physics, put together',
+    subtitle: 'Every unit, what it is worth, and what to do first',
+    to: '/guide/class-12-physics',
+    keywords:
+      'physics class 12 syllabus weightage unit wise marks optics electrostatics magnetism modern physics semiconductor guide important chapters',
   },
   {
     id: 'guide-class-12-chemistry',
@@ -98,6 +107,15 @@ const PAGES: SearchItem[] = [
     to: '/guide/class-12-chemistry',
     keywords:
       'chemistry class 12 syllabus weightage unit wise marks electrochemistry biomolecules organic physical inorganic guide what to study first deleted syllabus',
+  },
+  {
+    id: 'page-script-physics',
+    type: 'page',
+    title: 'My Physics answer script',
+    subtitle: 'Every half mark, written out by the examiner',
+    to: '/paper/script/physics',
+    keywords:
+      'physics answer sheet evaluated half marks step marking cbse 042 scan electrostatics lost marks',
   },
   {
     id: 'page-about',

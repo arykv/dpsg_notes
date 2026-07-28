@@ -213,8 +213,8 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
-    path: '/paper/script',
-    title: 'A real evaluated CBSE answer script — all 35 pages',
+    path: '/paper/script/computer-science',
+    title: 'A real evaluated CBSE answer script — Computer Science, all 35 pages',
     description:
       'My whole Class 12 Computer Science answer book exactly as CBSE returned it after evaluation: every page, every tick, every red cross, the blank pages and the rough work. Only the script barcode is covered. Probably the only complete evaluated CBSE script published anywhere.',
     intent: [
@@ -229,6 +229,44 @@ export const PAGES: PageMeta[] = [
       headline: 'A real evaluated CBSE answer script, every page',
       stat: '35',
       statLabel: 'pages, nothing left out',
+    },
+  },
+  {
+    path: '/paper/script/physics',
+    title: 'A real evaluated CBSE Physics answer script — every half mark shown',
+    description:
+      'My whole Class 12 Physics answer book as CBSE returned it. Physics is marked in half marks and the evaluator wrote the arithmetic on the page — you can watch a five-mark answer being scored fragment by fragment, including the electrostatics question that scored 0 + 0 + 0 + 0 + 0.',
+    intent: [
+      'cbse physics evaluated answer sheet',
+      'how are physics board answers marked',
+      'cbse physics step marking half marks',
+      'cbse answer script physics sample',
+      'why did i lose marks in physics board',
+    ],
+    og: {
+      kicker: 'Physics · marked in halves',
+      headline: 'Watch a five-mark answer being scored fragment by fragment',
+      stat: '0.5',
+      statLabel: 'at a time',
+    },
+  },
+  {
+    path: '/guide/class-12-physics',
+    title: 'Class 12 Physics — every unit, its marks, and what to study first',
+    description:
+      'The whole of CBSE Class 12 Physics in one place: official unit-wise weightage for all 70 theory marks, what each unit actually asks, and why Optics being 14 marks at the back of the book ruins so many timetables. Plus the half-mark scoring shown on my own evaluated script, including the five-mark question that scored zero.',
+    intent: [
+      'class 12 physics weightage 2026',
+      'cbse class 12 physics unit wise marks',
+      'important chapters class 12 physics',
+      'cbse physics step marking half marks',
+      'class 12 physics optics weightage',
+    ],
+    og: {
+      kicker: 'Class 12 Physics',
+      headline: 'Every unit, its marks, and what to study first',
+      stat: '14',
+      statLabel: 'marks in optics alone',
     },
   },
   {

@@ -82,7 +82,8 @@ export default function App() {
                     <Route path="/strategy" element={<Strategy />} />
                     <Route path="/results" element={<Results />} />
                     <Route path="/paper" element={<Paper />} />
-                    <Route path="/paper/script" element={<Script />} />
+                    <Route path="/paper/script" element={<Navigate to="/paper/script/computer-science" replace />} />
+                    <Route path="/paper/script/:slug" element={<Script />} />
                     <Route path="/guide/:slug" element={<Guide />} />
                     <Route path="/links" element={<Navigate to="/resources" replace />} />
                     <Route path="/about" element={<About />} />

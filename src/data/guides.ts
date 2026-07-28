@@ -23,8 +23,10 @@ export interface Unit {
   n: number
   name: string
   marks: number
-  /** Which of the three chemistries this belongs to. */
-  branch: 'Physical' | 'Inorganic' | 'Organic' | 'Biochemistry'
+  /** The grouping a student actually thinks in — "Organic", "Optics & waves".
+   *  Rendered as a summary chip row so the shape of the paper is visible
+   *  before the unit list is. */
+  branch: string
   /** What actually gets asked from it, in plain terms. */
   asked: string
 }
@@ -228,7 +230,168 @@ export const CHEMISTRY_12: SubjectGuide = {
   ],
 }
 
-export const GUIDES: SubjectGuide[] = [CHEMISTRY_12]
+/* -------------------------------------------------------------------------- */
+
+export const PHYSICS_12: SubjectGuide = {
+  slug: 'class-12-physics',
+  subject: 'Physics',
+  code: '042',
+  grade: 12,
+  theoryMarks: 70,
+  paper: {
+    questions: 33,
+    sections: 'Five — A: MCQs, B: very short, C: short, D: case-based, E: long answer',
+    duration: '3 hours',
+  },
+  mine: {
+    theory: 60,
+    practical: 30,
+    total: 90,
+    verdict:
+      'Evaluated at 58, moderated to 60. A respectable total hiding a bad paper: I scored full marks on both case studies and zero on a five-mark electrostatics question. My whole script is published, so you can see exactly where it went wrong.',
+  },
+
+  // Unit weightage. The chapter-level numbers below reconstruct CBSE's official
+  // paired totals exactly — I+II 16, III+IV 17, V+VI 18, VII+VIII 12, IX 7 —
+  // which is the check that says the table is right rather than copied.
+  units: [
+    {
+      n: 1,
+      name: 'Electrostatics',
+      marks: 10,
+      branch: 'Electricity & magnetism',
+      asked:
+        'Field and potential from charge distributions, Gauss’s law, capacitors in combination. Ten marks, heavily numerical, and the unit I personally lost the most on.',
+    },
+    {
+      n: 2,
+      name: 'Current Electricity',
+      marks: 6,
+      branch: 'Electricity & magnetism',
+      asked: 'Drift velocity, Kirchhoff’s laws, the Wheatstone bridge, potentiometer.',
+    },
+    {
+      n: 3,
+      name: 'Magnetic Effects of Current and Magnetism',
+      marks: 11,
+      branch: 'Electricity & magnetism',
+      asked:
+        'Biot–Savart and Ampère’s law, force on conductors, torque on a loop, the moving coil galvanometer. Second-heaviest unit in the paper.',
+    },
+    {
+      n: 4,
+      name: 'Electromagnetic Induction and Alternating Current',
+      marks: 6,
+      branch: 'Electricity & magnetism',
+      asked: 'Faraday and Lenz, self and mutual inductance, LCR circuits, the transformer.',
+    },
+    {
+      n: 5,
+      name: 'Electromagnetic Waves',
+      marks: 4,
+      branch: 'Optics & waves',
+      asked:
+        'Almost pure recall — the spectrum in order, and the uses and sources of each band. Four marks for memorising one table.',
+    },
+    {
+      n: 6,
+      name: 'Optics',
+      marks: 14,
+      branch: 'Optics & waves',
+      asked:
+        'The heaviest unit by a distance. Ray optics — mirrors, lenses, the lens maker formula, microscopes and telescopes — plus wave optics: interference, Young’s double slit, diffraction.',
+    },
+    {
+      n: 7,
+      name: 'Dual Nature of Radiation and Matter',
+      marks: 4,
+      branch: 'Modern physics',
+      asked:
+        'Photoelectric effect and de Broglie wavelength. Small, self-contained, and a frequent case study.',
+    },
+    {
+      n: 8,
+      name: 'Atoms and Nuclei',
+      marks: 8,
+      branch: 'Modern physics',
+      asked:
+        'Bohr’s model and spectral series, then binding energy per nucleon, fission and fusion. More conceptual than most of the paper.',
+    },
+    {
+      n: 9,
+      name: 'Electronic Devices',
+      marks: 7,
+      branch: 'Modern physics',
+      asked:
+        'Semiconductors, p-n junctions, diodes and rectifiers, energy band diagrams. Short syllabus, seven marks, and rarely tricky.',
+    },
+  ],
+
+  sections: [
+    {
+      id: 'where-marks-are',
+      heading: 'Optics is 14 marks and it sits at the back of the book',
+      body: [
+        'Optics alone is a fifth of the paper — more than Electrostatics, more than any other unit — and it is chapters 9 and 10, which is exactly where people run out of year. Electrostatics and Magnetism together are 21, and they are at the front, which is why everyone is comfortable with the first quarter of the syllabus and shaky on the part that carries the most marks.',
+        'The two cheapest units are Electromagnetic Waves at 4 and Electronic Devices at 7. Between them that is 11 marks for a very short syllabus, and Electromagnetic Waves in particular is essentially one table of the spectrum and its uses. If you are triaging, those two are the highest return per hour in the subject.',
+      ],
+      rule: 'If you are behind: Electromagnetic Waves and Electronic Devices first — 11 marks for the least reading in the paper. Then Optics, because it is 14.',
+    },
+    {
+      id: 'half-marks',
+      heading: 'Physics is scored in half marks, and the examiner shows the arithmetic',
+      body: [
+        'This is the thing my script makes visible that nothing else does. The evaluator writes the sum on the page: a five-mark answer of mine reads "31a : 1 + 0.5 + 0.5 + 0.5 + 0.5 + 0.5 = 3.5". Every fragment is scored separately, and you can watch the mark being assembled.',
+        'What that means is that a Physics long answer is not one answer, it is six to ten scoring slots. The formula quoted correctly is a slot. The diagram is a slot. The substitution is a slot. The final value with units is a slot. You can get the final answer wrong and still take most of the marks — and you can get it right, skip the derivation, and take very few.',
+        'It also means the reverse, and this is the part that cost me. Q26 on my paper reads "0.5 + 0 + 0 + 0 + 0 + 0 = 0.5". Six slots, five empty, on a question I had genuinely half understood. Being nearly right in your head and putting almost nothing on the page is the specific way Physics marks disappear.',
+      ],
+      rule: 'Write the formula, then the diagram, then the substitution, then the answer with units — as separate lines. Each is a separate half mark whether or not you finish.',
+    },
+    {
+      id: 'my-zero',
+      heading: 'A full page of algebra that scored zero',
+      body: [
+        'Question 32 on my paper was a five-mark electrostatics question. I filled a page: field due to a dipole, the algebra expanded and simplified, a boxed final expression. It reads as a confident answer.',
+        'It scored 0 + 0 + 0 + 0 + 0 = 0.',
+        'I had answered a different question from the one asked. Nothing about my working was rewarded, because the marking scheme had five specific things in it and none of them were what I wrote. That is the single most expensive mistake available in a Physics paper, and it is not a knowledge failure — it is a reading failure.',
+        'The alternative I also attempted, 32b, scraped 1 out of 5. Between them I put nearly two pages of work into ten marks and came away with one.',
+        'This is why the fifteen minutes of reading time matter more in Physics than anywhere else. You cannot recover a misread question with effort. The page is published if you want to see what a confident zero looks like.',
+      ],
+      rule: 'In reading time, for every long question, write down what is actually being asked in four words before you write anything else.',
+    },
+    {
+      id: 'case-studies',
+      heading: 'The case studies are free marks and nobody treats them that way',
+      body: [
+        'Section D is two case-based questions, four marks each — eight marks of the paper. On my script both are full marks, 4/4 and 4/4, and they were the easiest eight marks I got.',
+        'They are built to be answerable from the passage plus one standard idea. The photoelectric one gave me the setup and asked four short questions about it; the galvanometer one did the same. There is no derivation, no long numerical, and no risk of misreading a five-marker.',
+        'People leave these until last because they look long on the page. They are not long. Do them early while you are fresh and bank eight marks.',
+      ],
+    },
+  ],
+
+  watch: [
+    {
+      name: 'Ashu Ghai sir',
+      handle: '@AshuGhai11th12th',
+      href: 'https://www.youtube.com/@AshuGhai11th12th',
+      note: 'What I actually used. Most of my Physics happened in the week before the paper and this is why it was survivable at all.',
+    },
+    {
+      name: 'Experiential Physics',
+      handle: '@experientialphysics',
+      href: 'https://www.youtube.com/@experientialphysics',
+      note: 'My own school teacher, and the one to use for the practical side — the 30 marks that are not moderated and that everyone treats as automatic.',
+    },
+  ],
+
+  sources: [
+    { label: 'CBSE Academic — curriculum and rationalised syllabus', href: 'https://cbseacademic.nic.in/' },
+    { label: 'NCERT textbooks', href: 'https://ncert.nic.in/textbook.php' },
+  ],
+}
+
+export const GUIDES: SubjectGuide[] = [PHYSICS_12, CHEMISTRY_12]
 
 export const guideBySlug = (slug: string) => GUIDES.find((g) => g.slug === slug)
 

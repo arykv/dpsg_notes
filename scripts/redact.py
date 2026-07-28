@@ -24,15 +24,26 @@ TARGET_W = 1700          # px on the long edge — readable handwriting, sane by
 WEBP_QUALITY = 78
 
 # Fractional boxes (x0, y0, x1, y1) of the page, generous by design.
-COVER_OFFICE_BLOCK = (0.205, 0.735, 0.395, 0.905)
+COVER_OFFICE_BLOCK = (0.175, 0.700, 0.410, 0.920)
 
 
-# The scanning stamp is always in the header strip, left or right. Restricting
-# the search there is what makes colour detection safe: the candidate writes in
-# blue ballpoint, so anywhere below this band a "blue square" is far more likely
-# to be a letter than a stamp — and covering an answer would be worse than
-# leaving an undecodable stamp in place.
-STAMP_BAND = 0.22
+# The stamp's geometry, measured off 31 correctly-detected stamps in the
+# Computer Science script rather than guessed. It is remarkably consistent:
+#
+#     width  33-38 px at TARGET_W    aspect (w/h) 1.06-1.29
+#     height 28-32 px                fill         0.80-0.93
+#     y      0.069-0.126 of the page
+#
+# The tolerances below are those ranges with room either side. Being this strict
+# matters: Physics annotates marks as blue rounded chips and blue summary boxes
+# in the same header strip, and a loose filter blacks out the very marks the
+# script is published to show. Chips are wide (aspect > 2), so aspect and fill
+# are what actually separate them.
+STAMP_BAND = 0.20
+STAMP_W = (26, 48)
+STAMP_H = (22, 42)
+STAMP_ASPECT = (0.95, 1.50)
+STAMP_FILL = 0.62
 
 
 def blue_stamp_boxes(bgr):
@@ -53,11 +64,13 @@ def blue_stamp_boxes(bgr):
         x, y, w, h = cv2.boundingRect(c)
         if y + h > STAMP_BAND * H:
             continue
-        if not (14 <= w <= 130 and 14 <= h <= 130):
+        if not (STAMP_W[0] <= w <= STAMP_W[1] and STAMP_H[0] <= h <= STAMP_H[1]):
             continue
-        if not (0.55 <= w / h <= 1.8):        # a QR stamp is roughly square
+        if not (STAMP_ASPECT[0] <= w / h <= STAMP_ASPECT[1]):
             continue
-        if cv2.countNonZero(mask[y:y + h, x:x + w]) < 0.18 * w * h:
+        # A QR is dense once its modules are closed together; a rounded mark
+        # chip is mostly outline and fails here even if it slips through above.
+        if cv2.countNonZero(mask[y:y + h, x:x + w]) < STAMP_FILL * w * h:
             continue
         boxes.append((x, y, w, h))
     return boxes

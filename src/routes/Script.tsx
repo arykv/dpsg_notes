@@ -1,40 +1,50 @@
+import { Link, useParams } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { EyeOff } from 'lucide-react'
-import { CS_SCRIPT, CS_SCRIPT_BLANKS, CS_SCRIPT_PAGES, scriptImage } from '@/data/script'
-import { CS_PRINTED_TOTAL } from '@/data/paper'
+import { SCRIPTS, blankCount, scriptBySlug, scriptImage, type Script as ScriptData } from '@/data/script'
 import { SectionHead } from '@/components/ui/primitives'
 import { ButtonLink } from '@/components/ui/Button'
+import NotFound from '@/routes/NotFound'
 import { inView, rise } from '@/lib/motion'
 
 /**
- * The whole answer script, published.
+ * A whole answer script, published.
  *
- * The rest of the site makes claims about what CBSE does to a paper. This is
- * the document those claims are read off — so a student can check them instead
- * of taking my word for it. That's the entire reason it's here.
+ * The rest of the site makes claims about what CBSE does to a paper. These are
+ * the documents those claims are read off — so a student can check them instead
+ * of taking my word for it. That's the entire reason they're here.
  */
 export default function Script() {
+  const { slug } = useParams()
+  const script = slug ? scriptBySlug(slug) : undefined
+  if (!script) return <NotFound />
+
+  const others = SCRIPTS.filter((s) => s.slug !== script.slug)
+  const moderation = script.marksheetTotal - script.scriptTotal
+
   return (
     <div className="mx-auto max-w-4xl px-4 pt-12 pb-8 sm:px-6">
       <div className="register pl-5 sm:pl-16">
         <SectionHead
-          eyebrow="Computer Science · 083 · 2026"
-          title="My whole answer script, all 35 pages"
-          description={`The evaluated Class 12 Computer Science paper that scored ${CS_PRINTED_TOTAL}/70 in theory, exactly as CBSE returned it. Nothing rearranged, nothing left out — including the ten blank pages and the rough work.`}
+          eyebrow={`${script.subject} · ${script.code} · 2026`}
+          title={`My whole ${script.subject} script, all ${script.pages.length} pages`}
+          description={script.lede}
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="text-muted mt-2 space-y-3 text-[15px] leading-relaxed"
-        >
-          <p>
-            Everything else on this site makes claims about what happens to a board paper. It would
-            be a bit rich to ask you to believe them without showing you the document, so here it
-            is.
-          </p>
-        </motion.div>
+        <div className="border-line-strong mt-6 flex flex-wrap items-baseline gap-x-8 gap-y-2 border-y py-4">
+          <span className="flex items-baseline gap-2.5">
+            <span className="font-display text-3xl font-bold tabular">{script.scriptTotal}</span>
+            <span className="eyebrow">On the script</span>
+          </span>
+          <span className="flex items-baseline gap-2.5">
+            <span className="font-display text-mark text-3xl font-bold tabular">
+              {script.marksheetTotal}
+            </span>
+            <span className="eyebrow">
+              {moderation > 0 ? `On the marksheet · +${moderation}` : 'On the marksheet · unchanged'}
+            </span>
+          </span>
+        </div>
 
         {/* What's covered. Stating it precisely is the point. */}
         <div className="surface border-line mt-7 rounded-[6px] border p-5">
@@ -44,7 +54,10 @@ export default function Script() {
               <h2 className="text-[15px]">Three things are covered, and nothing else</h2>
               <ul className="text-muted mt-2.5 space-y-1.5 text-[14px] leading-relaxed">
                 <li>· The barcode number on page 1.</li>
-                <li>· The office-use block on the cover — the QR code and the IDEN, BAG and CHK numbers beside it.</li>
+                <li>
+                  · The office-use block on the cover — the QR code and the IDEN, BAG and CHK
+                  numbers beside it.
+                </li>
                 <li>· The small blue stamp the scanning centre puts on every page.</li>
               </ul>
               <p className="text-muted mt-3 text-[14px] leading-relaxed">
@@ -69,14 +82,33 @@ export default function Script() {
           </ButtonLink>
         </div>
 
+        {others.length > 0 && (
+          <p className="text-muted mt-5 text-[14px]">
+            Also published:{' '}
+            {others.map((o, i) => (
+              <span key={o.slug}>
+                {i > 0 && ', '}
+                <Link
+                  to={`/paper/script/${o.slug}`}
+                  className="underline decoration-dotted underline-offset-2 hover:text-[var(--text)]"
+                >
+                  {o.subject}
+                </Link>
+              </span>
+            ))}
+            .
+          </p>
+        )}
+
         <p className="text-faint mt-6 font-mono text-[11px] tabular">
-          {CS_SCRIPT_PAGES} pages · {CS_SCRIPT_BLANKS} blank · scans, so they load as you scroll
+          {script.pages.length} pages · {blankCount(script)} blank · scans, so they load as you
+          scroll
         </p>
       </div>
 
       {/* --- The pages ----------------------------------------------------- */}
       <ol className="mt-10 space-y-10">
-        {CS_SCRIPT.map((p, i) => (
+        {script.pages.map((p, i) => (
           <motion.li
             key={p.n}
             initial="hidden"
@@ -88,7 +120,7 @@ export default function Script() {
           >
             <div className="mb-2.5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <span className="eyebrow">
-                Page {p.n} of {CS_SCRIPT_PAGES}
+                Page {p.n} of {script.pages.length}
                 {p.booklet !== undefined && ` · booklet ${p.booklet}`}
               </span>
               {p.section && (
@@ -97,22 +129,26 @@ export default function Script() {
                 </span>
               )}
             </div>
-            <p className={`mb-3 text-[14px] leading-relaxed ${p.blank ? 'text-faint' : 'text-muted'}`}>
+            <p
+              className={`mb-3 text-[14px] leading-relaxed ${p.blank ? 'text-faint' : 'text-muted'}`}
+            >
               {p.caption}
             </p>
             <a
-              href={scriptImage(p.n)}
+              href={scriptImage(script.slug, p.n)}
               target="_blank"
               rel="noreferrer noopener"
               className="border-line hover:border-line-strong block overflow-hidden rounded-[6px] border transition-colors"
             >
               <img
-                src={scriptImage(p.n)}
-                alt={`Answer script page ${p.n}${p.booklet !== undefined ? `, booklet page ${p.booklet}` : ''} — ${p.caption}`}
+                src={scriptImage(script.slug, p.n)}
+                alt={`${script.subject} answer script page ${p.n}${
+                  p.booklet !== undefined ? `, booklet page ${p.booklet}` : ''
+                } — ${p.caption}`}
                 width={1700}
                 height={1202}
                 // The first couple are above the fold on most screens; the rest
-                // are a 2 MB document nobody should download all of at once.
+                // are megabytes nobody should download all at once.
                 loading={i < 2 ? 'eager' : 'lazy'}
                 decoding="async"
                 className="block h-auto w-full bg-[var(--surface-2)]"
@@ -124,8 +160,18 @@ export default function Script() {
 
       <p className="text-faint register mt-14 pl-5 text-[13px] leading-relaxed sm:pl-16">
         That's the whole document. If you spot something in it I've described wrongly anywhere else
-        on this site, tell me — <a className="underline decoration-dotted underline-offset-2" href="mailto:dpsgnotes@gmail.com">dpsgnotes@gmail.com</a>.
+        on this site, tell me —{' '}
+        <a
+          className="underline decoration-dotted underline-offset-2"
+          href="mailto:dpsgnotes@gmail.com"
+        >
+          dpsgnotes@gmail.com
+        </a>
+        .
       </p>
     </div>
   )
 }
+
+/** Re-exported so the route file stays the only place that knows about params. */
+export type { ScriptData }
