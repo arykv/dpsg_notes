@@ -113,11 +113,12 @@ scans should stay private. His counter: *"otherwise how will students trust me"*
 evidence nobody can look at isn't evidence. `/paper` makes a lot of claims about
 what CBSE does to a paper, and a skeptical student had only our word for them.
 
-Computer Science is up in full at `/paper/script`. Only three things are covered,
-and all three identify the *script* rather than the candidate: the page-1
-barcode, the cover's office-use block (QR plus IDEN/BAG/CHK), and the scanning
-centre's per-page stamp. Handwriting, marks, ticks, crosses and corrections are
-untouched — covering those would defeat the purpose.
+**Computer Science and Physics are up in full** at `/paper/script/:slug` — 70
+pages between them. Only three things are covered, and all three identify the
+*script* rather than the candidate: the page-1 barcode, the cover's office-use
+block (QR plus IDEN/BAG/CHK), and the scanning centre's per-page stamp.
+Handwriting, marks, ticks, crosses and corrections are untouched — covering those
+would defeat the purpose.
 
 The no-paywall part stands and is not revisitable: it contradicted *"everything
 essential stays free"*, and a paywall on a static site is cosmetic anyway —
@@ -129,14 +130,17 @@ This supersedes HANDOVER.md §8's "Computer Science free in full, the other four
 paywalled."
 
 **Before any other subject goes up, every one of its pages must be looked at
-individually.** Only Computer Science has been. That is not a formality — the
-first redaction run covered three chunks of an actual answer, and only a
-page-by-page look caught it.
+individually.** Computer Science and Physics have been; Chemistry, Maths and
+English have not. This is not a formality, and it has now caught two separate
+problems: the first CS run boxed three chunks of a real answer, and the CS-era
+filter matched up to twelve of Physics's blue mark chips per page. Both would
+have censored the evidence rather than protecting anyone.
 
-**Privacy check on the CS script is complete** — all 35 pages inspected
-28 Jul 2026, plus the cover QR decoded (`817445528`, the same barcode already
-printed as text on page 1). No name, no roll number, no parents' names, no DOB
-anywhere in the document. That is what made publishing it possible.
+**Privacy checks complete for Computer Science and Physics** — all 70 pages
+inspected 28 Jul 2026, plus the CS cover QR decoded (`817445528`, the same
+barcode already printed as text on page 1). No name, no roll number, no parents'
+names, no DOB anywhere in either document. That is what made publishing them
+possible.
 
 The source PDFs still stay out of git; what ships is the redacted render under
 `public/script/`, produced by `scripts/redact.py`. That script re-runs QR
