@@ -208,8 +208,11 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
 
 ### Content-complete v1 — no backend needed
 1. ~~**Trust section**~~ — **done**, `/results`. See §2.
+1b. ~~**The answer-script pillar**~~ — **done**: `/paper`, plus both scripts published in full.
+1c. **Subject guides** — Physics and Chemistry live at `/guide/:slug`. Maths, English and
+   Computer Science outstanding. Do each subject's script first; the guide is much better for it.
 2. **Book shelf** — MTG and others, with the required Amazon Associates disclosure.
-   Needs: exact titles from him.
+   **Blocked: needs exact titles from him.**
 3. **Wall charts** — the list already exists in `strategy.ts`; turn 3 into designed A3 PDFs,
    free to download. Class 10 SST maps, Class 10 Maths formulae, organic conversions.
 4. **Hindi guide** — he deferred this; ask when ready.
@@ -248,8 +251,17 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
   | English Core | `A8C772D1-B5C5-41D9-8237-9F21ACA3BAAB-2.pdf` | 35 |
 
   Page 1 of each is the **question-wise marks summary** as real text — no name, no roll number,
-  just a barcode. Pages 2+ are pure scans of his handwriting. Every page still to be inspected
-  individually before any of it informs published copy; only CS has been checked so far.
+  just a barcode. Pages 2+ are pure scans of his handwriting.
+
+  **Computer Science and Physics are inspected, redacted and published** at
+  `/paper/script/:slug`. Chemistry, Maths and English are not. Inspect every page individually
+  before generating anything — that is how the one real mistake was caught.
+
+  `scripts/redact.py <pdf> <outdir> <slug>` does the work and verifies itself. Its stamp filter is
+  built from measured geometry (31 real stamps: width 33-38px at 1700px, aspect 1.06-1.29, fill
+  0.80-0.93), because a loose filter matched Physics's blue mark chips and would have blacked out
+  the marks. Expect **exactly one box per page except pages 3 and 4**; anything else means the
+  filter needs re-checking against that subject.
 
   What gets built from these: **educational walkthroughs, typeset.** Per question — what was
   asked, what he wrote, what the examiner did to it, why the mark went the way it did, and how

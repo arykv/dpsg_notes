@@ -247,14 +247,40 @@ all** — building experiences for zero visitors is malpractice.
   question-wise marks summary, and six lessons. Its best moment is arithmetic:
   the unasterisked rows total 68, exactly the printed total, which turns the
   footnote from a claim into a proof.
-- Still to do: the per-question Computer Science walkthrough — what was asked,
-  what he wrote, what the examiner did to it, and how he'd answer it today.
-  That one needs Aryan, not just the document.
-- Still to do: the same treatment for the other four subjects. Each needs its
-  35 pages inspected individually first; only CS has been checked.
+- ~~The scripts themselves~~ — **Computer Science and Physics are published in
+  full** at `/paper/script/:slug`, 70 pages between them, every page inspected
+  individually first.
+- Still to do: Chemistry, Mathematics and English scripts. Each needs its pages
+  inspected one by one before anything is generated — that step is not optional
+  and it is what caught the one real mistake.
+- Still to do: the per-question walkthrough — what was asked, what he wrote,
+  what the examiner did to it, how he'd answer it today. That one needs Aryan,
+  not just the document.
+
+### Wave 1b — subject guides *(the positioning Aryan articulated)*
+
+> *"Free content is available, but it's scattered. I've put it all together with
+> in-depth analysis."*
+
+Curation as the product, not content as the product. **Physics and Chemistry are
+live** at `/guide/:slug`. Rules that make them worth trusting are in
+`src/data/guides.ts`: weightage must come from CBSE and is asserted at build
+time to sum to 70, no channel goes in unverified, and where a source doesn't
+settle something the page says so rather than filling the gap.
+
+The unclonable half of each guide comes from his own script, not the web — the
+half-mark findings, the question that scored zero. The web only supplies
+weightage and paper structure, which every coaching site already has. **So do
+the script before the guide for each remaining subject.**
+
+Still to do: Maths, English, Computer Science guides.
 
 ### Wave 2 — the signature
 Pull an all nighter.
+
+Now unblocked in principle — two guides exist to curate from — but still thin
+until more subjects land. Build it once three or four guides are up, not before,
+or the plan it produces will point at nothing.
 
 > ⚠️ **Content dependency, not yet costed.** The experience promises important
 > chapters, formula sheets, PYQs and last-minute videos *per subject*. Today the
