@@ -106,17 +106,32 @@ stamps, the rough-work page, the OSM ordering window, and the +7 on Chemistry.
 | | |
 |---|---|
 | **Free, all five subjects** | The analysis — annotations, why each mark was awarded, why marks were lost, how he'd answer it today, what moderation did |
-| **Never published** | The original full scans |
+| **Free, published in full** | The scans themselves, redacted |
 
-Reasoning: the earlier plan (CS free, four subjects paywalled) contradicted
-*"everything essential stays free"*, and a paywall on a static site is cosmetic
-anyway — anything under `public/` is fetchable by URL. More to the point,
-**nobody wants to buy 35 pages of someone else's handwriting.** They want to
-understand how marks are awarded. The analysis was always the product; the scans
-were only ever the evidence.
+**Reversed again, 28 Jul 2026, and Aryan was right.** Both of us had argued the
+scans should stay private. His counter: *"otherwise how will students trust me"* —
+evidence nobody can look at isn't evidence. `/paper` makes a lot of claims about
+what CBSE does to a paper, and a skeptical student had only our word for them.
+
+Computer Science is up in full at `/paper/script`. Only three things are covered,
+and all three identify the *script* rather than the candidate: the page-1
+barcode, the cover's office-use block (QR plus IDEN/BAG/CHK), and the scanning
+centre's per-page stamp. Handwriting, marks, ticks, crosses and corrections are
+untouched — covering those would defeat the purpose.
+
+The no-paywall part stands and is not revisitable: it contradicted *"everything
+essential stays free"*, and a paywall on a static site is cosmetic anyway —
+anything under `public/` is fetchable by URL. Nobody was going to buy 35 pages of
+someone else's handwriting. What changed is only whether the scans are published,
+not whether they're sold. They are not sold.
 
 This supersedes HANDOVER.md §8's "Computer Science free in full, the other four
 paywalled."
+
+**Before any other subject goes up, every one of its pages must be looked at
+individually.** Only Computer Science has been. That is not a formality — the
+first redaction run covered three chunks of an actual answer, and only a
+page-by-page look caught it.
 
 **Privacy check on the CS script is complete** — all 35 pages inspected
 28 Jul 2026, plus the cover QR decoded (`817445528`, the same barcode already
