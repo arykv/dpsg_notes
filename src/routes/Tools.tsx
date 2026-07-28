@@ -60,6 +60,7 @@ export default function Tools() {
         <TargetTool />
         <AttendanceTool />
         <GradeTool />
+        <QuestionTargetTool />
         <CountdownTool />
         <UnitsTool />
       </motion.div>
@@ -399,6 +400,131 @@ function GradeTool() {
 }
 
 /* --- 5 · countdown -------------------------------------------------------- */
+
+/* --- 5 · question target -------------------------------------------------- */
+
+/**
+ * The only number that has ever predicted anyone's marks.
+ *
+ * Watching a one-shot feels like progress and isn't. Solving does. The point of
+ * this calculator is to make a small daily number look like the large number it
+ * actually becomes — five a day is nothing, and five a day is also a thousand
+ * questions by the boards.
+ */
+function QuestionTargetTool() {
+  const [perDay, setPerDay] = useLocalStorage<string>('dpsg.qPerDay', '5')
+  const [subjects, setSubjects] = useLocalStorage<string>('dpsg.qSubjects', '3')
+  const [date, setDate] = useLocalStorage<string>('dpsg.examDate', '')
+  const [restDays, setRestDays] = useLocalStorage<string>('dpsg.qRestDays', '1')
+
+  const read = useMemo(() => {
+    const q = Number(perDay)
+    const s = Number(subjects)
+    const rest = Number(restDays)
+    if (!Number.isFinite(q) || !Number.isFinite(s) || q <= 0 || s <= 0) return null
+    if (!date) return null
+
+    const target = new Date(`${date}T09:00:00`)
+    if (Number.isNaN(target.getTime())) return null
+
+    const days = Math.ceil((target.getTime() - Date.now()) / 86_400_000)
+    if (days <= 0) return { days, past: true } as const
+
+    // Rest days are per week and honest — a plan that assumes seven days a week
+    // is a plan you break in a fortnight and then abandon entirely.
+    const working = Math.max(0, days - Math.floor(days / 7) * Math.min(Math.max(rest, 0), 6))
+    const perSubject = working * q
+    const total = perSubject * s
+
+    // Three minutes a question is a fair average across an MCQ and a five-marker.
+    const minutesPerDay = q * s * 3
+
+    return { days, working, perSubject, total, minutesPerDay, past: false } as const
+  }, [perDay, subjects, date, restDays])
+
+  return (
+    <Tool
+      id="questions"
+      title="Question target"
+      blurb="Watching explanations feels like studying. Solving is studying. This turns a small daily number into the one it adds up to."
+      footnote="Three minutes a question is a rough blend of a one-mark MCQ and a five-mark long answer — your own pace will differ, and the daily minutes are only there to tell you whether the target is survivable."
+    >
+      <div className="grid gap-4 sm:grid-cols-2">
+        <NumberField
+          label="Questions a day, per subject"
+          value={perDay}
+          onChange={setPerDay}
+          min={1}
+          max={200}
+          hint="Pick a number you'll still hit on a bad day."
+        />
+        <NumberField
+          label="Subjects you're doing this for"
+          value={subjects}
+          onChange={setSubjects}
+          min={1}
+          max={6}
+        />
+        <NumberField
+          label="Rest days a week"
+          value={restDays}
+          onChange={setRestDays}
+          min={0}
+          max={6}
+          hint="Be honest. Zero is not a plan."
+        />
+        <div>
+          <label htmlFor="q-exam-date" className="text-muted mb-1.5 block text-[13px] font-medium">
+            First paper
+          </label>
+          <input
+            id="q-exam-date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="surface border-line hover:border-line-strong focus:border-[var(--mark)] h-11 w-full rounded-[6px] border px-3 text-[15px] transition-colors focus:outline-none"
+          />
+        </div>
+      </div>
+
+      {read && read.past && (
+        <p className="text-muted mt-5 text-[14px]">That date has passed. Set the next one.</p>
+      )}
+
+      {read && !read.past && (
+        <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="mt-5">
+          <div className="grid gap-3 sm:grid-cols-3">
+            <Readout
+              value={read.total.toLocaleString('en-IN')}
+              label="Questions by the boards"
+              tone="mark"
+              sub={`Across ${subjects} subject${Number(subjects) === 1 ? '' : 's'}`}
+            />
+            <Readout
+              value={read.perSubject.toLocaleString('en-IN')}
+              label="Per subject"
+              sub={`Over ${read.working} study days`}
+            />
+            <Readout
+              value={`${Math.floor(read.minutesPerDay / 60)}h ${read.minutesPerDay % 60}m`}
+              label="A day"
+              tone={read.minutesPerDay > 240 ? 'warn' : 'accent'}
+              sub={read.minutesPerDay > 240 ? 'That is a lot. Lower it.' : 'Roughly, at three minutes each'}
+            />
+          </div>
+
+          <p className="border-[var(--mark)]/50 bg-[var(--mark)]/[0.06] mt-4 rounded-[5px] border-l-2 px-4 py-3 text-[14px] leading-relaxed">
+            {read.total >= 1000
+              ? `${perDay} a day sounds like nothing. It is ${read.total.toLocaleString('en-IN')} questions before you sit the first paper — more than any question bank you were going to buy.`
+              : `That is ${read.total.toLocaleString('en-IN')} questions. Worth nudging the daily number up: it compounds far faster than it feels like it should.`}
+          </p>
+        </motion.div>
+      )}
+    </Tool>
+  )
+}
+
+/* --- 6 · countdown -------------------------------------------------------- */
 
 function CountdownTool() {
   const [date, setDate] = useLocalStorage<string>('dpsg.examDate', '')

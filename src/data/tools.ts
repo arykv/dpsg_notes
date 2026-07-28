@@ -36,6 +36,13 @@ export const TOOLS: ToolMeta[] = [
     keywords: 'cgpa gpa grade points a1 a2 b1 conversion 9.5 percentage',
   },
   {
+    id: 'questions',
+    name: 'Question target',
+    blurb: 'Solve this many a day and this is where you land by the boards. The only number that predicts your marks.',
+    keywords:
+      'questions per day target practice pyq goal daily how many questions solve plan boards streak practice plan',
+  },
+  {
     id: 'countdown',
     name: 'Exam countdown',
     blurb: 'Days left, and what that means in study sessions rather than dates.',

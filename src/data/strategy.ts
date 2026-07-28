@@ -80,6 +80,19 @@ export const IN_THE_HALL: StrategyNote[] = [
 
 export const THE_YEAR: StrategyNote[] = [
   {
+    id: 'solve-dont-watch',
+    heading: 'Watching a one-shot will do nothing for you',
+    lede: 'It feels like studying. It is not studying. You have to solve questions.',
+    body: [
+      'A ten-hour one-shot at 2x is the most comfortable way to spend a day and feel productive. You understand everything while it is on the screen, and then you sit down with a paper and cannot start. Understanding an explanation and being able to produce one are different skills, and only the second one is examined.',
+      'So watch the video if a chapter is genuinely new to you — that is what it is for. Then close it and solve. If you have a choice between the next video and twenty questions, it is the twenty questions, every time.',
+      'Here is the part nobody tells you, and it is the reason people give up on this. When you start solving, it feels like the teacher is doing the questions and you are getting nothing. You watch a solution, it makes sense, you meet the next question and you are blank again. That stage is horrible and completely normal, and most people quit inside it and go back to watching videos because watching feels better.',
+      'Push through it, because the thing you are actually building is not knowledge. It is pattern recognition. What feels like a hundred impossible questions is about ten approaches wearing different clothes. One day you read a question and realise it is the same shape as one you have already done, and after that it is not hard any more — it never was hard, you just did not know the approach. Once you know it you can take a thousand questions like it.',
+      'That is the whole game. Every question you solve is not one question. It is one more pattern you will recognise in the exam hall.',
+    ],
+    rule: 'If a chapter is new: one video, then solve. Never two videos in a row.',
+  },
+  {
     id: 'school-exams',
     heading: 'The one thing that actually carried me',
     lede: 'Take every school exam seriously — even if it’s one all-nighter each.',
