@@ -270,6 +270,56 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/print',
+    title: 'Free CBSE wall charts and a one-page letter for parents',
+    description:
+      'Print-ready A3 wall charts — Class 12 Physics formulae, Maths formulae, and the organic conversions — plus a single page for a parent on what actually helps the night before an exam. Free, no account, designed for paper.',
+    intent: [
+      'cbse formula sheet pdf class 12',
+      'physics formula chart class 12',
+      'organic chemistry conversions chart',
+      'what should parents do before board exams',
+    ],
+    og: {
+      kicker: 'Print',
+      headline: 'Things worth putting on a wall',
+      stat: '4',
+      statLabel: 'free, designed for paper',
+    },
+  },
+  {
+    path: '/print/physics-formulae',
+    title: 'Class 12 Physics formula sheet — free A3 wall chart',
+    description:
+      'Every Class 12 Physics formula the paper assumes you already know, on one printable sheet: electrostatics, current electricity, magnetism and induction, optics, modern physics and electronic devices. Free, no account.',
+    intent: ['class 12 physics formula sheet pdf', 'physics formulas class 12 all chapters', 'cbse physics formula chart'],
+    og: { kicker: 'Wall chart', headline: 'Class 12 Physics — the formulae, and nothing else', stat: 'A3', statLabel: 'free to print' },
+  },
+  {
+    path: '/print/maths-formulae',
+    title: 'Class 12 Maths formula sheet — free A3 wall chart',
+    description:
+      'The derivatives, integrals, definite-integral properties, vectors, matrices and probability formulae you are expected to produce from memory. Calculus is 35 of the 80 marks, so this is the half worth having on a wall.',
+    intent: ['class 12 maths formula sheet pdf', 'integration formulas class 12', 'cbse maths formula chart'],
+    og: { kicker: 'Wall chart', headline: 'Class 12 Maths — calculus is 35 of the 80 marks', stat: 'A3', statLabel: 'free to print' },
+  },
+  {
+    path: '/print/organic-conversions',
+    title: 'Organic conversions chart — Class 12 Chemistry, free to print',
+    description:
+      'The named conversions and distinguishing tests that come round every year: haloalkanes, alcohols and phenols, carbonyls, amines. Chemistry is scored in half marks, so the reagent alone is worth writing even when you cannot finish the chain.',
+    intent: ['organic chemistry conversions class 12', 'name reactions class 12 chemistry chart', 'organic conversions cbse pdf'],
+    og: { kicker: 'Wall chart', headline: 'Organic conversions — the reagent above the arrow', stat: 'A3', statLabel: 'free to print' },
+  },
+  {
+    path: '/print/for-parents',
+    title: 'For a parent, the night before a board exam — one page',
+    description:
+      'What actually helps and what does not, written by a student who has just been through it. Food on time, a quiet house, and letting them sleep. Plus the two things about the exam itself worth knowing — including that CBSE moderation is real.',
+    intent: ['what should parents do night before exam', 'how to support child before board exams', 'parents board exam stress advice'],
+    og: { kicker: 'One page', headline: 'For a parent, the night before', stat: '1', statLabel: 'page, send it on' },
+  },
+  {
     path: '/guide',
     title: 'CBSE Class 12 subject guides — every unit, its marks, what to study first',
     description:

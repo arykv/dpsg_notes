@@ -298,3 +298,65 @@
     opacity: 0;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Print.
+
+   Only /print/* is designed to leave the screen. What comes out of a printer
+   has to be black on white and legible from across a room — the register's
+   bottle-green ground and faint ruling are exactly wrong on paper, and a wall
+   chart you have to squint at is one you stop looking at.
+--------------------------------------------------------------------------- */
+
+@media print {
+  /* Force the paper palette regardless of the theme on screen. */
+  :root,
+  .dark {
+    --canvas: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --line: #b9b9b9;
+    --line-strong: #6b6b6b;
+    --text: #000000;
+    --text-muted: #1c1c1c;
+    --text-faint: #4a4a4a;
+    --mark: #000000;
+    --pen: #000000;
+    --rule: transparent;
+    --shadow-card: none;
+  }
+
+  body {
+    background: #fff !important;
+    background-image: none !important;
+  }
+
+  /* The site's furniture never prints. */
+  header,
+  footer,
+  .register::before {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .printable {
+    margin: 0 !important;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1,
+  h2 {
+    break-after: avoid;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+}

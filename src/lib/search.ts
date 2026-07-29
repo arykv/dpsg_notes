@@ -99,6 +99,14 @@ const PAGES: SearchItem[] = [
     keywords: 'exam tomorrow tonight last minute plan emergency revision panic how cooked am i what to study night before survive',
   },
   {
+    id: 'page-print',
+    type: 'page',
+    title: 'Wall charts & the parent page',
+    subtitle: 'Free, designed for paper',
+    to: '/print',
+    keywords: 'formula sheet wall chart print a3 physics maths organic conversions parents night before exam printable free',
+  },
+  {
     id: 'page-guides',
     type: 'page',
     title: 'Subject guides',

@@ -23,6 +23,7 @@ const COLUMNS = [
       { label: 'NCERT chapters', to: '/chapters/class-11' },
       { label: 'Subject guides', to: '/guide' },
       { label: 'Books worth buying', to: '/books' },
+      { label: 'Wall charts to print', to: '/print' },
       { label: 'Resources & channels', to: '/resources' },
     ],
   },
