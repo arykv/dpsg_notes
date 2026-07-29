@@ -51,12 +51,13 @@ export default function Paper() {
         className="surface border-line-strong mt-8 rounded-[6px] border p-5"
       >
         <p className="eyebrow">Don't take my word for it</p>
-        <h2 className="mt-1.5 text-[17px]">Two whole scripts are on this site, 70 pages</h2>
+        <h2 className="mt-1.5 text-[17px]">Three whole scripts are on this site, 105 pages</h2>
         <p className="text-muted mt-2 text-[14px] leading-relaxed">
-          Two whole evaluated papers, exactly as CBSE returned them — the ticks, the crosses, the
+          Three whole evaluated papers, exactly as CBSE returned them — the ticks, the crosses, the
           blank pages and the rough work. Only the script's barcode is covered. Everything claimed
-          below can be checked against them. Physics is the more revealing of the two: the examiner
-          writes the half-mark arithmetic straight onto the page.
+          below can be checked against them. Physics is the most revealing: the examiner writes the
+          half-mark arithmetic straight onto the page. Chemistry is the most useful, because it is
+          the one I did badly.
         </p>
         <div className="mt-4 flex flex-wrap gap-2.5">
           <ButtonLink to="/paper/script/computer-science" size="sm" variant="mark">
@@ -64,6 +65,9 @@ export default function Paper() {
           </ButtonLink>
           <ButtonLink to="/paper/script/physics" size="sm" variant="secondary">
             Physics, 35 pages
+          </ButtonLink>
+          <ButtonLink to="/paper/script/chemistry" size="sm" variant="secondary">
+            Chemistry, 35 pages
           </ButtonLink>
         </div>
       </motion.aside>

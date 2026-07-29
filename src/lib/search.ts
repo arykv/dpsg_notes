@@ -118,6 +118,15 @@ const PAGES: SearchItem[] = [
       'physics answer sheet evaluated half marks step marking cbse 042 scan electrostatics lost marks',
   },
   {
+    id: 'page-script-chemistry',
+    type: 'page',
+    title: 'My Chemistry answer script',
+    subtitle: 'The paper I did worst in, published in full',
+    to: '/paper/script/chemistry',
+    keywords:
+      'chemistry answer sheet evaluated half marks cbse 043 scan moderation grace marks worst paper',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

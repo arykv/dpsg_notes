@@ -178,9 +178,51 @@ export const PHYSICS_SCRIPT: Script = {
   ],
 }
 
+
+/* --- Chemistry ------------------------------------------------------------ */
+
+export const CHEMISTRY_SCRIPT: Script = {
+  slug: 'chemistry',
+  subject: 'Chemistry',
+  code: '043',
+  scriptTotal: 52,
+  marksheetTotal: 59,
+  lede: 'My worst paper, and the one with the most to learn from. Evaluated at 51.5, rounded up to 52, then moderated to 59 — the biggest jump of my five subjects. Almost every long answer here is scored in halves.',
+  pages: [
+    ...PRELIMS('Chemistry'),
+    { n: 5, booklet: 2, section: 'Section A', caption: 'Q1–Q9, the MCQs. Two zeros already, on Q1 and Q5.' },
+    { n: 6, booklet: 3, caption: 'Q10–Q16, including the assertion-and-reason pairs. Two more zeros.' },
+    { n: 7, booklet: 4, section: 'Section B', caption: 'Q17–Q19. The first red summary box: "17 : 0.5 + 0.5 + 0.5 = 1.5".' },
+    { n: 8, booklet: 5, caption: 'Q20 and Q21 — kinetics and amino acids.' },
+    { n: 9, booklet: 6, section: 'Section C', caption: 'Q22 — SN1 versus SN2. "22a : 0.5 + 0 = 0.5".' },
+    { n: 10, booklet: 7, caption: 'Q22b, Q22c and the start of Q23 — racemic mixtures and the phenol conversion.' },
+    { n: 11, booklet: 8, caption: 'Q23 continued — Reimer–Tiemann and Friedel–Crafts.' },
+    { n: 12, booklet: 9, caption: 'Q24 — acidity of carboxylic acids. Q24b scored zero.' },
+    { n: 13, booklet: 10, caption: 'Q25 — anomers, invert sugar and glycosidic linkage.' },
+    { n: 14, booklet: 11, caption: 'Q26 — the first-order kinetics numerical. Full marks, and the cleanest working in the paper.' },
+    { n: 15, booklet: 12, caption: 'Q27b on primary cells, and the start of Q28 — elevation of boiling point.' },
+    { n: 16, booklet: 13, caption: 'Q28 concluded. "28 : 0.5 + 0.5 + 1 + 0.5 = 2.5".' },
+    { n: 17, booklet: 14, section: 'Section D', caption: 'Q29 — crystal field splitting, then coordination compounds. The first of several zeros on electron configurations.' },
+    { n: 18, booklet: 15, caption: 'Q29 continued — the hexaammine and hexacyano complexes.' },
+    { n: 19, booklet: 16, caption: 'Q30 — amine basicity, diazotisation and why aniline is acetylated before nitration.' },
+    { n: 20, booklet: 17, caption: 'Q30a(ii) — the Hofmann degradation chain. Scored 0.5 of 1.' },
+    { n: 21, booklet: 18, section: 'Section E', caption: 'A false start on Section E, crossed straight out. Left in because it is what actually happened.' },
+    { n: 22, booklet: 19, caption: 'Q31a — the Nernst equation done properly. Three ticks in a row.' },
+    { n: 23, booklet: 20, caption: 'Q31a concluded at 5 of 5, and the start of Q32 on carbonyl identification.' },
+    { n: 24, booklet: 21, caption: 'Q32a(ii) — two oxidation conversions, both marked wrong.' },
+    { n: 25, booklet: 22, caption: 'Q33 — d-block reduction potentials and the irregular trend.' },
+    { n: 26, booklet: 23, caption: 'Q33 continued — the copper and manganese explanations, both zero.' },
+    { n: 27, booklet: 24, caption: 'Q33a(ii) permanganate equations, and Q33b on lanthanoids.' },
+    { n: 28, booklet: 25, caption: 'Q33b(iv) — potassium permanganate on heating. "33b_iv : 0 + 0 = 0".' },
+    ...blanks(29, 5),
+    { n: 34, booklet: 31, caption: 'Rough work, stamped RW.' },
+    { n: 35, booklet: 32, caption: 'The densest page in any of the three scripts — every formula I could not hold in my head.' },
+  ],
+}
+
 /* -------------------------------------------------------------------------- */
 
-export const SCRIPTS: Script[] = [CS_SCRIPT, PHYSICS_SCRIPT]
+export const SCRIPTS: Script[] = [CS_SCRIPT, PHYSICS_SCRIPT, CHEMISTRY_SCRIPT]
 
 export const scriptBySlug = (slug: string) => SCRIPTS.find((s) => s.slug === slug)
 

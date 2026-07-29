@@ -289,6 +289,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/paper/script/chemistry',
+    title: 'A real evaluated CBSE Chemistry answer script — my worst paper, published',
+    description:
+      'My whole Class 12 Chemistry answer book as CBSE returned it. Evaluated at 51.5, rounded to 52, moderated to 59 — the biggest jump of my five papers. Every zero, every half mark and every crossed-out false start, including a Section E attempt I abandoned mid-sentence.',
+    intent: [
+      'cbse chemistry evaluated answer sheet',
+      'how are chemistry board answers marked',
+      'cbse chemistry step marking half marks',
+      'why did i lose marks in chemistry board',
+      'cbse chemistry answer script sample',
+    ],
+    og: {
+      kicker: 'Chemistry · my worst paper',
+      headline: 'The one I did badly, published in full',
+      stat: '51.5',
+      statLabel: 'before rounding',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:
