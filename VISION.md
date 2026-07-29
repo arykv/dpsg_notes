@@ -306,11 +306,36 @@ edit: **never flatter, never hopeless.**
 > having, then repeat. Five shallow subjects is the failure mode.
 
 ### Wave 3 — the loop
-Deadline alerts · the parent one-pager · wall charts as free A3 PDFs (which
-double as the first real demand test for printed products)
+- ~~Wall charts~~ — **shipped** at `/print`. Three A3 charts (Physics formulae,
+  Maths formulae, organic conversions), print-styled rather than PDFs so they
+  stay editable and weigh nothing.
+- ~~The parent one-pager~~ — **shipped** at `/print/for-parents`. Deliberately
+  not a tab; a single sheet the student hands on.
+- **Deadline alerts — a decision, not a task.** It needs an email backend, and
+  "no uploads, no database" is a standing rule. Decide the rule before building
+  the feature.
 
 ### Wave 4 — only if 1–3 land
 Pre-orders · contributors · other boards
+
+---
+
+## 13. Where it actually got to, 28 Jul 2026
+
+Everything in waves 0–3 that survives this document's own philosophy is built
+and live. 30 prerendered routes.
+
+| | |
+|---|---|
+| The flagship | `/tonight` — three taps, honest verdict, plan ranked by marks per minute |
+| The moat | `/results`, `/paper`, and all five scripts at `/paper/script/:slug` — 183 pages |
+| Curation | Five guides at `/guide/:slug`, weightage asserted at build time |
+| Off-screen | Three wall charts and the parent page at `/print` |
+| Utility | 395 NCERT chapters, 7 calculators, strategy, resources, school day |
+
+**Open, and each for a stated reason:** SEO/Search Console (deferred by Aryan
+until the site was done — it now is); deadline-alert emails (needs a backend
+decision first); printed-kit pre-orders (needs April 2027).
 
 ---
 
