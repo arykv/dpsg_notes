@@ -24,6 +24,7 @@ function isSection(pathname: string, to: string): boolean {
 const NAV = [
   { to: '/library', label: 'Library' },
   { to: '/chapters/class-11', label: 'Chapters' },
+  { to: '/guide', label: 'Guides' },
   { to: '/strategy', label: 'Strategy' },
   { to: '/results', label: 'Results' },
   { to: '/paper', label: 'Your paper' },

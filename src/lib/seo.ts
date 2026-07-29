@@ -251,6 +251,24 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/guide',
+    title: 'CBSE Class 12 subject guides — every unit, its marks, what to study first',
+    description:
+      'All five Class 12 science-stream subjects mapped in one place: official unit-wise weightage, what each unit actually asks, and what to do first if you are short on time. Physics, Chemistry, Maths, English and Computer Science, each with my own marks attached.',
+    intent: [
+      'cbse class 12 chapter wise weightage',
+      'class 12 important chapters all subjects',
+      'cbse class 12 syllabus marks distribution',
+      'what to study first class 12 boards',
+    ],
+    og: {
+      kicker: 'Subject guides',
+      headline: 'Every Class 12 subject, put together properly',
+      stat: '5',
+      statLabel: 'subjects mapped',
+    },
+  },
+  {
     path: '/guide/class-12-physics',
     title: 'Class 12 Physics — every unit, its marks, and what to study first',
     description:
@@ -362,6 +380,63 @@ export const PAGES: PageMeta[] = [
       headline: 'The subject people think you cannot study for',
       stat: '76',
       statLabel: 'and it was the formats',
+    },
+  },
+  {
+    path: '/guide/class-12-maths',
+    title: 'Class 12 Maths — every unit, its marks, and why Calculus is half the paper',
+    description:
+      'The whole of CBSE Class 12 Mathematics in one place: official unit-wise weightage for all 80 theory marks, why Calculus alone is 35 of them, and why you should not buy a reference book for this subject. From a student who scored 71 out of 80 using only NCERT and past papers.',
+    intent: [
+      'class 12 maths weightage 2026',
+      'cbse class 12 maths unit wise marks',
+      'best book for class 12 maths cbse',
+      'class 12 maths important chapters',
+      'cbse maths calculus weightage',
+    ],
+    og: {
+      kicker: 'Class 12 Maths',
+      headline: 'Calculus alone is 35 of the 80 marks',
+      stat: '35',
+      statLabel: 'of 80, one unit',
+    },
+  },
+  {
+    path: '/guide/class-12-english',
+    title: 'Class 12 English — where the marks actually are, and it is not the literature',
+    description:
+      'CBSE Class 12 English Core, mapped: 22 marks of reading you cannot prepare, 18 marks of writing formats you absolutely can, and 40 marks of literature that wants shorter answers than you think. From a student who scored 76 out of 80 by learning four layouts.',
+    intent: [
+      'class 12 english weightage',
+      'cbse english core writing section format',
+      'how to score full marks in english class 12',
+      'class 12 english notice invitation letter format',
+      'english core important chapters',
+    ],
+    og: {
+      kicker: 'Class 12 English',
+      headline: '18 marks of pure format that nobody studies',
+      stat: '18',
+      statLabel: 'marks in the layouts',
+    },
+  },
+  {
+    path: '/guide/class-12-computer-science',
+    title: 'Class 12 Computer Science — the only paper marked in whole marks',
+    description:
+      'CBSE Class 12 Computer Science, mapped: Python is 40 of the 70, databases another 20, and it is the only one of my five papers with no half marks anywhere in it — which changes how you should write the code. From a student who scored 68 out of 70.',
+    intent: [
+      'class 12 computer science weightage',
+      'cbse computer science 083 syllabus marks',
+      'class 12 cs sql questions marks',
+      'computer science important chapters class 12',
+      'how to score full marks computer science',
+    ],
+    og: {
+      kicker: 'Class 12 CS',
+      headline: 'The only paper marked in whole marks',
+      stat: '40',
+      statLabel: 'of 70 is Python',
     },
   },
   {

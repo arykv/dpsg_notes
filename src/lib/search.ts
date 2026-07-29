@@ -91,6 +91,14 @@ const PAGES: SearchItem[] = [
       'answer sheet scan evaluated copy real example what does a checked paper look like osm computer science 083 evidence proof pages',
   },
   {
+    id: 'page-guides',
+    type: 'page',
+    title: 'Subject guides',
+    subtitle: 'All five subjects, weightage and what to do first',
+    to: '/guide',
+    keywords: 'guides subject weightage class 12 all subjects important chapters what to study first',
+  },
+  {
     id: 'guide-class-12-physics',
     type: 'page',
     title: 'Class 12 Physics, put together',
@@ -152,6 +160,30 @@ const PAGES: SearchItem[] = [
     to: '/paper/script/english',
     keywords:
       'english answer sheet evaluated cbse 301 notice invitation letter article format writing section marks scan',
+  },
+  {
+    id: 'guide-class-12-maths',
+    type: 'page',
+    title: 'Class 12 Maths, put together',
+    subtitle: 'Calculus is 35 of 80 — plan accordingly',
+    to: '/guide/class-12-maths',
+    keywords: 'maths mathematics class 12 weightage calculus integration probability linear programming vectors guide no book ncert',
+  },
+  {
+    id: 'guide-class-12-english',
+    type: 'page',
+    title: 'Class 12 English, put together',
+    subtitle: 'The writing formats are where the marks are',
+    to: '/guide/class-12-english',
+    keywords: 'english core class 12 weightage notice invitation letter article format literature flamingo vistas reading comprehension guide',
+  },
+  {
+    id: 'guide-class-12-cs',
+    type: 'page',
+    title: 'Class 12 Computer Science, put together',
+    subtitle: 'Python 40, databases 20, no half marks',
+    to: '/guide/class-12-computer-science',
+    keywords: 'computer science class 12 083 weightage python sql database networks guide whole marks file handling stack',
   },
   {
     id: 'page-about',

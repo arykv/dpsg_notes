@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { AlertTriangle, ArrowUpRight, Play } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import {
+  GUIDES,
   branchTotals,
   guideBySlug,
   unitTotal,
@@ -22,7 +24,11 @@ import { inView, rise, stagger } from '@/lib/motion'
  */
 export default function Guide() {
   const { slug } = useParams()
-  const guide = slug ? guideBySlug(slug) : undefined
+  // No slug means the index. Five guides with no hub was the single worst bit
+  // of navigation on the site.
+  if (!slug) return <GuideIndex />
+
+  const guide = guideBySlug(slug)
   if (!guide) return <NotFound />
 
   return (
@@ -247,5 +253,62 @@ function Watch({ guide }: { guide: SubjectGuide }) {
         . Weightage is CBSE's own and is checked at build time to sum to {guide.theoryMarks}.
       </p>
     </motion.section>
+  )
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/** The hub. Leads with each subject's shape, because that's what you came for. */
+function GuideIndex() {
+  return (
+    <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
+      <SectionHead
+        eyebrow="Subject guides"
+        title="Every Class 12 subject, put together properly"
+        description="All of this exists free somewhere. It's spread across a syllabus PDF, a dozen blogs copying each other's mistakes, and a hundred channels. Here it is in one place, with my own marks attached to each one."
+      />
+
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={stagger(0.05)}
+        className="mt-10 space-y-3"
+      >
+        {GUIDES.map((g) => (
+          <motion.div key={g.slug} variants={rise}>
+            <Link
+              to={`/guide/${g.slug}`}
+              className="surface border-line hover:border-line-strong block rounded-[6px] border p-5 transition-colors"
+            >
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 className="text-[17px]">{g.subject}</h2>
+                <span className="text-mark font-mono text-[12px] tabular">
+                  {g.mine.total}/100
+                </span>
+              </div>
+              <p className="text-muted mt-2 text-[14px] leading-relaxed">{g.mine.verdict}</p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {Object.entries(branchTotals(g))
+                  .sort((a, b) => b[1] - a[1])
+                  .map(([branch, marks]) => (
+                    <span
+                      key={branch}
+                      className="surface-2 border-line text-muted rounded-[4px] border px-2 py-0.5 text-[12px]"
+                    >
+                      {branch} <span className="text-mark font-mono tabular">{marks}</span>
+                    </span>
+                  ))}
+              </div>
+            </Link>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <p className="text-faint mt-8 text-[13px] leading-relaxed">
+        Every weightage table here is CBSE's own and is checked at build time to sum to the paper
+        total, because coaching sites copy each other's typos and you plan your week around this.
+      </p>
+    </div>
   )
 }

@@ -391,7 +391,186 @@ export const PHYSICS_12: SubjectGuide = {
   ],
 }
 
-export const GUIDES: SubjectGuide[] = [PHYSICS_12, CHEMISTRY_12]
+
+/* -------------------------------------------------------------------------- */
+
+export const MATHS_12: SubjectGuide = {
+  slug: 'class-12-maths',
+  subject: 'Mathematics',
+  code: '041',
+  grade: 12,
+  theoryMarks: 80,
+  paper: { questions: 38, sections: 'Five — A: MCQs, B: very short, C: short, D: long, E: case-based', duration: '3 hours' },
+  mine: {
+    theory: 71,
+    practical: 20,
+    total: 91,
+    verdict:
+      'The paper I got most out of per hour spent, and the one I bought no book for. 71 of 80, untouched by moderation. My whole script is published, including the question I abandoned halfway through.',
+  },
+  units: [
+    { n: 1, name: 'Relations and Functions', marks: 8, branch: 'Foundations', asked: 'One-one and onto proofs, and inverse trigonometric functions. Almost always a five-marker asking you to prove a function bijective.' },
+    { n: 2, name: 'Algebra', marks: 10, branch: 'Foundations', asked: 'Matrices and determinants — inverse by adjoint, and solving a system of three equations as a matrix product.' },
+    { n: 3, name: 'Calculus', marks: 35, branch: 'Calculus', asked: 'Nearly half the paper. Continuity and differentiability, applications of derivatives, indefinite and definite integrals, area under curves, and differential equations.' },
+    { n: 4, name: 'Vectors and Three-Dimensional Geometry', marks: 14, branch: 'Vectors & 3D', asked: 'Dot and cross products, projections, and the shortest distance between two lines — which turns up nearly every year.' },
+    { n: 5, name: 'Linear Programming', marks: 5, branch: 'Applied', asked: 'One question, graphical method, corner points. The most predictable five marks in the paper and the reason the booklet has graph paper in it.' },
+    { n: 6, name: 'Probability', marks: 8, branch: 'Applied', asked: 'Conditional probability, Bayes, and a case study built around a real-sounding scenario.' },
+  ],
+  sections: [
+    {
+      id: 'calculus',
+      heading: 'Calculus is 35 of 80 and everything else is a rounding error',
+      body: [
+        'Nearly half the paper is one unit. Integration alone will out-mark Linear Programming, Probability and Relations combined. If your revision plan gives Calculus the same slot as everything else, your revision plan is wrong.',
+        'The corollary is the good news: Linear Programming is five marks for one graph and a table of corner points, and it is the same question every year in different clothes. Probability is eight more for a small, self-contained syllabus. Between them that is thirteen marks you can genuinely secure in an evening.',
+      ],
+      rule: 'Calculus every day. Linear Programming and Probability in the last week — not before, they will keep.',
+    },
+    {
+      id: 'no-book',
+      heading: 'Do not buy a book for this subject',
+      body: [
+        'I did not, and it is the paper I scored highest in relative to effort. NCERT exercises — all of them, including the miscellaneous ones everybody skips because they are harder — plus every past paper you can find, is genuinely enough.',
+        'A reference book mostly gives you a way to feel busy without solving anything. You already have more questions in the NCERT than you will finish.',
+      ],
+      rule: 'NCERT miscellaneous exercises are the ones worth doing. They are harder than the chapter exercises, which is the point.',
+    },
+    {
+      id: 'abandoned',
+      heading: 'The most expensive thing you can do is stop halfway',
+      body: [
+        'Question 30 on my paper was integration by parts. I set it up correctly and took the first mark. Then the working simply stops mid-line. The chip reads "30 : 1 + 0 + 0 = 1".',
+        'The same thing happened on my Physics paper, on a five-mark electrostatics question that scored zero. Two papers, same failure: the marks were sitting there in the later steps and I did not put anything on the page to claim them.',
+        'Maths is marked in half marks and every step is a slot. A wrong final answer with correct working keeps most of the marks. An abandoned answer keeps almost none. If you are stuck, write the next line you are sure of anyway.',
+      ],
+      rule: 'Never leave a question half-written. Wrong beats blank, every single time.',
+    },
+  ],
+  watch: [
+    { name: 'Ushank Ghai sir', handle: '@AshuGhai11th12th', href: 'https://www.youtube.com/@AshuGhai11th12th', note: 'Same channel as Ashu sir. The question marathons are the useful part — hours of him solving one after another, which is the closest thing to practice you can get from a video.' },
+  ],
+  sources: [
+    { label: 'CBSE Academic — curriculum and rationalised syllabus', href: 'https://cbseacademic.nic.in/' },
+    { label: 'NCERT textbooks', href: 'https://ncert.nic.in/textbook.php' },
+  ],
+}
+
+export const ENGLISH_12: SubjectGuide = {
+  slug: 'class-12-english',
+  subject: 'English Core',
+  code: '301',
+  grade: 12,
+  theoryMarks: 80,
+  paper: { questions: 13, sections: 'Three — A: Reading, B: Writing, C: Literature', duration: '3 hours' },
+  mine: {
+    theory: 76,
+    practical: 20,
+    total: 96,
+    verdict:
+      'My second-highest paper, and the one I prepared least for — because the marks are in formats, not in reading. 76 of 80, unchanged by moderation.',
+  },
+  units: [
+    { n: 1, name: 'Reading Comprehension', marks: 22, branch: 'Reading', asked: 'Two unseen passages with sub-parts. No preparation possible beyond reading carefully and answering in the passage’s own words.' },
+    { n: 2, name: 'Creative Writing Skills', marks: 18, branch: 'Writing', asked: 'Notice, invitation, letter to the editor or application, and an article or report. Fixed layouts, fixed mark distribution.' },
+    { n: 3, name: 'Literature', marks: 40, branch: 'Literature', asked: 'Flamingo and Vistas — extract-based questions, short answers and two long answers on theme and character.' },
+  ],
+  sections: [
+    {
+      id: 'formats',
+      heading: 'The writing section is 18 marks of pure format, and people ignore it',
+      body: [
+        'Everyone treats English as the subject you cannot study for, so they read the chapters again and call it revision. Meanwhile eighteen marks sit in the writing section, where the layout is fixed and published, and where you can score full marks by following a template.',
+        'On my script the notice took 4 of 4 and the article 5 of 5. The half mark I lost on the invitation was layout, not content — I know exactly what it was, and it is the kind of thing you only fix by having written twenty of them.',
+        'Learn the four formats until you can draw them from memory. It is the highest marks-per-hour on the entire Class 12 syllabus, in any subject.',
+      ],
+      rule: 'Box the notice. Centre the invitation. Address block, subject line, salutation, body, sign-off for the letter. Every time.',
+    },
+    {
+      id: 'literature',
+      heading: 'Literature is 40 marks and the answers are shorter than you think',
+      body: [
+        'The extract questions are one mark each and want one clean sentence. The long answers are 4 or 5 and want a position, two or three supports from the text, and a conclusion — not everything you remember about the chapter.',
+        'On my script the long answers scored 4.5 and 4.5. Both are about a page. Length was never the thing being marked.',
+      ],
+    },
+    {
+      id: 'reading',
+      heading: 'The reading section cannot be prepared, so stop trying',
+      body: [
+        'Twenty-two marks of unseen passages. There is nothing to revise. What there is, is a technique: answer in the words of the passage wherever the question allows it, and keep one-mark answers to one line.',
+        'My whole reading section came out clean, and I had done nothing for it except read the passage twice before starting.',
+      ],
+    },
+  ],
+  watch: [
+    { name: 'Grand Academy', handle: '@GrandAcad', href: 'https://www.youtube.com/@GrandAcad', note: 'What I used for writing skills and the long answers — the formats especially.' },
+    { name: 'Taniya Sharma', handle: '@EnglishClassesbyTaniyaSharma', href: 'https://www.youtube.com/@EnglishClassesbyTaniyaSharma', note: 'For the literature side — Flamingo and Vistas chapter by chapter.' },
+  ],
+  sources: [
+    { label: 'CBSE Academic — curriculum and sample papers', href: 'https://cbseacademic.nic.in/' },
+    { label: 'NCERT textbooks', href: 'https://ncert.nic.in/textbook.php' },
+  ],
+}
+
+export const CS_12: SubjectGuide = {
+  slug: 'class-12-computer-science',
+  subject: 'Computer Science',
+  code: '083',
+  grade: 12,
+  theoryMarks: 70,
+  paper: { questions: 37, sections: 'Five — A: MCQs, B: very short, C: short, D: long, E: case-based', duration: '3 hours' },
+  mine: {
+    theory: 68,
+    practical: 30,
+    total: 98,
+    verdict:
+      'My best paper — 68 of 70, and the only one of my five marked entirely in whole marks. No half marks anywhere in the script, which changes how you should write it.',
+  },
+  units: [
+    { n: 1, name: 'Computational Thinking and Programming — 2', marks: 40, branch: 'Python', asked: 'Python: functions, file handling (text, binary and CSV), and data structures — the stack especially. Well over half the paper.' },
+    { n: 2, name: 'Computer Networks', marks: 10, branch: 'Networks', asked: 'Topologies, devices, protocols, and one case study asking you to lay out a campus network and justify it.' },
+    { n: 3, name: 'Database Management', marks: 20, branch: 'Databases', asked: 'SQL queries and their output tables, plus Python–MySQL connectivity. Very predictable and very learnable.' },
+  ],
+  sections: [
+    {
+      id: 'whole-marks',
+      heading: 'This is the only paper with no half marks in it',
+      body: [
+        'I checked all five of my scripts. Physics had ten half marks, Chemistry eleven, English four, Maths two. Computer Science had none at all — every chip on the page is a whole number.',
+        'That changes the calculus of a half-finished answer. In Physics a partial derivation still banks fragments. Here a function that does not work is more likely to score nothing, and a function that works scores the mark even if it is inelegant.',
+        'So the priority is different: get something that runs, then make it neat. On my four-mark file-handling answer there are five separate ticks against five separate lines — the import, the open, the loop, the condition, the close — and each one is a whole mark being confirmed.',
+      ],
+      rule: 'Write code that works before you write code that is pretty. Whole marks do not reward elegance.',
+    },
+    {
+      id: 'sql',
+      heading: 'Databases are 20 marks and they are free',
+      body: [
+        'SQL is twenty marks of the seventy, and it is the most predictable content in the subject. The same handful of query shapes come round every year — SELECT with WHERE, GROUP BY with aggregate, ORDER BY, and a join — and once you have written thirty of them you are not going to meet a new one.',
+        'On my script every SQL question and its output table is correct. It is not because I am good at SQL, it is because there is not very much of it to be good at.',
+      ],
+      rule: 'Do every SQL question in the last ten years of papers. It is an afternoon, and it is a fifth of the paper.',
+    },
+    {
+      id: 'both',
+      heading: 'Answering both alternatives bought me nothing',
+      body: [
+        'On seven either/or questions I wrote out both options. The summary on page one scores both and then discards one — the footnote says asterisked marks are omitted from totalling, and the unasterisked rows add up to exactly 68, which is the printed total.',
+        'On my paper both alternatives happened to score the same, so the script cannot tell you which one CBSE keeps. What it does tell you is that the second attempt cost me time I could have spent checking the rest of the paper.',
+      ],
+      rule: 'Pick one alternative. Cross the other out properly and move on.',
+    },
+  ],
+  watch: [
+    { name: 'Programming with Mosh', handle: '@programmingwithmosh', href: 'https://www.youtube.com/@programmingwithmosh', note: 'For Python itself rather than for the board syllabus. If the language is the thing defeating you, fix that first and the paper gets much easier.' },
+  ],
+  sources: [
+    { label: 'CBSE Academic — curriculum and sample papers', href: 'https://cbseacademic.nic.in/' },
+    { label: 'NCERT textbooks', href: 'https://ncert.nic.in/textbook.php' },
+  ],
+}
+
+export const GUIDES: SubjectGuide[] = [PHYSICS_12, CHEMISTRY_12, MATHS_12, ENGLISH_12, CS_12]
 
 export const guideBySlug = (slug: string) => GUIDES.find((g) => g.slug === slug)
 
