@@ -14,9 +14,9 @@ Everything a new session needs to pick this up. Written 28 July 2026.
 **All Nighter** — a free CBSE study site for Class 10, 11 and 12. Every NCERT chapter,
 honest exam strategy, calculators, and a directory of checked free resources.
 
-The positioning is the whole point: *everything you need at 11pm the night before.* Aryan was
-a last-minute studier and scored 95.2% and 92.8% anyway. The site says that out loud, which no
-competitor will.
+The positioning is the whole point: *not where you study all year — where you go when you didn't.*
+Aryan was a last-minute studier and scored 95.2% and 92.8% anyway. The site says that out loud,
+which no coaching company can, because it destroys their subscription model. See `VISION.md` §1.
 
 | | |
 |---|---|

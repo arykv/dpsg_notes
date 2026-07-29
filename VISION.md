@@ -113,8 +113,8 @@ scans should stay private. His counter: *"otherwise how will students trust me"*
 evidence nobody can look at isn't evidence. `/paper` makes a lot of claims about
 what CBSE does to a paper, and a skeptical student had only our word for them.
 
-**Computer Science, Physics and Chemistry are up in full** at
-`/paper/script/:slug` — 105 pages between them. Only three things are covered, and all three identify the
+**All five scripts are up in full** at `/paper/script/:slug` — 183 pages.
+Only three things are covered, and all three identify the
 *script* rather than the candidate: the page-1 barcode, the cover's office-use
 block (QR plus IDEN/BAG/CHK), and the scanning centre's per-page stamp.
 Handwriting, marks, ticks, crosses and corrections are untouched — covering those
@@ -129,18 +129,17 @@ not whether they're sold. They are not sold.
 This supersedes HANDOVER.md §8's "Computer Science free in full, the other four
 paywalled."
 
-**Before any other subject goes up, every one of its pages must be looked at
-individually.** Computer Science, Physics and Chemistry have been; Maths and
-English have not. This is not a formality, and it has now caught two separate
-problems: the first CS run boxed three chunks of a real answer, and the CS-era
-filter matched up to twelve of Physics's blue mark chips per page. Both would
-have censored the evidence rather than protecting anyone.
+**Every page of anything published here must be looked at individually.** That
+is not a formality — it caught three separate problems the verifier passed
+clean on: the first CS run boxed three chunks of a real answer; the CS-era
+filter matched up to twelve of Physics's blue mark chips per page; and English's
+skewed scans left the stamp on two pages. Each would have been shipped by
+automation alone.
 
-**Privacy checks complete for Computer Science, Physics and Chemistry** — all
-105 pages inspected 28 Jul 2026, plus the CS cover QR decoded (`817445528`, the same
-barcode already printed as text on page 1). No name, no roll number, no parents'
-names, no DOB anywhere in any of the three. That is what made publishing them
-possible.
+**Privacy checks complete for all five** — 183 pages inspected 28 Jul 2026, plus
+the CS cover QR decoded (`817445528`, the same barcode already printed as text on
+page 1). No name, no roll number, no parents' names, no DOB anywhere in any of
+them. That is what made publishing them possible.
 
 The source PDFs still stay out of git; what ships is the redacted render under
 `public/script/`, produced by `scripts/redact.py`. That script re-runs QR
