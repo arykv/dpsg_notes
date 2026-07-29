@@ -32,14 +32,14 @@ COVER_OFFICE_BLOCK = (0.175, 0.700, 0.410, 0.920)
 #
 #     width  33-38 px at TARGET_W    aspect (w/h) 1.06-1.29
 #     height 28-32 px                fill         0.80-0.93
-#     y      0.069-0.126 of the page
+#     y      0.069-0.126 of the page (English skews lower, hence the 0.27 band)
 #
 # The tolerances below are those ranges with room either side. Being this strict
 # matters: Physics annotates marks as blue rounded chips and blue summary boxes
 # in the same header strip, and a loose filter blacks out the very marks the
 # script is published to show. Chips are wide (aspect > 2), so aspect and fill
 # are what actually separate them.
-STAMP_BAND = 0.20
+STAMP_BAND = 0.27
 STAMP_W = (26, 48)
 STAMP_H = (22, 42)
 STAMP_ASPECT = (0.95, 1.50)

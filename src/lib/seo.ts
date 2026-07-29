@@ -346,6 +346,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/paper/script/english',
+    title: 'A real evaluated CBSE English answer script — all 35 pages',
+    description:
+      'My whole Class 12 English Core answer book as CBSE returned it. 76 out of 80, and the marks are almost entirely in the formats — notice, invitation, letter, article — which are fixed and learnable, unlike the literature answers everyone spends their time on.',
+    intent: [
+      'cbse english evaluated answer sheet',
+      'how are english board answers marked',
+      'cbse class 12 english notice letter format marks',
+      'english core answer script sample',
+      'how to score full marks english writing section',
+    ],
+    og: {
+      kicker: 'English Core · 80 marks',
+      headline: 'The subject people think you cannot study for',
+      stat: '76',
+      statLabel: 'and it was the formats',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:

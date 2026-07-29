@@ -145,6 +145,15 @@ const PAGES: SearchItem[] = [
       'books mtg previous years questions reference book class 12 buy recommendation shelf ncert enough maths no book',
   },
   {
+    id: 'page-script-english',
+    type: 'page',
+    title: 'My English answer script',
+    subtitle: 'Where the writing-section marks actually are',
+    to: '/paper/script/english',
+    keywords:
+      'english answer sheet evaluated cbse 301 notice invitation letter article format writing section marks scan',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

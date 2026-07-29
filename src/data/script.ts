@@ -278,9 +278,46 @@ export const MATHS_SCRIPT: Script = {
   ],
 }
 
+
+/* --- English Core --------------------------------------------------------- */
+
+export const ENGLISH_SCRIPT: Script = {
+  slug: 'english',
+  subject: 'English Core',
+  code: '301',
+  scriptTotal: 76,
+  marksheetTotal: 76,
+  lede: 'The one people assume you cannot study for. 76 out of 80, and the marks are almost entirely in the formats — the notice, the invitation, the letter, the article — which are fixed and learnable, unlike the literature answers everyone spends their time on.',
+  pages: [
+    ...PRELIMS('English Core'),
+    { n: 5, booklet: 2, section: 'Section A', caption: 'Q1 — the reading comprehension on Jonathan Livingston Seagull. Ten sub-parts, each with its own chip.' },
+    { n: 6, booklet: 3, caption: 'Q1 concluded. Full marks across the passage.' },
+    { n: 7, booklet: 4, caption: 'Q2 — the road safety case study. Note how short the one-mark answers are.' },
+    { n: 8, booklet: 5, caption: 'Q2 concluded, all eight sub-parts correct.' },
+    { n: 9, booklet: 6, section: 'Section B', caption: 'Q3 — the notice, boxed as the format requires. 4 of 4: "03AOR : 1 + 2 + 1 = 4".' },
+    { n: 10, booklet: 7, caption: 'Q4 — the invitation. 3.5 of 4, and the half mark lost is in the layout, not the content.' },
+    { n: 11, booklet: 8, caption: 'Q5 — the letter to the editor on noise pollution. Address block, subject line, salutation, all in place.' },
+    { n: 12, booklet: 9, caption: 'Q5 continued — the body. Every underlined phrase is the examiner marking content points.' },
+    { n: 13, booklet: 10, caption: 'Q5 concluded, signed off with the persona the question gave.' },
+    { n: 14, booklet: 11, caption: 'Q6 — the article, "The Vanishing Art of Slowing Down". 5 of 5.' },
+    { n: 15, booklet: 12, caption: 'Q6 concluded.' },
+    { n: 16, booklet: 13, section: 'Section C', caption: 'Q7 — the poetry extract. Six sub-parts, six ticks.' },
+    { n: 17, booklet: 14, caption: 'Q8 and Q9 — prose extracts. The zero on 08B(i) is the only one in the section.' },
+    { n: 18, booklet: 15, caption: 'Q9 concluded and Q10 begun — Gandhi, Champaran, and the paradox in Deep Water.' },
+    { n: 19, booklet: 16, caption: 'Q10 continued — Franz and the last lesson, then Aunt Jennifer.' },
+    { n: 20, booklet: 17, caption: 'Q10 concluded and Q11 begun — Edla, and Bama on education.' },
+    { n: 21, booklet: 18, caption: 'Q11 concluded — the court astrologer and the Tiger King.' },
+    { n: 22, booklet: 19, caption: 'Q12 — Sophie and Mukesh compared. 4.5 of 5.' },
+    { n: 23, booklet: 20, caption: 'Q13 — Journey to the End of the Earth. 4.5 of 5.' },
+    { n: 24, booklet: 21, caption: 'Q13 concluded.' },
+    ...blanks(25, 10),
+    { n: 35, booklet: 32, caption: 'Rough work — the article planned out in single words before it was written.' },
+  ],
+}
+
 /* -------------------------------------------------------------------------- */
 
-export const SCRIPTS: Script[] = [CS_SCRIPT, PHYSICS_SCRIPT, CHEMISTRY_SCRIPT, MATHS_SCRIPT]
+export const SCRIPTS: Script[] = [CS_SCRIPT, PHYSICS_SCRIPT, CHEMISTRY_SCRIPT, MATHS_SCRIPT, ENGLISH_SCRIPT]
 
 export const scriptBySlug = (slug: string) => SCRIPTS.find((s) => s.slug === slug)
 
