@@ -25,6 +25,7 @@ const Results = lazy(() => import('@/routes/Results'))
 const Paper = lazy(() => import('@/routes/Paper'))
 const Script = lazy(() => import('@/routes/Script'))
 const Guide = lazy(() => import('@/routes/Guide'))
+const Books = lazy(() => import('@/routes/Books'))
 const About = lazy(() => import('@/routes/About'))
 const NotFound = lazy(() => import('@/routes/NotFound'))
 
@@ -85,6 +86,7 @@ export default function App() {
                     <Route path="/paper/script" element={<Navigate to="/paper/script/computer-science" replace />} />
                     <Route path="/paper/script/:slug" element={<Script />} />
                     <Route path="/guide/:slug" element={<Guide />} />
+                    <Route path="/books" element={<Books />} />
                     <Route path="/links" element={<Navigate to="/resources" replace />} />
                     <Route path="/about" element={<About />} />
                     <Route path="*" element={<NotFound />} />

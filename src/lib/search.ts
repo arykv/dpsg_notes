@@ -136,6 +136,15 @@ const PAGES: SearchItem[] = [
       'maths mathematics answer sheet evaluated cbse 041 scan step marking half marks graph paper integration',
   },
   {
+    id: 'page-books',
+    type: 'page',
+    title: 'The shelf',
+    subtitle: 'Books worth buying, and the one subject that needs none',
+    to: '/books',
+    keywords:
+      'books mtg previous years questions reference book class 12 buy recommendation shelf ncert enough maths no book',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',

@@ -327,6 +327,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/books',
+    title: 'The best books for CBSE Class 12 — and the subject you shouldn’t buy one for',
+    description:
+      'Three books I would actually buy for Class 12 — MTG Previous 10 Years Questions for Physics, Chemistry and English — and why I would not buy anything at all for Maths, where NCERT and past papers got me 71 out of 80. No affiliate links, no sponsorship, nothing earned if you buy.',
+    intent: [
+      'best books for class 12 cbse',
+      'mtg previous years questions class 12',
+      'best reference book class 12 maths',
+      'do i need reference books for cbse boards',
+      'cbse class 12 books to buy',
+    ],
+    og: {
+      kicker: 'The shelf',
+      headline: 'Three books worth buying, and one subject worth buying nothing for',
+      stat: '0',
+      statLabel: 'affiliate links',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:
