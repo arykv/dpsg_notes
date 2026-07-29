@@ -140,7 +140,7 @@ export const PAGES: PageMeta[] = [
     path: '/tools',
     title: 'CBSE calculators — best of five, attendance, grade points',
     description:
-      'Work out your CBSE percentage with best of five, check whether you meet the 75% attendance rule, convert marks to grade points and CGPA, and see what your last paper needs to score. Nothing leaves your browser.',
+      'Seven calculators. Work out your CBSE percentage with best of five, check whether you meet the 75% attendance rule, convert marks to grade points and CGPA, and see what your last paper needs to score. Nothing leaves your browser.',
     intent: [
       'cbse best of five calculator',
       'cbse percentage calculator class 12',
@@ -150,7 +150,7 @@ export const PAGES: PageMeta[] = [
     og: {
       kicker: 'CBSE calculators',
       headline: 'Best of five, attendance, and what your last paper needs',
-      stat: '6',
+      stat: '7',
       statLabel: 'calculators',
     },
   },
