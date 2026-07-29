@@ -139,7 +139,7 @@ have censored the evidence rather than protecting anyone.
 **Privacy checks complete for Computer Science, Physics and Chemistry** — all
 105 pages inspected 28 Jul 2026, plus the CS cover QR decoded (`817445528`, the same
 barcode already printed as text on page 1). No name, no roll number, no parents'
-names, no DOB anywhere in either document. That is what made publishing them
+names, no DOB anywhere in any of the three. That is what made publishing them
 possible.
 
 The source PDFs still stay out of git; what ships is the redacted render under
