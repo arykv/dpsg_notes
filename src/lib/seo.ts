@@ -251,6 +251,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/tonight',
+    title: 'Pull an all nighter — an honest plan for the hours you have left',
+    description:
+      'Tomorrow’s exam? Three taps and you get an honest read on where you stand plus an hour-by-hour plan for the time you actually have — spent where the marks are, not where the textbook starts. It tells you what to skip, and it tells you when to sleep.',
+    intent: [
+      'exam tomorrow what to study',
+      'last minute study plan cbse',
+      'how to study night before exam',
+      'one night before board exam plan',
+      'what to study if exam is tomorrow',
+    ],
+    og: {
+      kicker: 'Tomorrow’s exam?',
+      headline: 'Let’s survive it. An honest plan for the hours you have left.',
+      stat: '3',
+      statLabel: 'taps, no typing',
+    },
+  },
+  {
     path: '/guide',
     title: 'CBSE Class 12 subject guides — every unit, its marks, what to study first',
     description:

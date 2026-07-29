@@ -22,6 +22,7 @@ function isSection(pathname: string, to: string): boolean {
  * already links there.
  */
 const NAV = [
+  { to: '/tonight', label: 'Tonight' },
   { to: '/library', label: 'Library' },
   { to: '/chapters/class-11', label: 'Chapters' },
   { to: '/guide', label: 'Guides' },

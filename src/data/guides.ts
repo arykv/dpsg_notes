@@ -29,6 +29,14 @@ export interface Unit {
   branch: string
   /** What actually gets asked from it, in plain terms. */
   asked: string
+  /**
+   * How expensive a mark is here. `recall` units can be crammed and are the
+   * ones to reach for when time is short; `heavy` ones need derivations or
+   * numericals you cannot acquire overnight. Drives the ordering in
+   * "Pull an all nighter" — without it the plan ranks purely by marks and
+   * drops Biomolecules, which is the exact opposite of this guide's advice.
+   */
+  effort?: 'recall' | 'standard' | 'heavy'
 }
 
 export interface GuideSection {
@@ -93,6 +101,7 @@ export const CHEMISTRY_12: SubjectGuide = {
       name: 'Solutions',
       marks: 7,
       branch: 'Physical',
+      effort: 'heavy',
       asked:
         'Colligative properties, and almost always a numerical — molality, elevation of boiling point, depression of freezing point, or a van’t Hoff factor question.',
     },
@@ -101,6 +110,7 @@ export const CHEMISTRY_12: SubjectGuide = {
       name: 'Electrochemistry',
       marks: 9,
       branch: 'Physical',
+      effort: 'heavy',
       asked:
         'The heaviest unit in the paper, and the one the 2026 paper leaned on hardest. Nernst equation, cell EMF, conductivity and molar conductivity, and electrolysis calculations.',
     },
@@ -109,6 +119,7 @@ export const CHEMISTRY_12: SubjectGuide = {
       name: 'Chemical Kinetics',
       marks: 7,
       branch: 'Physical',
+      effort: 'heavy',
       asked:
         'Rate law and order, the first-order integrated rate equation, half-life, and Arrhenius. Reliably numerical.',
     },
@@ -117,6 +128,7 @@ export const CHEMISTRY_12: SubjectGuide = {
       name: 'd- and f-Block Elements',
       marks: 7,
       branch: 'Inorganic',
+      effort: 'recall',
       asked:
         'Reason-based questions: why this oxidation state, why that colour, why this magnetic moment. Lanthanoid contraction turns up constantly.',
     },
@@ -162,6 +174,7 @@ export const CHEMISTRY_12: SubjectGuide = {
       name: 'Biomolecules',
       marks: 7,
       branch: 'Biochemistry',
+      effort: 'recall',
       asked:
         'Almost pure recall — carbohydrates, proteins, vitamins, nucleic acids. The cheapest marks in the paper.',
     },
@@ -260,6 +273,7 @@ export const PHYSICS_12: SubjectGuide = {
       name: 'Electrostatics',
       marks: 10,
       branch: 'Electricity & magnetism',
+      effort: 'heavy',
       asked:
         'Field and potential from charge distributions, Gauss’s law, capacitors in combination. Ten marks, heavily numerical, and the unit I personally lost the most on.',
     },
@@ -290,6 +304,7 @@ export const PHYSICS_12: SubjectGuide = {
       name: 'Electromagnetic Waves',
       marks: 4,
       branch: 'Optics & waves',
+      effort: 'recall',
       asked:
         'Almost pure recall — the spectrum in order, and the uses and sources of each band. Four marks for memorising one table.',
     },
@@ -298,6 +313,7 @@ export const PHYSICS_12: SubjectGuide = {
       name: 'Optics',
       marks: 14,
       branch: 'Optics & waves',
+      effort: 'heavy',
       asked:
         'The heaviest unit by a distance. Ray optics — mirrors, lenses, the lens maker formula, microscopes and telescopes — plus wave optics: interference, Young’s double slit, diffraction.',
     },

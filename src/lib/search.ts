@@ -91,6 +91,14 @@ const PAGES: SearchItem[] = [
       'answer sheet scan evaluated copy real example what does a checked paper look like osm computer science 083 evidence proof pages',
   },
   {
+    id: 'page-tonight',
+    type: 'page',
+    title: 'Pull an all nighter',
+    subtitle: 'An honest plan for the hours you have left',
+    to: '/tonight',
+    keywords: 'exam tomorrow tonight last minute plan emergency revision panic how cooked am i what to study night before survive',
+  },
+  {
     id: 'page-guides',
     type: 'page',
     title: 'Subject guides',

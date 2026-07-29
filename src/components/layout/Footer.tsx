@@ -17,6 +17,7 @@ const COLUMNS = [
   {
     title: 'Use things',
     links: [
+      { label: 'Pull an all nighter', to: '/tonight' },
       { label: 'Calculators', to: '/tools' },
       { label: 'Bell timings', to: '/day' },
       { label: 'NCERT chapters', to: '/chapters/class-11' },
