@@ -113,8 +113,8 @@ scans should stay private. His counter: *"otherwise how will students trust me"*
 evidence nobody can look at isn't evidence. `/paper` makes a lot of claims about
 what CBSE does to a paper, and a skeptical student had only our word for them.
 
-**Computer Science and Physics are up in full** at `/paper/script/:slug` — 70
-pages between them. Only three things are covered, and all three identify the
+**Computer Science, Physics and Chemistry are up in full** at
+`/paper/script/:slug` — 105 pages between them. Only three things are covered, and all three identify the
 *script* rather than the candidate: the page-1 barcode, the cover's office-use
 block (QR plus IDEN/BAG/CHK), and the scanning centre's per-page stamp.
 Handwriting, marks, ticks, crosses and corrections are untouched — covering those
@@ -130,14 +130,14 @@ This supersedes HANDOVER.md §8's "Computer Science free in full, the other four
 paywalled."
 
 **Before any other subject goes up, every one of its pages must be looked at
-individually.** Computer Science and Physics have been; Chemistry, Maths and
+individually.** Computer Science, Physics and Chemistry have been; Maths and
 English have not. This is not a formality, and it has now caught two separate
 problems: the first CS run boxed three chunks of a real answer, and the CS-era
 filter matched up to twelve of Physics's blue mark chips per page. Both would
 have censored the evidence rather than protecting anyone.
 
-**Privacy checks complete for Computer Science and Physics** — all 70 pages
-inspected 28 Jul 2026, plus the CS cover QR decoded (`817445528`, the same
+**Privacy checks complete for Computer Science, Physics and Chemistry** — all
+105 pages inspected 28 Jul 2026, plus the CS cover QR decoded (`817445528`, the same
 barcode already printed as text on page 1). No name, no roll number, no parents'
 names, no DOB anywhere in either document. That is what made publishing them
 possible.
@@ -251,10 +251,10 @@ all** — building experiences for zero visitors is malpractice.
   question-wise marks summary, and six lessons. Its best moment is arithmetic:
   the unasterisked rows total 68, exactly the printed total, which turns the
   footnote from a claim into a proof.
-- ~~The scripts themselves~~ — **Computer Science and Physics are published in
-  full** at `/paper/script/:slug`, 70 pages between them, every page inspected
-  individually first.
-- Still to do: Chemistry, Mathematics and English scripts. Each needs its pages
+- ~~The scripts themselves~~ — **Computer Science, Physics and Chemistry are
+  published in full** at `/paper/script/:slug`, 105 pages between them, every
+  page inspected individually first.
+- Still to do: Mathematics (43 pages) and English scripts. Each needs its pages
   inspected one by one before anything is generated — that step is not optional
   and it is what caught the one real mistake.
 - Still to do: the per-question walkthrough — what was asked, what he wrote,
@@ -277,7 +277,8 @@ half-mark findings, the question that scored zero. The web only supplies
 weightage and paper structure, which every coaching site already has. **So do
 the script before the guide for each remaining subject.**
 
-Still to do: Maths, English, Computer Science guides.
+Still to do: Maths, English and Computer Science guides. Chemistry and
+Physics are done, and each was much better for having read the script first.
 
 ### Wave 2 — the signature
 Pull an all nighter.

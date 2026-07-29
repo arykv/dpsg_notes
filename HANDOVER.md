@@ -253,8 +253,8 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
   Page 1 of each is the **question-wise marks summary** as real text — no name, no roll number,
   just a barcode. Pages 2+ are pure scans of his handwriting.
 
-  **Computer Science and Physics are inspected, redacted and published** at
-  `/paper/script/:slug`. Chemistry, Maths and English are not. Inspect every page individually
+  **Computer Science, Physics and Chemistry are inspected, redacted and published** at
+  `/paper/script/:slug`. Maths and English are not. Inspect every page individually
   before generating anything — that is how the one real mistake was caught.
 
   `scripts/redact.py <pdf> <outdir> <slug>` does the work and verifies itself. Its stamp filter is
