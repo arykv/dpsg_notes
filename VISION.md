@@ -282,15 +282,19 @@ half-mark findings, the question that scored zero. The web only supplies
 weightage and paper structure, which every coaching site already has. **So do
 the script before the guide for each remaining subject.**
 
-Still to do: Maths, English and Computer Science guides. Chemistry and
-Physics are done, and each was much better for having read the script first.
+All five shipped. Each was much better for having read its script first —
+that ordering is the rule, not a preference.
 
 ### Wave 2 — the signature
-Pull an all nighter.
+~~Pull an all nighter~~ — **shipped** at `/tonight`, and it leads the home page.
 
-Now unblocked in principle — two guides exist to curate from — but still thin
-until more subjects land. Build it once three or four guides are up, not before,
-or the plan it produces will point at nothing.
+Three taps, no typing. Ranks units by **marks per minute**, not raw marks —
+which needed an `effort` field on Unit, because ranking by marks alone dropped
+Biomolecules first, the exact opposite of what the Chemistry guide advises.
+Names what it drops out loud. Tells you to sleep, with a number.
+
+The two rules in `lib/allnighter.ts` are not stylistic and must survive any
+edit: **never flatter, never hopeless.**
 
 > ⚠️ **Content dependency, not yet costed.** The experience promises important
 > chapters, formula sheets, PYQs and last-minute videos *per subject*. Today the

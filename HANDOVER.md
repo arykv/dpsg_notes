@@ -209,10 +209,15 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
 ### Content-complete v1 — no backend needed
 1. ~~**Trust section**~~ — **done**, `/results`. See §2.
 1b. ~~**The answer-script pillar**~~ — **done**: `/paper`, plus both scripts published in full.
-1c. **Subject guides** — Physics and Chemistry live at `/guide/:slug`. Maths, English and
-   Computer Science outstanding. Do each subject's script first; the guide is much better for it.
-2. **Book shelf** — MTG and others, with the required Amazon Associates disclosure.
-   **Blocked: needs exact titles from him.**
+1c. ~~**Subject guides**~~ — **all five live** at `/guide/:slug`, with an index at `/guide`.
+   Weightage is asserted at build time to sum to the paper total.
+1d. ~~**Pull an all nighter**~~ — **live** at `/tonight`, and it leads the home page.
+2. ~~**Book shelf**~~ — **live** at `/books`. No affiliate links, ever: he can't hold an
+   Associates account at 17, and after April 2027 the better reason still stands.
+
+**Still open:** wall charts (3 designed A3 PDFs), the parent one-pager, deadline-alert
+emails (needs a backend, which conflicts with the no-backend rule — decide before building),
+and SEO/Search Console, which is deferred by his explicit decision until the site is done.
 3. **Wall charts** — the list already exists in `strategy.ts`; turn 3 into designed A3 PDFs,
    free to download. Class 10 SST maps, Class 10 Maths formulae, organic conversions.
 4. **Hindi guide** — he deferred this; ask when ready.
@@ -253,8 +258,8 @@ prerendering + JSON-LD + sitemap · legacy `.html` redirects · error boundary �
   Page 1 of each is the **question-wise marks summary** as real text — no name, no roll number,
   just a barcode. Pages 2+ are pure scans of his handwriting.
 
-  **Computer Science, Physics and Chemistry are inspected, redacted and published** at
-  `/paper/script/:slug`. Maths and English are not. Inspect every page individually
+  **All five are inspected, redacted and published** at `/paper/script/:slug` — 183 pages.
+  `STAMP_BAND` is 0.27; English's scans skew enough to put the stamp at y≈0.21. Inspect every page individually
   before generating anything — that is how the one real mistake was caught.
 
   `scripts/redact.py <pdf> <outdir> <slug>` does the work and verifies itself. Its stamp filter is
