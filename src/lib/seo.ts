@@ -308,6 +308,25 @@ export const PAGES: PageMeta[] = [
     },
   },
   {
+    path: '/paper/script/mathematics',
+    title: 'A real evaluated CBSE Maths answer script — all 43 pages',
+    description:
+      'My whole Class 12 Mathematics answer book as CBSE returned it, graph paper included. The cleanest of my five papers at 71/80 theory, marked in half marks throughout, with every crossed-out false start and four pages of rough work left in.',
+    intent: [
+      'cbse maths evaluated answer sheet',
+      'how are maths board answers marked step marking',
+      'cbse class 12 maths answer script sample',
+      'cbse maths half marks steps',
+      'what does a checked maths answer sheet look like',
+    ],
+    og: {
+      kicker: 'Mathematics · 43 pages',
+      headline: 'The cleanest of my five papers, published in full',
+      stat: '71',
+      statLabel: 'unchanged by moderation',
+    },
+  },
+  {
     path: '/resources',
     title: 'Best free YouTube channels & sites for CBSE Class 11 and 12',
     description:

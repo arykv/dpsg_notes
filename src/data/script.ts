@@ -220,9 +220,67 @@ export const CHEMISTRY_SCRIPT: Script = {
   ],
 }
 
+
+/* --- Mathematics ---------------------------------------------------------- */
+
+export const MATHS_SCRIPT: Script = {
+  slug: 'mathematics',
+  subject: 'Mathematics',
+  code: '041',
+  scriptTotal: 71,
+  marksheetTotal: 71,
+  lede: 'The cleanest paper of the five, and the longest booklet — 43 pages, because Maths comes with graph paper bound in. Marked in halves throughout, and the only script where I never attempted both alternatives of an either/or.',
+  pages: [
+    ...PRELIMS('Mathematics'),
+    { n: 5, booklet: 2, section: 'Section A', caption: 'Q1–Q8, the MCQs. Q7 is the only zero here.' },
+    { n: 6, booklet: 3, caption: 'Q9–Q17. All correct.' },
+    { n: 7, booklet: 4, caption: 'Q18–Q20, the assertion-and-reason questions. Q19 wrong.' },
+    { n: 8, booklet: 5, section: 'Section B', caption: 'Q21 vector projection and Q22 on diagonals. "22 : 0.5 + 0.5 + 0 = 1".' },
+    { n: 9, booklet: 6, caption: 'Q23b inverse trig, and the start of Q24b implicit differentiation.' },
+    { n: 10, booklet: 7, caption: 'Q24b concluded, and Q25a — the cot inverse simplification. Both full marks.' },
+    { n: 11, booklet: 8, section: 'Section C', caption: 'Q26 — two definite integrals, using the even-function property.' },
+    { n: 12, booklet: 9, caption: 'Q26 concluded and Q27b, the differential equation. Both 3 of 3.' },
+    { n: 13, booklet: 10, caption: 'Q28 — linear programming, worked as a table of corner points.' },
+    { n: 14, booklet: 11, caption: 'Q29 abandoned and restarted — the probability question, crossed out and begun again.' },
+    { n: 15, booklet: 12, caption: 'Q29a — the two-bag problem. "29aOR : 0.5 + 1 + 0 + 0 = 1.5".' },
+    {
+      n: 16,
+      booklet: 13,
+      caption: 'Q30 — integration by parts. "30 : 1 + 0 + 0 = 1". Set up correctly, then the working simply stops.',
+    },
+    { n: 17, booklet: 14, caption: 'Q31a — the surd integral, split into two and solved in parallel columns.' },
+    { n: 18, booklet: 15, section: 'Section D', caption: 'Q32 — the parametric second derivative. Two pages of it.' },
+    { n: 19, booklet: 16, caption: 'Q32 concluded. "32 : 1 + 1 + 0.5 + 0.5 + 1 + 0 = 4".' },
+    { n: 20, booklet: 17, caption: 'Q33 — the shortest distance between two lines, worked to 5 of 5.' },
+    { n: 21, booklet: 18, caption: 'Q33 concluded — the intersection point and the line through the origin.' },
+    { n: 22, booklet: 19, caption: 'The LPP graph, drawn on the bound-in graph paper. 1.5 marks for the shading alone.' },
+    { n: 23, caption: 'The reverse of the graph sheet. Blank.', blank: true },
+    { n: 24, caption: 'A second graph sheet, unused.', blank: true },
+    { n: 25, caption: 'Its reverse. Blank.', blank: true },
+    { n: 26, caption: 'A third graph sheet, unused.', blank: true },
+    { n: 27, booklet: 23, caption: 'Q34b — proving the function is one-one. 2.5 of 5 so far.' },
+    { n: 28, booklet: 24, caption: 'Q34b concluded — proving onto. "34b : 2.5 + 2.5 = 5".' },
+    { n: 29, booklet: 25, caption: 'Q35a — the 3×3 matrix inverse, with a false start crossed through.' },
+    { n: 30, booklet: 26, caption: 'Q35a continued — the system of equations as a matrix product.' },
+    { n: 31, booklet: 27, caption: 'Q35a concluded. "35aOR : 1 + 1.5 + 0.5 + 0.5 + 1.5 = 5".' },
+    { n: 32, booklet: 28, section: 'Section E', caption: 'Q36 — the lottery case study.' },
+    { n: 33, booklet: 29, caption: 'Q36 (iii) — exactly one jackpot. Half marks, and a red cross on the arithmetic.' },
+    { n: 34, booklet: 30, caption: 'Q37 — the two concentric circles, with the region sketched.' },
+    { n: 35, booklet: 31, caption: 'Q37 (iii) — the area integral, with a long crossed-out attempt beside it.' },
+    { n: 36, booklet: 32, caption: 'Q37 concluded at 4π square units. "37_iiib : 1 + 1 = 2".' },
+    { n: 37, caption: 'Blank, and stamped as such.', blank: true },
+    { n: 38, booklet: 33, caption: 'Q38 — the subscription revenue maximisation. Full marks.' },
+    { n: 39, caption: 'Blank, and stamped as such.', blank: true },
+    { n: 40, booklet: 37, caption: 'Rough work, stamped RW.' },
+    { n: 41, booklet: 38, caption: 'More rough work — matrix cofactors and half-remembered identities.' },
+    { n: 42, booklet: 39, caption: 'Rough work, still going.' },
+    { n: 43, booklet: 40, caption: 'The last page. Every formula I could not hold in my head.' },
+  ],
+}
+
 /* -------------------------------------------------------------------------- */
 
-export const SCRIPTS: Script[] = [CS_SCRIPT, PHYSICS_SCRIPT, CHEMISTRY_SCRIPT]
+export const SCRIPTS: Script[] = [CS_SCRIPT, PHYSICS_SCRIPT, CHEMISTRY_SCRIPT, MATHS_SCRIPT]
 
 export const scriptBySlug = (slug: string) => SCRIPTS.find((s) => s.slug === slug)
 

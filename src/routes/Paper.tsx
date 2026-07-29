@@ -28,7 +28,7 @@ export default function Paper() {
       <SectionHead
         eyebrow="The answer script"
         title="What happens to your paper after you hand it in"
-        description="Read off one real evaluated Class 12 script, bought back from CBSE. How it's scanned, how it's marked, and the six things it changed about how I'd write a paper."
+        description="Read off four real evaluated Class 12 scripts, bought back from CBSE. How they're scanned, how they're marked, and the six things it changed about how I'd write a paper."
       />
 
       <motion.p
@@ -38,9 +38,9 @@ export default function Paper() {
         className="text-muted mt-2 text-[15px] leading-relaxed"
       >
         You spend two years writing papers and never once see what one looks like at the other end.
-        I paid to get mine back and went through all thirty-five pages. Almost none of what follows
-        is written down anywhere else, so where the script doesn't actually answer a question, I've
-        said that instead of guessing.
+        I paid to get mine back and went through every page of four of them. Almost none of what
+        follows is written down anywhere else, so where the scripts don't actually answer a
+        question, I've said that instead of guessing.
       </motion.p>
 
       {/* The document itself, offered before any of the claims about it. */}
@@ -51,9 +51,9 @@ export default function Paper() {
         className="surface border-line-strong mt-8 rounded-[6px] border p-5"
       >
         <p className="eyebrow">Don't take my word for it</p>
-        <h2 className="mt-1.5 text-[17px]">Three whole scripts are on this site, 105 pages</h2>
+        <h2 className="mt-1.5 text-[17px]">Four whole scripts are on this site, 148 pages</h2>
         <p className="text-muted mt-2 text-[14px] leading-relaxed">
-          Three whole evaluated papers, exactly as CBSE returned them — the ticks, the crosses, the
+          Four whole evaluated papers, exactly as CBSE returned them — the ticks, the crosses, the
           blank pages and the rough work. Only the script's barcode is covered. Everything claimed
           below can be checked against them. Physics is the most revealing: the examiner writes the
           half-mark arithmetic straight onto the page. Chemistry is the most useful, because it is
@@ -68,6 +68,9 @@ export default function Paper() {
           </ButtonLink>
           <ButtonLink to="/paper/script/chemistry" size="sm" variant="secondary">
             Chemistry, 35 pages
+          </ButtonLink>
+          <ButtonLink to="/paper/script/mathematics" size="sm" variant="secondary">
+            Maths, 43 pages
           </ButtonLink>
         </div>
       </motion.aside>

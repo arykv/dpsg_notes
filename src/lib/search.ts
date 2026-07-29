@@ -127,6 +127,15 @@ const PAGES: SearchItem[] = [
       'chemistry answer sheet evaluated half marks cbse 043 scan moderation grace marks worst paper',
   },
   {
+    id: 'page-script-maths',
+    type: 'page',
+    title: 'My Maths answer script',
+    subtitle: 'All 43 pages, graph paper included',
+    to: '/paper/script/mathematics',
+    keywords:
+      'maths mathematics answer sheet evaluated cbse 041 scan step marking half marks graph paper integration',
+  },
+  {
     id: 'page-about',
     type: 'page',
     title: 'About & contribute',
