@@ -55,6 +55,8 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
           </motion.section>
         )}
 
+        <TakeAway />
+
         <QuickActions />
 
         {stocked.length > 0 && (
@@ -182,6 +184,52 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
  * receipt were sitting two clicks away. Those are the reason to trust anything
  * else here, so they go above the fold-ish, not in the footer.
  */
+/**
+ * The things meant to leave the screen, on the front door.
+ *
+ * Wall charts and the parent page are the only free-and-physical things here,
+ * and they were reachable only from the footer — which is where links go to
+ * die. Both are the kind of thing a student sends to someone else, which is
+ * the whole distribution strategy in one row.
+ */
+function TakeAway() {
+  const items = [
+    { to: '/print', eyebrow: 'Print', title: 'Wall charts', body: 'Physics and Maths formulae and the organic conversions, on A3. The cheapest revision there is — you look at one for months without meaning to.' },
+    { to: '/print/for-parents', eyebrow: 'One page', title: 'For a parent', body: 'What actually helps the night before, and what does not however kindly meant. Send it on rather than trying to explain it.' },
+    { to: '/books', eyebrow: 'The shelf', title: 'What to buy', body: 'Three books worth the money, and the one subject you should buy nothing at all for. No affiliate links, ever.' },
+  ]
+
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="show"
+      viewport={inView}
+      variants={stagger(0.05)}
+      className="mt-20"
+    >
+      <SectionHead
+        eyebrow="Take it with you"
+        title="Things that work off the screen"
+        description="All free, none of it behind an account, and all of it made to be handed to somebody else."
+      />
+      <div className="grid gap-3 sm:grid-cols-3">
+        {items.map((i) => (
+          <motion.div key={i.to} variants={rise}>
+            <Link
+              to={i.to}
+              className="surface border-line hover:border-line-strong block h-full rounded-[8px] border p-5 shadow-card transition-[border-color,transform] duration-200 hover:-translate-y-0.5"
+            >
+              <p className="eyebrow">{i.eyebrow}</p>
+              <h3 className="mt-2 text-[16px]">{i.title}</h3>
+              <p className="text-muted mt-1.5 text-[14px] leading-relaxed">{i.body}</p>
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+    </motion.section>
+  )
+}
+
 function ProofStrip() {
   const items = [
     {
