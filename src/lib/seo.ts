@@ -58,9 +58,9 @@ export function ogImageFor(path: string): string {
 export const PAGES: PageMeta[] = [
   {
     path: '/',
-    title: 'All Nighter — everything you need at 11pm the night before',
+    title: 'All Nighter — where you go when you didn’t study all year',
     description:
-      'Free CBSE study site for Class 10, 11 and 12. All 395 NCERT chapters, handwritten notes, percentage and attendance calculators, and honest exam strategy from a student who scored 95.2% and 92.8% studying last minute. No login, no ads.',
+      'Tomorrow’s exam? Three taps and you get an honest plan for the hours you have left. Plus all 395 NCERT chapters, five subject guides with official weightage, seven CBSE calculators, and five real evaluated answer scripts published in full. Free, no login, no ads.',
     intent: [
       'cbse study material class 10 11 12',
       'ncert chapters pdf free',
@@ -68,10 +68,10 @@ export const PAGES: PageMeta[] = [
       'dps gandhinagar notes',
     ],
     og: {
-      kicker: 'Free CBSE study site',
-      headline: 'Everything you need at 11pm the night before',
+      kicker: 'Tomorrow’s exam?',
+      headline: 'Not where you study all year. Where you go when you didn’t.',
       stat: '395',
-      statLabel: 'NCERT chapters',
+      statLabel: 'NCERT chapters, free',
     },
   },
   {

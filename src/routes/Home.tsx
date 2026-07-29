@@ -35,6 +35,8 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
     <>
       <Hero onOpenSearch={onOpenSearch} />
 
+      <ProofStrip />
+
       <div className="register mx-auto max-w-6xl px-4 pl-5 sm:px-6 sm:pl-16">
         {/* Someone who has been here before gets their own shelf first. */}
         {shelf.length > 0 && (
@@ -172,6 +174,68 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
  * printed on it, then the one field that matters. No slogan, no glow — the
  * search box is the product and it gets the space.
  */
+/**
+ * The three things nobody else has, surfaced on the front door.
+ *
+ * Before this the home page predated all of it — a visitor could leave without
+ * ever learning that five real evaluated scripts and a documented moderation
+ * receipt were sitting two clicks away. Those are the reason to trust anything
+ * else here, so they go above the fold-ish, not in the footer.
+ */
+function ProofStrip() {
+  const items = [
+    {
+      to: '/results',
+      stat: '+9',
+      label: 'marks, across five papers',
+      title: 'CBSE moderation is real',
+      body: 'My evaluated scripts next to the marksheet they became. Three subjects match exactly, two gained marks — which is what makes the other two readable.',
+    },
+    {
+      to: '/paper',
+      stat: '183',
+      label: 'pages, nothing left out',
+      title: 'All five answer scripts, published',
+      body: 'Every paper I sat, exactly as CBSE returned it. The ticks, the crosses, the blank pages, the rough work, and the five-marker that scored zero.',
+    },
+    {
+      to: '/guide',
+      stat: '5',
+      label: 'subjects mapped',
+      title: 'Where the marks actually are',
+      body: 'Official unit weightage for every subject, what each unit really asks, and what to do first when you are short on time.',
+    },
+  ]
+
+  return (
+    <section className="border-line border-b">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={inView}
+        variants={stagger(0.06)}
+        className="register mx-auto grid max-w-6xl gap-3 px-4 py-12 pl-5 sm:px-6 sm:pl-16 lg:grid-cols-3"
+      >
+        {items.map((i) => (
+          <motion.div key={i.to} variants={rise}>
+            <Link
+              to={i.to}
+              className="surface border-line hover:border-line-strong block h-full rounded-[8px] border p-5 shadow-card transition-[border-color,transform] duration-200 hover:-translate-y-0.5"
+            >
+              <div className="flex items-baseline gap-2.5">
+                <span className="font-display text-mark text-3xl font-bold tabular">{i.stat}</span>
+                <span className="eyebrow">{i.label}</span>
+              </div>
+              <h3 className="mt-3 text-[16px]">{i.title}</h3>
+              <p className="text-muted mt-1.5 text-[14px] leading-relaxed">{i.body}</p>
+            </Link>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  )
+}
+
 function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
   const subjectCount = new Set(NCERT_BOOKS.map((b) => b.subject)).size
 
@@ -198,23 +262,36 @@ function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
             variants={rise}
             className="mt-8 max-w-4xl text-[2.4rem] leading-[1.02] sm:text-[3.4rem] lg:text-[4rem]"
           >
-            Everything you need at{' '}
-            <span className="marked">11pm the night before</span>.
+            Tomorrow's exam? <span className="marked">Let's survive it</span>.
           </motion.h1>
 
           <motion.p
             variants={rise}
-            className="text-muted mt-6 max-w-lg text-[15px] leading-relaxed"
+            className="text-muted mt-6 max-w-xl text-[15px] leading-relaxed"
           >
-            Every NCERT chapter, notes, calculators and honest exam strategy — for Class 10,
-            11 and 12. Free, no login, and nothing buried six clicks deep.
+            This isn't where you study all year. It's where you go when you didn't. Three taps and
+            you get an honest read on where you stand, plus a plan for the hours you actually have.
           </motion.p>
+
+          {/* The one button the whole site is named after. */}
+          <motion.div variants={rise} className="mt-7 flex flex-wrap items-center gap-3">
+            <Link
+              to="/tonight"
+              className="bg-[var(--mark)] inline-flex h-13 items-center gap-2 rounded-[6px] px-6 py-3.5 text-[15px] font-medium text-[#241703] transition-[filter,transform] hover:brightness-108 active:scale-[0.98]"
+            >
+              Pull an all nighter
+              <ArrowRight className="size-4" />
+            </Link>
+            <span className="text-faint text-[13px]">
+              Or browse — 395 NCERT chapters, five subject guides, seven calculators.
+            </span>
+          </motion.div>
 
           <div className="mt-9 grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
             <div>
               {/* Styled as a form field, label and all — because that's what it is. */}
               <motion.div variants={rise}>
-                <p className="eyebrow mb-2">Search everything</p>
+                <p className="eyebrow mb-2">Or search everything</p>
                 <button
                   onClick={onOpenSearch}
                   aria-label="Open search"
