@@ -235,6 +235,11 @@ named so that the sentence says itself.
 Traffic before features. **The site currently has no Search Console submission at
 all** — building experiences for zero visitors is malpractice.
 
+> **Sequencing decision, 28 Jul 2026:** SEO and Search Console wait until the
+> site is content-complete. Aryan's call — submitting an unfinished site is
+> worth less than submitting a finished one, and it is his fifteen minutes to
+> spend when he chooses. Recorded here so it stops being raised.
+
 ### Wave 0 — unglamorous, highest ROI, days not weeks
 - ~~Kill the duplicate `dps-gandhinagar.in` copy~~ — **done.** See HANDOVER §8.
 - ~~Per-page OG images~~ — **done.** Every route renders its own card at build
