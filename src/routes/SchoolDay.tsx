@@ -30,6 +30,7 @@ export default function SchoolDay() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="School day"
         title="What period is it?"
         description="Timings start on a sensible default. Fix them once to match your section and this device remembers — nothing is sent anywhere."

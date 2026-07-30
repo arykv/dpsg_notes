@@ -33,6 +33,7 @@ export default function Tools() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Tools"
         title="The maths around the maths"
         description="Percentages, attendance and grade points, worked out the way CBSE works them out. Nothing here leaves your browser."

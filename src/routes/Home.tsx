@@ -10,6 +10,7 @@ import { RECENT_RESOURCES, countBySubject, getResource } from '@/data/resources'
 import { SUBJECTS } from '@/data/subjects'
 import { TOOLS } from '@/data/tools'
 import { NCERT_BOOKS, NCERT_CHAPTER_COUNT, booksFor } from '@/data/ncert'
+import { GUIDES } from '@/data/guides'
 import { useRecents } from '@/lib/hooks'
 import { inView, rise, stagger } from '@/lib/motion'
 import { cn } from '@/lib/cn'
@@ -34,6 +35,8 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
   return (
     <>
       <Hero onOpenSearch={onOpenSearch} />
+
+      <WhyBother />
 
       <ProofStrip />
 
@@ -140,7 +143,7 @@ export default function Home({ onOpenSearch }: { onOpenSearch: () => void }) {
           <SectionHead
             eyebrow="Beyond notes"
             title="Maths you shouldn’t have to do by hand"
-            description="Six calculators that follow CBSE’s own rules, so the number matches the certificate."
+            description={`${TOOLS.length} calculators that follow CBSE’s own rules, so the number matches the certificate.`}
             action={
               <ButtonLink to="/tools" variant="secondary" size="sm">
                 Open tools
@@ -230,6 +233,99 @@ function TakeAway() {
   )
 }
 
+/**
+ * The question the site has to answer in the first ten seconds.
+ *
+ * A student who lands here already has Google, ChatGPT, a WhatsApp group and
+ * four coaching apps, all free, all with more content than this will ever have.
+ * "Notes and resources" is not a reason to stay — every one of those does that.
+ * So this section says the actual reasons in the plainest words available, and
+ * every one of them is something the alternatives structurally can't say: a
+ * subscription business cannot tell you that you can survive this in one night,
+ * and nobody else has bought their own answer scripts back and published them.
+ */
+function WhyBother() {
+  const reasons = [
+    {
+      to: '/tonight',
+      title: 'It decides, instead of giving you more to read',
+      body: 'At 11pm you don’t need another PDF. You need someone to say what to open first, what to skip, and when to stop. Four taps and you get exactly that, in order, with the time each thing gets.',
+      link: 'Try it',
+    },
+    {
+      to: '/tonight',
+      title: 'It tells you what you’ll actually score',
+      body: 'Not "you can still get 90". A realistic range next to the pass mark, the units it can’t reach named out loud, and — when that’s the truth — the sentence that one night doesn’t undo a year.',
+      link: 'See how it works that out',
+    },
+    {
+      to: '/guide',
+      title: 'Every number here comes from CBSE, not from another website',
+      body: 'Unit weightage is read out of the published curriculum, and the site refuses to build if it stops adding up to the paper total. Where a source doesn’t settle something, the page says so rather than filling the gap.',
+      link: 'The subject guides',
+    },
+    {
+      to: '/paper',
+      title: 'I show you my own papers, including the bad one',
+      body: '183 pages of my evaluated answer scripts, exactly as CBSE returned them — the ticks, the crosses, the rough work, and the five-mark question that scored zero. Nobody advising you online does this.',
+      link: 'Read the scripts',
+    },
+    {
+      to: '/about',
+      title: 'No account, no ads, no app, no paywall — permanently',
+      body: 'Nothing here is gated and nothing ever will be. The plan is worked out on your phone rather than on a server, so nothing you tap even leaves it. There isn’t a business model to protect.',
+      link: 'How this is built',
+    },
+  ]
+
+  return (
+    <section className="border-line border-b" aria-labelledby="why-bother">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={inView}
+        variants={stagger(0.05)}
+        className="register mx-auto max-w-6xl px-4 py-14 pl-5 sm:px-6 sm:pl-16"
+      >
+        <motion.p variants={rise} className="eyebrow">
+          Fair question
+        </motion.p>
+        <motion.h2 variants={rise} id="why-bother" className="mt-2 max-w-2xl text-3xl sm:text-4xl">
+          Why use this when everything is already <span className="marked">free somewhere</span>?
+        </motion.h2>
+        <motion.p variants={rise} className="text-muted mt-4 max-w-xl text-[15px] leading-relaxed">
+          Because it being free somewhere is the problem. It’s scattered across a syllabus PDF
+          nobody opens, ten sites that copy each other, and a hundred channels — and assembling it
+          is a day of work that every student repeats alone. Five reasons this is worth the tab:
+        </motion.p>
+
+        <ol className="divide-line border-line mt-8 divide-y border-t">
+          {reasons.map((r, i) => (
+            <motion.li key={r.title} variants={rise} className="py-5">
+              <div className="flex gap-4 sm:gap-5">
+                <span className="text-faint mt-1 shrink-0 font-mono text-[11px] tabular">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-[17px]">{r.title}</h3>
+                  <p className="text-muted mt-1.5 max-w-2xl text-[14px] leading-relaxed">{r.body}</p>
+                  <Link
+                    to={r.to}
+                    className="text-mark mt-2.5 inline-flex items-center gap-1 text-[13px] font-medium underline-offset-4 hover:underline"
+                  >
+                    {r.link}
+                    <ArrowRight className="size-3.5" aria-hidden />
+                  </Link>
+                </div>
+              </div>
+            </motion.li>
+          ))}
+        </ol>
+      </motion.div>
+    </section>
+  )
+}
+
 function ProofStrip() {
   const items = [
     {
@@ -296,14 +392,20 @@ function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
           variants={stagger(0.06, 0.04)}
           className="pl-5 sm:pl-16"
         >
-          {/* Register header line — the kind printed at the top of a school form. */}
+          {/* Register header line — the kind printed at the top of a school form.
+              It used to read "Delhi Public School · Gandhinagar", which is where
+              this started and is still where the marksheets come from. But it is
+              also the first line on the page, and to a CBSE student in any other
+              school it read as "this is not for you" before they had seen a
+              single thing the site does. The school is on /about, where someone
+              asking who wrote this will actually look for it. */}
           <motion.div
             variants={rise}
             className="border-line text-faint flex flex-wrap items-center gap-x-4 gap-y-1 border-b pb-3 font-mono text-[10px] tracking-[0.16em] uppercase"
           >
-            <span>Delhi Public School · Gandhinagar</span>
+            <span>CBSE · Classes 10 to 12</span>
             <span className="hidden sm:inline">Session 2025–26</span>
-            <span className="ml-auto">Unofficial · student run</span>
+            <span className="ml-auto">Unofficial · one student, no company</span>
           </motion.div>
 
           <motion.h1
@@ -317,8 +419,10 @@ function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
             variants={rise}
             className="text-muted mt-6 max-w-xl text-[15px] leading-relaxed"
           >
-            This isn't where you study all year. It's where you go when you didn't. Three taps and
-            you get an honest read on where you stand, plus a plan for the hours you actually have.
+            This isn't where you study all year. It's where you go when you didn't. Four taps and
+            you get an honest read on where you stand — including what you're realistically going to
+            score, which is not full marks — and a plan for the hours you actually have rather than
+            the hours on the clock.
           </motion.p>
 
           {/* The one button the whole site is named after. */}
@@ -331,7 +435,8 @@ function Hero({ onOpenSearch }: { onOpenSearch: () => void }) {
               <ArrowRight className="size-4" />
             </Link>
             <span className="text-faint text-[13px]">
-              Or browse — 395 NCERT chapters, five subject guides, seven calculators.
+              Or browse — {NCERT_CHAPTER_COUNT} NCERT chapters, {GUIDES.length} subject guides,{' '}
+              {TOOLS.length} calculators.
             </span>
           </motion.div>
 

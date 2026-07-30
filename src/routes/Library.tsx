@@ -90,6 +90,7 @@ export default function Library() {
   return (
     <div className="register mx-auto max-w-6xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Library"
         title={subject ? subjectName(subject as never) : 'Everything, in one list'}
         description="Handwritten notes scanned by students here, plus anything else people have sent in. Filters stack and the URL keeps them, so you can send someone a link straight to what you found."
@@ -228,6 +229,11 @@ export default function Library() {
           />
         </div>
       </div>
+
+      {/* The grid's cards are h3s. Without a heading for the region they sat
+          directly under the page h1, so anyone navigating by headings jumped a
+          level and had nothing to land on between "the page" and "one file". */}
+      <h2 className="sr-only">Results</h2>
 
       {results.length > 0 ? (
         <motion.div

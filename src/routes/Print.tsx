@@ -27,6 +27,7 @@ export default function Print() {
       <div className="print:hidden">
         <div className="register pl-5 sm:pl-16">
           <SectionHead
+            level={1}
             eyebrow={item.kind === 'chart' ? 'Wall chart' : 'One page'}
             title={item.title}
             description={item.blurb}
@@ -48,7 +49,9 @@ export default function Print() {
 
       <article className="printable mt-10">
         <header className="border-line mb-6 border-b pb-4">
-          <h1 className="text-2xl sm:text-3xl">{item.title}</h1>
+          {/* h2: the screen chrome above already carries the page h1. This is
+              the printable document's own heading, which is why it repeats. */}
+          <h2 className="text-2xl sm:text-3xl">{item.title}</h2>
           <p className="text-muted mt-1 text-[14px]">{item.subtitle}</p>
         </header>
 
@@ -114,6 +117,7 @@ function PrintIndex() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Print"
         title="Things worth putting on a wall"
         description="The cheapest revision there is — you look at a chart for months without meaning to. All free, all designed for paper, none of them behind anything."

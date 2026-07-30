@@ -26,6 +26,7 @@ export default function Script() {
     <div className="mx-auto max-w-4xl px-4 pt-12 pb-8 sm:px-6">
       <div className="register pl-5 sm:pl-16">
         <SectionHead
+          level={1}
           eyebrow={`${script.subject} · ${script.code} · 2026`}
           title={`My whole ${script.subject} script, all ${script.pages.length} pages`}
           description={script.lede}

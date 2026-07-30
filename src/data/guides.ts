@@ -37,6 +37,14 @@ export interface Unit {
    * drops Biomolecules, which is the exact opposite of this guide's advice.
    */
   effort?: 'recall' | 'standard' | 'heavy'
+  /**
+   * Marks you cannot revise for. Unseen passages are the whole of this
+   * category: there is no content to learn, only a technique to apply on the
+   * day. The planner refuses to allocate hours to these and says why, rather
+   * than quietly handing you an hour of "revise reading comprehension" — which
+   * is the kind of instruction that makes a plan feel fake.
+   */
+  unpreppable?: boolean
 }
 
 export interface GuideSection {
@@ -486,7 +494,7 @@ export const ENGLISH_12: SubjectGuide = {
       'My second-highest paper, and the one I prepared least for — because the marks are in formats, not in reading. 76 of 80, unchanged by moderation.',
   },
   units: [
-    { n: 1, name: 'Reading Comprehension', marks: 22, branch: 'Reading', asked: 'Two unseen passages with sub-parts. No preparation possible beyond reading carefully and answering in the passage’s own words.' },
+    { n: 1, name: 'Reading Comprehension', marks: 22, branch: 'Reading', unpreppable: true, asked: 'Two unseen passages with sub-parts. No preparation possible beyond reading carefully and answering in the passage’s own words.' },
     { n: 2, name: 'Creative Writing Skills', marks: 18, branch: 'Writing', asked: 'Notice, invitation, letter to the editor or application, and an article or report. Fixed layouts, fixed mark distribution.' },
     { n: 3, name: 'Literature', marks: 40, branch: 'Literature', asked: 'Flamingo and Vistas — extract-based questions, short answers and two long answers on theme and character.' },
   ],

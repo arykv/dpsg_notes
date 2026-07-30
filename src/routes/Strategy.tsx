@@ -26,6 +26,7 @@ export default function Strategy() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Exam strategy"
         title="What I actually did in the exam hall"
         description="Not general advice — what worked for me across two boards, including the papers I got wrong and why."

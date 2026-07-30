@@ -18,6 +18,7 @@ export default function Books() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="The shelf"
         title="The three books I'd buy, and the one subject I wouldn't"
         description="Four subjects, three books. Nothing here is sponsored, nothing is an affiliate link, and one row tells you to keep your money."

@@ -60,7 +60,7 @@ export const PAGES: PageMeta[] = [
     path: '/',
     title: 'All Nighter — where you go when you didn’t study all year',
     description:
-      'Tomorrow’s exam? Three taps and you get an honest plan for the hours you have left. Plus all 395 NCERT chapters, five subject guides with official weightage, seven CBSE calculators, and five real evaluated answer scripts published in full. Free, no login, no ads.',
+      'Tomorrow’s exam? Four taps and you get an honest plan for the hours you have left — Class 11 or 12, with the marks you can realistically expect rather than the ones you’d like. Plus all 395 NCERT chapters, five subject guides with official CBSE weightage, seven calculators, and five real evaluated answer scripts published in full. Free, no login, no ads.',
     intent: [
       'cbse study material class 10 11 12',
       'ncert chapters pdf free',
@@ -254,18 +254,21 @@ export const PAGES: PageMeta[] = [
     path: '/tonight',
     title: 'Pull an all nighter — an honest plan for the hours you have left',
     description:
-      'Tomorrow’s exam? Three taps and you get an honest read on where you stand plus an hour-by-hour plan for the time you actually have — spent where the marks are, not where the textbook starts. It tells you what to skip, and it tells you when to sleep.',
+      'Tomorrow’s exam? Four taps, Class 11 or 12, and you get a realistic read on where you stand — including the marks you can actually expect, next to the pass mark — plus an hour-by-hour plan for the time you really have once breaks and 3am are taken off it. It names what you’re skipping, and it tells you when to sleep.',
     intent: [
       'exam tomorrow what to study',
       'last minute study plan cbse',
       'how to study night before exam',
       'one night before board exam plan',
       'what to study if exam is tomorrow',
+      'can i pass if i study one night before',
+      'how many marks can i get studying one night',
+      'class 11 exam tomorrow nothing prepared',
     ],
     og: {
       kicker: 'Tomorrow’s exam?',
       headline: 'Let’s survive it. An honest plan for the hours you have left.',
-      stat: '3',
+      stat: '4',
       statLabel: 'taps, no typing',
     },
   },

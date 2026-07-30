@@ -26,6 +26,7 @@ export default function Paper() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="The answer script"
         title="What happens to your paper after you hand it in"
         description="Read off four real evaluated Class 12 scripts, bought back from CBSE. How they're scanned, how they're marked, and the six things it changed about how I'd write a paper."

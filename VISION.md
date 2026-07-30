@@ -63,12 +63,67 @@ Then the site empties out: countdown, hour-by-hour plan to the exam, and *inside
 that plan* the chapters, formula sheets, PYQs and videos for those hours.
 Nothing else on screen.
 
-### Two rules for the verdict
+### Three rules for the verdict
 
 1. **Never flatter.** If they're cooked, say cooked. The credibility of this
    entire site is that it doesn't lie about marks — that has to hold here too.
 2. **Never hopeless.** Brutal about the situation, never about the person. There
    is always a plan, even if the plan is small.
+3. **Never promise a night it cannot deliver.** Added 30 Jul 2026, at Aryan's
+   insistence, and it is the same rule as (1) applied to the plan rather than to
+   the verdict.
+
+### On (3) — what "realistic" cost us, and why it was worth it
+
+The first build of `/tonight` was honest in its *wording* and dishonest in its
+*arithmetic*. It divided the hours to the exam by the marks in the paper, which
+meant:
+
+- a chapter could take fifteen minutes,
+- twelve hours on the clock counted as twelve hours of work,
+- and the number at the top — "marks this plan reaches" — was **coverage**, which
+  every single reader will read as a score they are going to get.
+
+None of that is a rounding error. A student who follows a plan built on it runs
+out of night somewhere in the middle and concludes they are the problem. That is
+the opposite of what this page is for.
+
+So the page now says, in plain words on the results screen, all of the following:
+
+> **You are not getting full marks, and nothing on this page is going to.**
+> One night does not undo a year, and anyone telling you otherwise is selling a
+> course.
+
+…followed by the marks in units the plan never reaches, the fact that internal
+marks are untouchable, and the reminder that CBSE wants 33% of the *written*
+paper on its own. The headline figure is a **range** sitting next to the pass
+mark, because for a lot of people opening this at 1am the pass mark is the actual
+question and nobody else will say the number out loud.
+
+**This makes the product look worse and trust it more.** A student who has done
+nothing in Chemistry is told, correctly, to expect somewhere in the teens out of
+70 — below the pass mark — and the plan's stated objective changes from "a
+percentage" to "clear 23". That is a real outcome, it is worth having, and it is
+the only version of this feature that survives contact with a real night.
+
+**The best moment on the page is now a refusal.** Past roughly 2:45am there is no
+usable night left, and the verdict becomes *"Stop. Go to sleep, and do this in
+the morning"* — with the morning becoming the study block. A study site that
+tells you to shut the book and set an alarm is the thing a student screenshots.
+Do not soften it, and do not let a later "optimisation" hand those hours back.
+
+### Class 11 was never a decision, it was an accident
+
+`/tonight` only knew Class 12 because the planner read `guides.ts`, and Class 12
+is the only year with a written guide behind it. Nobody chose to exclude half the
+school; it fell out of where the data happened to live. Fixed 30 Jul 2026 —
+paper shape now lives in `papers.ts`, separately from the analysis of it.
+
+The honesty rule is different for Class 11 and must stay different: **it is not a
+board exam.** CBSE publishes the syllabus and the weightage, schools set the
+paper to it, and therefore nobody can tell a Class 11 student what "always comes
+up". Class 11 copy describes what is in a unit and what it is worth. It never
+predicts a paper.
 
 ### The sleep recommendation is the most important part
 
@@ -77,6 +132,40 @@ screenshots it and sends it to a friend. It is also just true. Do not soften it
 into a suggestion.
 
 ---
+
+## 2b. Answering "why would I use this?" on the front door
+
+Added 30 Jul 2026, because the home page never answered it. A student landing
+here already has Google, ChatGPT, a WhatsApp group and four coaching apps — all
+free, all with more content than this will ever have. "Notes and resources" is
+not a reason to stay; every one of those does that.
+
+So the second thing on the home page is now the question in the student's own
+words — *"Why use this when everything is already free somewhere?"* — and five
+answers, each one something the alternatives **structurally cannot say**:
+
+1. **It decides.** At 11pm you don't need another PDF, you need someone to say
+   what to open first and when to stop.
+2. **It tells you what you'll actually score.** Not "you can still get 90".
+3. **Every number comes from CBSE**, and the build fails if it stops adding up.
+4. **I show you my own papers, including the bad one.** 183 pages.
+5. **No account, no ads, no app, no paywall** — there is no business model to
+   protect, which is exactly why the other four are possible.
+
+A subscription business cannot say (1) or (5) and survive, and nobody else has
+(4) at all. That is the whole argument, and it now takes ten seconds to read
+rather than four clicks to discover.
+
+**The header line stopped saying "Delhi Public School · Gandhinagar."** It was
+the first line on the page, and to a CBSE student in any other school it read as
+*this is not for you* before they had seen a single thing the site does. It now
+reads "CBSE · Classes 10 to 12 … Unofficial · one student, no company". The
+school is still on `/about`, which is where someone asking who wrote this will
+actually look — the honesty is unchanged, the false narrowing is gone.
+
+*(Still open, and his call: `/day` and the bell-timing widget in the hero are
+genuinely DPS-Gandhinagar-only, and they hold prime space on a page now aimed at
+every CBSE student.)*
 
 ## 3. Moderation is the front door, not a feature
 

@@ -62,8 +62,12 @@ export function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
           <span className="border-line-strong text-mark grid h-7 place-items-center rounded-[3px] border px-1.5 font-mono text-[11px] font-medium tracking-[0.1em]">
             AN
           </span>
+          {/* The wordmark, not "Notes" — that was the old name and it was the
+              one word a visitor actually saw, while the title, the copyright and
+              this link's own aria-label all said All Nighter. The name is also
+              the pitch: the target sentence is "bro, just use All Nighter". */}
           <span className="font-display hidden text-[15px] font-bold tracking-tight sm:block">
-            Notes
+            All Nighter
           </span>
         </Link>
 

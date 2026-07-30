@@ -71,6 +71,7 @@ export default function Chapters() {
   return (
     <div className="register mx-auto max-w-4xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="NCERT · chapterwise"
         title={`Class ${grade} NCERT chapters, one click each`}
         description="The actual NCERT PDFs, straight from ncert.nic.in — no ad walls, no sign-up, no “download” button that opens three tabs. Papers are set from these books."
@@ -124,6 +125,10 @@ export default function Chapters() {
       <p className="text-faint mb-4 font-mono text-[11px] tabular">
         {books.length} books · {chapterCount} chapters
       </p>
+
+      {/* Radix renders each Accordion.Header as an h3, so the list needs a
+          heading of its own or the page jumps h1 → h3. */}
+      <h2 className="sr-only">Books</h2>
 
       {books.length > 0 ? (
         <motion.div initial="hidden" animate="show" variants={stagger(0.03)} className="pb-8">

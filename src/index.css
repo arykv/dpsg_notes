@@ -20,15 +20,18 @@
   --color-board-500: #17564a;
   --color-board-400: #1f6b5c;
 
-  /* Marigold — the marking colour. */
-  --color-mark-600: #b3701a;
+  /* Marigold — the marking colour.
+     `700` is the text-safe version: the same hue taken down until it clears
+     4.5:1 on paper. See the contrast note under the semantic tokens. */
+  --color-mark-700: #96590c;
+  --color-mark-600: #bd7a1f;
   --color-mark-500: #d8901f;
   --color-mark-400: #f2a93b;
   --color-mark-300: #f6c877;
 
   /* Red pen. Reserved for corrections and things that have run out. */
-  --color-pen-600: #c63b2f;
-  --color-pen-500: #e4574a;
+  --color-pen-600: #bd3529;
+  --color-pen-500: #f28c80;
 
   --font-display: 'Bricolage Grotesque', 'Archivo', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -47,6 +50,25 @@
 
 /* --- Semantic surfaces ---------------------------------------------------- */
 
+/* --- On contrast ----------------------------------------------------------
+
+   Every foreground token below clears WCAG AA (4.5:1) against all three of the
+   backgrounds it can land on — `--canvas`, `--surface` and `--surface-2`. That
+   is not a formality here: `--text-faint` carries `.eyebrow`, which is 10px
+   mono caps, and this palette originally ran it at 3.4:1 on paper. Small text
+   in a low-contrast colour is exactly what a tired student at 1am cannot read.
+
+   `--mark` and `--mark-text` are deliberately two different marigolds. The
+   first is the fill — buttons, rules, the highlighter swipe — where the
+   contrast that matters is against the dark text sitting *on* it. The second is
+   the same hue taken darker so it can be a link on paper. Using one value for
+   both is what forced the original into a shade that was too pale to read and
+   too dark to feel like a highlighter.
+
+   If you change any of these, re-check them. The ratios are tight by design —
+   they are the lightest values that pass, so the page still looks like paper.
+-------------------------------------------------------------------------- */
+
 @layer base {
   /* Light is a notebook page. */
   :root {
@@ -58,10 +80,11 @@
     --line-strong: #c8bda2;
     --text: #0f2019;
     --text-muted: #4c5f56;
-    --text-faint: #7b8b81;
+    --text-faint: #5f7167;
     --accent: var(--color-board-700);
     --accent-text: var(--color-board-700);
     --mark: var(--color-mark-600);
+    --mark-text: var(--color-mark-700);
     --pen: var(--color-pen-600);
     --rule: rgb(15 32 25 / 0.055);
     --glass: rgb(251 248 240 / 0.82);
@@ -80,10 +103,12 @@
     --line-strong: #24705f;
     --text: #f1ede0;
     --text-muted: #a9bfb4;
-    --text-faint: #7e988c;
+    --text-faint: #9ab3a7;
     --accent: var(--color-mark-400);
     --accent-text: var(--color-mark-400);
     --mark: var(--color-mark-400);
+    /* On the board the fill colour is already light enough to read. */
+    --mark-text: var(--color-mark-400);
     --pen: var(--color-pen-500);
     --rule: rgb(241 237 224 / 0.05);
     --glass: rgb(5 46 39 / 0.86);
@@ -163,8 +188,9 @@
   .text-accent {
     color: var(--accent-text);
   }
+  /* Text, so the readable value — never the fill. */
   .text-mark {
-    color: var(--mark);
+    color: var(--mark-text);
   }
   .text-pen {
     color: var(--pen);

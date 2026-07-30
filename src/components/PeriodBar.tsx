@@ -101,7 +101,9 @@ export function PeriodBar({ compact = false }: { compact?: boolean }) {
             </span>
             <p className="eyebrow">Right now</p>
           </div>
-          <h3 className="mt-1.5 text-xl sm:text-2xl">{headline}</h3>
+          {/* h2, not h3 — this widget sits directly under the page's h1 in the
+              hero, so an h3 skipped a level for anyone navigating by heading. */}
+          <h2 className="mt-1.5 text-xl sm:text-2xl">{headline}</h2>
           <p className="text-muted mt-0.5 text-sm tabular">{detail}</p>
         </div>
 

@@ -19,6 +19,7 @@ export default function Resources() {
   return (
     <div className="register mx-auto max-w-4xl px-4 pt-12 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Resources"
         title="Where to actually learn this stuff"
         description="The channels and sites I used myself, then everything else worth opening. Every link has been checked by hand — a directory is only useful if you can trust every row in it."

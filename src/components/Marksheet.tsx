@@ -6,6 +6,7 @@ import {
   formatPercent,
   percentage,
   subjectTotal,
+  theoryPercentage,
   type Marksheet as MarksheetData,
 } from '@/data/results'
 import { inView, rise, stagger } from '@/lib/motion'
@@ -25,7 +26,11 @@ import { inView, rise, stagger } from '@/lib/motion'
  */
 export function Marksheet({ sheet }: { sheet: MarksheetData }) {
   const pct = percentage(sheet)
-  const hasInternal = sheet.subjects.some((s) => s.internal > 0)
+  const theoryPct = theoryPercentage(sheet)
+  // Every CBSE subject is out of 100, but almost none of them are out of 100 in
+  // the exam hall. Showing the denominators is the difference between a table
+  // of marks and a table that can be read.
+  const sameSplit = sheet.subjects.every((s) => s.theoryMax === sheet.subjects[0]?.theoryMax)
 
   return (
     <motion.figure
@@ -38,9 +43,9 @@ export function Marksheet({ sheet }: { sheet: MarksheetData }) {
       {/* Masthead */}
       <motion.figcaption variants={rise} className="border-line border-b px-5 py-4">
         <p className="eyebrow">Central Board of Secondary Education</p>
-        <h3 className="mt-1.5 text-lg">
+        <h2 className="mt-1.5 text-lg">
           {sheet.examName}, {sheet.year}
-        </h3>
+        </h2>
         <p className="text-faint mt-1 font-mono text-[11px]">
           Class {sheet.grade} · Statement of Marks
         </p>
@@ -48,21 +53,19 @@ export function Marksheet({ sheet }: { sheet: MarksheetData }) {
 
       {/* Marks table */}
       <div className="scroll-thin overflow-x-auto">
-        <table className="w-full min-w-[26rem] border-collapse text-left">
+        <table className="w-full min-w-[20rem] border-collapse text-left">
           <thead>
             <tr className="border-line border-b">
-              <th scope="col" className="eyebrow px-5 py-2.5 font-medium">
+              <th scope="col" className="eyebrow py-2.5 pr-2 pl-5 font-medium">
                 Subject
               </th>
-              <th scope="col" className="eyebrow px-3 py-2.5 text-right font-medium">
-                Theory
+              <th scope="col" className="eyebrow px-2 py-2.5 text-right font-medium">
+                Theory{sameSplit && sheet.subjects[0] ? ` /${sheet.subjects[0].theoryMax}` : ''}
               </th>
-              {hasInternal && (
-                <th scope="col" className="eyebrow px-3 py-2.5 text-right font-medium">
-                  Prac / IA
-                </th>
-              )}
-              <th scope="col" className="eyebrow px-5 py-2.5 text-right font-medium">
+              <th scope="col" className="eyebrow px-2 py-2.5 text-right font-medium">
+                Prac / IA
+              </th>
+              <th scope="col" className="eyebrow py-2.5 pr-5 pl-2 text-right font-medium">
                 Total
               </th>
             </tr>
@@ -78,26 +81,26 @@ export function Marksheet({ sheet }: { sheet: MarksheetData }) {
                   // count. Dimming it says that faster than a footnote.
                   aria-label={inFive ? undefined : `${s.subject} — not counted`}
                 >
-                  <td className={`px-5 py-2.5 text-[14px] ${inFive ? '' : 'text-faint'}`}>
+                  <td className={`py-2.5 pr-2 pl-5 text-[14px] ${inFive ? '' : 'text-faint'}`}>
                     {s.subject}
                     {!inFive && (
                       <span className="text-faint ml-2 font-mono text-[10px]">not counted</span>
                     )}
                   </td>
                   <td
-                    className={`px-3 py-2.5 text-right font-mono text-[13px] tabular ${inFive ? '' : 'text-faint'}`}
+                    className={`px-2 py-2.5 text-right font-mono text-[13px] tabular ${inFive ? '' : 'text-faint'}`}
                   >
                     {s.theory}
+                    <span className="text-faint text-[10px]">/{s.theoryMax}</span>
                   </td>
-                  {hasInternal && (
-                    <td
-                      className={`px-3 py-2.5 text-right font-mono text-[13px] tabular ${inFive ? '' : 'text-faint'}`}
-                    >
-                      {s.internal || '—'}
-                    </td>
-                  )}
                   <td
-                    className={`px-5 py-2.5 text-right font-mono text-[13px] font-medium tabular ${
+                    className={`px-2 py-2.5 text-right font-mono text-[13px] tabular ${inFive ? '' : 'text-faint'}`}
+                  >
+                    {s.internal}
+                    <span className="text-faint text-[10px]">/{s.internalMax}</span>
+                  </td>
+                  <td
+                    className={`py-2.5 pr-5 pl-2 text-right font-mono text-[13px] font-medium tabular ${
                       inFive ? '' : 'text-faint'
                     }`}
                   >
@@ -123,16 +126,22 @@ export function Marksheet({ sheet }: { sheet: MarksheetData }) {
         </span>
       </motion.div>
 
-      {/* The practical column deserves a warning label. */}
-      {hasInternal && (
-        <p className="border-line text-muted border-t px-5 py-3 text-[12px] leading-relaxed">
-          <span className="eyebrow mr-2">On that column</span>
-          Don't read too much into the practical marks. At my school they only ever ran 28 to 30 out
-          of 30 — I never saw 25 or 26 on anyone's, and getting less than that would have meant
-          something had actually gone wrong. Other schools may mark them differently. It's the
-          theory column that's earned in the exam hall, and it's the only one CBSE moderates.
-        </p>
-      )}
+      {/* The same result on the written papers alone. Costs a couple of points
+          and buys the number above its credibility. */}
+      <motion.div
+        variants={rise}
+        className="border-line flex flex-wrap items-baseline justify-between gap-x-8 gap-y-1 border-t px-5 py-3"
+      >
+        <span className="eyebrow">On the written papers only</span>
+        <span className="font-display text-lg font-bold tabular">{formatPercent(theoryPct)}</span>
+      </motion.div>
+
+      {/* The internal column deserves a warning label, and it isn't the same
+          warning in both years. */}
+      <p className="border-line text-muted border-t px-5 py-3 text-[12px] leading-relaxed">
+        <span className="eyebrow mr-2">On that column</span>
+        {sheet.internalNote}
+      </p>
 
       {/* The withheld fields. Naming them is the trust signal. */}
       <div className="border-line text-faint flex items-start gap-2.5 border-t px-5 py-3 text-[12px] leading-relaxed">

@@ -15,8 +15,12 @@ export interface SubjectMark {
   subject: string
   /** Written paper. This is the number CBSE moderates. */
   theory: number
+  /** What the written paper was out of. Not 100, and not the same for every subject. */
+  theoryMax: number
   /** Practical or internal assessment — moderation never touches it. */
   internal: number
+  /** What the internal component was out of. */
+  internalMax: number
   /** What the internal column is actually called on that year's marksheet. */
   internalLabel: 'Practical' | 'Internal'
 }
@@ -32,6 +36,8 @@ export interface Marksheet {
   countedSubjects: number
   /** Set when the year's result was computed by dropping a subject. */
   droppedNote?: string
+  /** The honest paragraph about what the internal column is worth that year. */
+  internalNote: string
 }
 
 const total = (s: SubjectMark) => s.theory + s.internal
@@ -44,15 +50,31 @@ export const CLASS_12: Marksheet = {
   examName: 'Senior School Certificate Examination',
   year: 2026,
   countedSubjects: 5,
+  internalNote:
+    'Don’t read too much into the practical marks. At my school they only ever ran 28 to 30 out of 30 — I never saw 25 or 26 on anyone’s, and getting less than that would have meant something had actually gone wrong. Other schools may mark them differently. It’s the theory column that’s earned in the exam hall, and it’s the only one CBSE moderates.',
   subjects: [
-    { subject: 'Computer Science', theory: 68, internal: 30, internalLabel: 'Practical' },
-    { subject: 'English Core', theory: 76, internal: 20, internalLabel: 'Internal' },
-    { subject: 'Mathematics', theory: 71, internal: 20, internalLabel: 'Internal' },
-    { subject: 'Physics', theory: 60, internal: 30, internalLabel: 'Practical' },
-    { subject: 'Chemistry', theory: 59, internal: 30, internalLabel: 'Practical' },
+    { subject: 'Computer Science', theory: 68, theoryMax: 70, internal: 30, internalMax: 30, internalLabel: 'Practical' },
+    { subject: 'English Core', theory: 76, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
+    { subject: 'Mathematics', theory: 71, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
+    { subject: 'Physics', theory: 60, theoryMax: 70, internal: 30, internalMax: 30, internalLabel: 'Practical' },
+    { subject: 'Chemistry', theory: 59, theoryMax: 70, internal: 30, internalMax: 30, internalLabel: 'Practical' },
   ],
 }
 
+/**
+ * Class 10, and this table was wrong on this site for months.
+ *
+ * It listed the subject totals in the theory column and left internals at zero,
+ * which quietly claimed I had written a 98-mark paper in Computer Applications.
+ * I hadn't. Five of the six subjects are 80 theory plus 20 internal, and I got
+ * the full 20 in every one of them — so a chunk of every number in the right
+ * column was never earned in an exam hall at all.
+ *
+ * Computer Applications is different again. It is CBSE code 165, a skill
+ * subject, and it runs 50 theory plus 50 practical rather than 80 plus 20 —
+ * so the 98 that led the list is 48 in the paper and a full practical. It is
+ * still my highest mark; it is just not the mark it looked like.
+ */
 export const CLASS_10: Marksheet = {
   id: 'class-10',
   grade: 10,
@@ -60,17 +82,36 @@ export const CLASS_10: Marksheet = {
   year: 2024,
   countedSubjects: 5,
   droppedNote: 'Six subjects sat, best five counted. Hindi was the one dropped.',
+  internalNote:
+    'Every one of those internal marks is full, and that is worth being suspicious about rather than impressed by. Twenty marks of internal assessment is periodic tests, notebooks and subject enrichment, marked by your own school — nearly everybody gets 19 or 20, so it lifts the whole class equally and tells you nothing about who can write a paper. Read the theory column instead. That one was 80 marks in a hall with a stranger marking it.',
   subjects: [
-    { subject: 'Computer Applications', theory: 98, internal: 0, internalLabel: 'Internal' },
-    { subject: 'Social Science', theory: 96, internal: 0, internalLabel: 'Internal' },
-    { subject: 'Science', theory: 95, internal: 0, internalLabel: 'Internal' },
-    { subject: 'Mathematics', theory: 94, internal: 0, internalLabel: 'Internal' },
-    { subject: 'English', theory: 93, internal: 0, internalLabel: 'Internal' },
-    { subject: 'Hindi', theory: 89, internal: 0, internalLabel: 'Internal' },
+    { subject: 'Computer Applications', theory: 48, theoryMax: 50, internal: 50, internalMax: 50, internalLabel: 'Practical' },
+    { subject: 'Social Science', theory: 76, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
+    { subject: 'Science', theory: 75, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
+    { subject: 'Mathematics', theory: 74, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
+    { subject: 'English', theory: 73, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
+    { subject: 'Hindi', theory: 69, theoryMax: 80, internal: 20, internalMax: 20, internalLabel: 'Internal' },
   ],
 }
 
 export const MARKSHEETS = [CLASS_12, CLASS_10]
+
+/**
+ * Marks that exceed what the component was out of are a typo, and a typo here
+ * is the site claiming a mark that was never awarded. Fail the build instead.
+ */
+for (const sheet of MARKSHEETS) {
+  for (const s of sheet.subjects) {
+    if (s.theoryMax + s.internalMax !== 100) {
+      throw new Error(
+        `Class ${sheet.grade} ${s.subject}: ${s.theoryMax} + ${s.internalMax} is not a 100-mark subject`,
+      )
+    }
+    if (s.theory > s.theoryMax || s.internal > s.internalMax || s.theory < 0 || s.internal < 0) {
+      throw new Error(`Class ${sheet.grade} ${s.subject}: marks fall outside what it was out of`)
+    }
+  }
+}
 
 /* --- Derived numbers ------------------------------------------------------ */
 
@@ -102,6 +143,25 @@ export function counted(sheet: Marksheet, mark: SubjectMark): boolean {
 }
 
 export { total as subjectTotal }
+
+/**
+ * The same result, counting only the papers actually written in an exam hall.
+ *
+ * Every aggregate CBSE prints has the internal column folded into it, and the
+ * internal column is marked by your own school and runs near full for almost
+ * everybody. So the headline percentage is always a bit kinder than the writing
+ * behind it. This is the unkind version of both of mine, and publishing it
+ * costs about two points — which is the price of the number above meaning
+ * something.
+ */
+export function theoryPercentage(sheet: Marksheet): number {
+  const counting = sheet.subjects
+    .filter((s) => counted(sheet, s))
+    .slice(0, sheet.countedSubjects)
+  const got = counting.reduce((n, s) => n + s.theory, 0)
+  const outOf = counting.reduce((n, s) => n + s.theoryMax, 0)
+  return outOf ? (got / outOf) * 100 : 0
+}
 
 /**
  * The two headline percentages, shared with the strategy page and the search

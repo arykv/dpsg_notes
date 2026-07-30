@@ -41,17 +41,30 @@ export function SectionHead({
   title,
   description,
   action,
+  /**
+   * `1` when this head *is* the page's title rather than a section inside it.
+   *
+   * This existed as a hard-coded `h2`, and the consequence was that 24 of the
+   * site's 30 routes shipped without an `<h1>` anywhere in them — because on
+   * almost every page the first `SectionHead` is the page title. A screen reader
+   * user navigating by headings had no top-level landmark to start from on any
+   * of those pages. It looks identical either way, which is exactly why it went
+   * unnoticed for so long.
+   */
+  level = 2,
 }: {
   eyebrow?: string
   title: string
   description?: string
   action?: React.ReactNode
+  level?: 1 | 2
 }) {
+  const Heading = level === 1 ? 'h1' : 'h2'
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div className="max-w-xl">
         {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}
-        <h2 className="text-2xl sm:text-3xl">{title}</h2>
+        <Heading className="text-2xl sm:text-3xl">{title}</Heading>
         {description && <p className="text-muted mt-2 text-sm leading-relaxed">{description}</p>}
       </div>
       {action}

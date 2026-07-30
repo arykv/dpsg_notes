@@ -40,6 +40,7 @@ export default function About() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="About"
         title="A library, not a product"
         description="Started at DPS Gandhinagar, open to anyone sitting the same papers."

@@ -28,6 +28,7 @@ export default function Results() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Results & proof"
         title="My marksheets, and proof that CBSE moderation is real"
         description="Both boards, subject by subject. Then the part nobody checks: my evaluated answer scripts next to the marksheet they turned into."
@@ -42,6 +43,20 @@ export default function Results() {
         Everything on this site is written from two board results. It's fair to want to see them
         before taking any of the advice, so here they are in full — including the subject I dropped
         and the paper that went worst.
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
+        className="text-muted mt-3 text-[15px] leading-relaxed"
+      >
+        Both tables are split into what I wrote in the hall and what my school marked, because those
+        are not the same thing and a single number hides it. My Class 10 table used to show the
+        subject totals in the theory column, which quietly claimed I had written a 98-mark
+        Computer Applications paper. I hadn't — it is a 50-mark paper, and I got 48. The row under
+        each table is the same result counting only the written papers. It is about two points lower
+        in both years, and that is the honest number.
       </motion.p>
 
       {/* --- The marksheets ------------------------------------------------ */}
@@ -160,19 +175,19 @@ function ModerationEvidence() {
         className="surface border-line-strong mt-8 overflow-hidden rounded-[6px] border"
       >
         <div className="scroll-thin overflow-x-auto">
-          <table className="w-full min-w-[26rem] border-collapse text-left">
+          <table className="w-full min-w-[20rem] border-collapse text-left">
             <thead>
               <tr className="border-line border-b">
-                <th scope="col" className="eyebrow px-5 py-2.5 font-medium">
+                <th scope="col" className="eyebrow py-2.5 pr-2 pl-4 font-medium">
                   Subject
                 </th>
-                <th scope="col" className="eyebrow px-3 py-2.5 text-right font-medium">
-                  Answer script
+                <th scope="col" className="eyebrow px-2 py-2.5 text-right font-medium">
+                  Script
                 </th>
-                <th scope="col" className="eyebrow px-3 py-2.5 text-right font-medium">
+                <th scope="col" className="eyebrow px-2 py-2.5 text-right font-medium">
                   Marksheet
                 </th>
-                <th scope="col" className="eyebrow px-5 py-2.5 text-right font-medium">
+                <th scope="col" className="eyebrow py-2.5 pr-4 pl-2 text-right font-medium">
                   Change
                 </th>
               </tr>
@@ -182,14 +197,14 @@ function ModerationEvidence() {
                 const gain = moderationGain(r)
                 return (
                   <tr key={r.subject} className="border-line border-b last:border-b-0">
-                    <td className="px-5 py-2.5 text-[14px]">{r.subject}</td>
-                    <td className="px-3 py-2.5 text-right font-mono text-[13px] tabular">
+                    <td className="py-2.5 pr-2 pl-4 text-[14px]">{r.subject}</td>
+                    <td className="px-2 py-2.5 text-right font-mono text-[13px] tabular">
                       {r.osm}
                     </td>
-                    <td className="px-3 py-2.5 text-right font-mono text-[13px] tabular">
+                    <td className="px-2 py-2.5 text-right font-mono text-[13px] tabular">
                       {r.marksheet}
                     </td>
-                    <td className="px-5 py-2.5 text-right">
+                    <td className="py-2.5 pr-4 pl-2 text-right">
                       {gain === 0 ? (
                         <span className="text-faint inline-flex items-center gap-1 font-mono text-[12px]">
                           <Equal className="size-3" aria-hidden />

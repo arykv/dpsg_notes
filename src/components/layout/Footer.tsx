@@ -50,10 +50,11 @@ export function Footer() {
               <span className="border-line-strong text-mark grid h-7 place-items-center rounded-[3px] border px-1.5 font-mono text-[11px] font-medium tracking-[0.1em]">
                 AN
               </span>
-              <span className="font-display text-[15px] font-bold tracking-tight">Notes</span>
+              <span className="font-display text-[15px] font-bold tracking-tight">All Nighter</span>
             </div>
             <p className="text-muted mt-4 max-w-xs text-sm leading-relaxed">
-              A study library run by students, for students. Free, no sign-up, and it stays that way.
+              Not where you study all year. Where you go when you didn&rsquo;t. Written by one CBSE
+              student who did it twice — free, no sign-up, and it stays that way.
             </p>
             <div className="mt-5 flex gap-2">
               <a

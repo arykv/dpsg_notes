@@ -34,6 +34,7 @@ export default function Guide() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow={`Class ${guide.grade} · ${guide.subject} · ${guide.code}`}
         title={`${guide.subject}, put together properly`}
         description="All of this exists free somewhere. It's spread across a syllabus PDF, a dozen blogs that copy each other's mistakes, and a hundred channels. Here it is in one place, with what I'd actually do."
@@ -264,6 +265,7 @@ function GuideIndex() {
   return (
     <div className="register mx-auto max-w-3xl px-4 pt-12 pb-8 pl-5 sm:px-6 sm:pl-16">
       <SectionHead
+        level={1}
         eyebrow="Subject guides"
         title="Every Class 12 subject, put together properly"
         description="All of this exists free somewhere. It's spread across a syllabus PDF, a dozen blogs copying each other's mistakes, and a hundred channels. Here it is in one place, with my own marks attached to each one."

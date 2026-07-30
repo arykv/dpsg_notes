@@ -47,11 +47,36 @@ around him signing up for anything.
 | Chemistry | 59 | 30 | 89 |
 
 **Class 10, 2024 — 95.2%** (best of five, Hindi dropped)
-Computer Applications 98 · Social Science 96 · Science 95 · Maths 94 ·
-English 93 · Hindi 89
 
-Note: Maths and English theory are out of **80**; Physics, Chemistry and CS out
-of **70**. Practicals differ accordingly.
+| Subject | Theory | Prac/IA | Total |
+|---|---|---|---|
+| Computer Applications | 48 / 50 | 50 / 50 | 98 |
+| Social Science | 76 / 80 | 20 / 20 | 96 |
+| Science | 75 / 80 | 20 / 20 | 95 |
+| Mathematics | 74 / 80 | 20 / 20 | 94 |
+| English | 73 / 80 | 20 / 20 | 93 |
+| Hindi | 69 / 80 | 20 / 20 | 89 (not counted) |
+
+Note: Maths and English Class 12 theory are out of **80**; Physics, Chemistry
+and CS out of **70**. Practicals differ accordingly.
+
+**The Class 10 table was wrong on the site until 30 Jul 2026** — it stored each
+subject *total* in the theory column with internals at zero, which claimed he had
+written a 98-mark Computer Applications paper. Two things were wrong:
+
+1. Five of six subjects are **80 theory + 20 internal**, and he got the full 20
+   in every one. So part of every number in that column was school-marked, not
+   earned in a hall.
+2. **Computer Applications is CBSE code 165, a skill subject: 50 theory + 50
+   practical**, not 80 + 20. The 98 is **48 + 50**. Confirmed by Aryan against
+   the document — do not "correct" it back to 78 + 20.
+
+`results.ts` now carries `theoryMax`/`internalMax` per subject and asserts at
+build time that they sum to 100 and that no mark exceeds its maximum.
+`theoryPercentage()` publishes the same result on the **written papers only** —
+**90.3%** (Class 12) and **93.5%** (Class 10). Both marksheets show it. It costs
+about two points in each year and it is the reason the headline number is worth
+anything.
 
 ### The moderation evidence — the project's whole foundation
 
@@ -112,6 +137,44 @@ school register:
 Tokens live in `src/index.css`. Motion vocabulary in `src/lib/motion.ts` — two
 springs (`snap`, `settle`) and one ease. Use them; don't hand-roll.
 
+### Contrast — the tokens are the lightest values that pass, so re-check any edit
+
+Every foreground token clears **WCAG AA (4.5:1)** against all three backgrounds
+it can land on: `--canvas`, `--surface`, `--surface-2`. This was not true until
+30 Jul 2026 — light mode ran `--text-faint` at **3.4:1**, and `--text-faint`
+carries `.eyebrow`, which is 10px mono caps. Small text in a pale colour is
+precisely what a tired student at 1am cannot read.
+
+`--mark` and `--mark-text` are **two different marigolds on purpose**:
+
+- `--mark` (light `#bd7a1f`) is the **fill** — buttons, rules, the highlighter
+  swipe. The contrast that matters is the dark text sitting *on* it.
+- `--mark-text` (light `#96590c`) is the same hue taken darker so it can be a
+  link on paper. `.text-mark` uses this one; never the fill.
+
+On the dark board the fill is already light enough, so both point at `mark-400`.
+One value for both is what forced the original into a shade too pale to read and
+too dark to feel like a highlighter.
+
+### Accessibility
+
+`SectionHead` takes `level={1}` when it *is* the page title. Until this existed
+**24 of the 30 routes shipped with no `<h1>` anywhere in them**, because on
+almost every page the first `SectionHead` is the page title — and it looks
+identical either way, which is why nobody noticed. All 30 routes now have exactly
+one `h1`, no skipped heading levels, no unlabelled controls, no duplicate ids.
+
+`MotionConfig reducedMotion="user"` sits at the root of `App.tsx`. The
+`prefers-reduced-motion` block in `index.css` only reaches *CSS* animation, and
+every entrance here is a JS-driven spring — without the MotionConfig the setting
+did nothing on the pages that move most.
+
+There is no axe in the toolchain. The check that found all of the above is a
+throwaway Python pass over `dist/**/index.html` looking for: missing `h1`,
+multiple `h1`, skipped heading levels, `<button>`/`<a>` with no accessible name,
+`<img>` without `alt`, inputs with no label, and duplicate ids. Worth re-running
+after any structural change — it takes seconds and it caught 25 real issues.
+
 ### Standing product rules
 
 - **No uploads, no database.** He killed a scoped Supabase flow. Contributions
@@ -127,10 +190,44 @@ springs (`snap`, `settle`) and one ease. Use them; don't hand-roll.
 ## 4. What's built — all 30 routes
 
 **The flagship**
-- `/tonight` — *Pull an all nighter.* Three taps (subject chip, datetime,
+- `/tonight` — *Pull an all nighter.* Four taps (**year**, subject chip, datetime,
   preparation), then an honest verdict and an hour-by-hour plan. Logic in
   `src/lib/allnighter.ts`; ranks units by **marks per minute**, names what it's
   dropping, and tells you to sleep with a number.
+
+  **Rewritten 30 Jul 2026 to be realistic.** The first version divided the hours
+  to the exam by the marks in the paper. That produced fifteen-minute chapters,
+  treated twelve hours of clock as twelve hours of work, and printed a coverage
+  figure that every reader took for a score. What it models now:
+
+  | | |
+  |---|---|
+  | Clock ≠ study | `studyMinutesBetween` walks the real hours: ten minutes' break per hour, and a quality curve by hour of night (3–5am is worth 0.45, the morning after sleep 1.05). Twelve hours on the clock becomes about four of work, and the page shows both numbers next to each other |
+  | A unit has a floor | `MIN_BLOCK` — 45 min from scratch, 30 half-known, 20 revising. A unit that doesn't fit is **dropped by name**, never given a token quarter hour |
+  | Coverage ≠ marks | `BASELINE`/`CONVERSION` per prep level. The headline is a **range**, next to CBSE's pass mark (`floor(0.33 × theory)` — 23/70, 26/80, the board's own figures) |
+  | The night has a shape | Sessions: day(s) → tonight → **sleep** → morning. Morning is revision-only. Past ~2:45am there is no usable night and the verdict becomes *"Stop. Go to sleep, and do this in the morning"* — then the morning becomes the study time |
+  | Multi-day | More than one night out, whole days are capped at **six effective hours** and labelled. Over a week out the verdict says this isn't an all nighter yet |
+  | Unpreppable marks | `Unit.unpreppable` — unseen passages. Listed, never scheduled, and counted in the range at 60% |
+
+  **The `depth` label must stay prep-aware.** It was density-only at first and
+  told a student who had ticked "basically nothing" *"You know this one. Don't
+  re-read it"* about a 45-mark Python unit. Time-per-mark says how deep a block
+  can go; only `prep` says what depth *means* to the person reading it.
+
+**Class 11 — `src/data/papers.ts`**
+
+`/tonight` used to know only Class 12, because it read `guides.ts` and that is
+the only year with a written guide. Class 11 papers now live in `papers.ts`;
+Class 12 papers are **derived** from `GUIDES` so weightage still has exactly one
+home. Every Class 11 number was read out of CBSE's own 2025–26 curriculum PDFs
+under `cbseacademic.nic.in/web_material/CurriculumMain26/SrSec/` — Physics 70
+(23/17/20/10, CBSE's own four marked blocks, *not* split further because CBSE
+doesn't publish per-unit figures inside them), Chemistry 70 (nine units),
+Maths 80 (23/25/12/8/12), English Core 80 (26/23/31), CS 70 (10/45/15).
+
+Class 11 unit copy says what is *in* a unit and what it is *worth*, and never
+claims to know what gets asked — it is not a board exam and the school sets the
+paper. Keep that distinction.
 
 **The moat — unclonable, and the reason to trust everything else**
 - `/results` — both marksheets as components, plus the moderation receipt
@@ -155,7 +252,7 @@ springs (`snap`, `settle`) and one ease. Use them; don't hand-roll.
 
 ```
 src/
-  data/     results · guides · script · paper · print · books
+  data/     results · guides · papers · script · paper · print · books
             resources · subjects · ncert(.json) · links · channels
             schedule · strategy · tools · legacy-routes · types
   lib/      allnighter (the plan) · search (Fuse) · marks · seo
@@ -174,14 +271,19 @@ scripts/
   build-ncert.py    regenerates ncert.json from ncert.nic.in
 ```
 
-**Three build-time assertions guard the data.** They fail the build rather than
+**Five build-time assertions guard the data.** They fail the build rather than
 publish something wrong, and that's deliberate:
 
 1. `guides.ts` — unit weightage must sum to the paper total (70/70/80/80/70).
    Coaching sites copy each other's typos and students plan their week on it.
-2. `script.ts` — page numbers must be contiguous `1..n`, so captions can't drift
+2. `papers.ts` — same check across **both** years, plus no zero-mark units and no
+   duplicate slugs. Class 11 has no guide page, so this is the only thing
+   standing between a mistyped weightage and a student's plan.
+3. `results.ts` — `theoryMax + internalMax` must be 100 and no mark may exceed
+   its maximum. A typo here is the site claiming a mark that was never awarded.
+4. `script.ts` — page numbers must be contiguous `1..n`, so captions can't drift
    out of step with the images and mislabel someone's evidence.
-3. `og.mjs` — `measure()` throws on any character outside the font subset. An
+5. `og.mjs` — `measure()` throws on any character outside the font subset. An
    overflowing headline is invisible until someone shares it.
 
 ---
